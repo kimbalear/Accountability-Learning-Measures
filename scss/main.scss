@@ -1,0 +1,27 @@
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap');
+
+  @import 'abstracts/_var.scss',
+  'abstracts/_typography.scss';
+
+  //@import 'components/_grid.scss',
+  @import 'components/grids_tab1',
+  'components/grids_tab2',
+  'components/grids_tab3',
+  'components/grids_tab4',
+  'components/grids_tab5',
+  'components/_tabs.scss';
+
+  i,
+  rem {
+    color: rgb(138, 116, 116);
+    font-weight: 300;
+    font-size: 0.5em;
+  }
+
+  .ui-widget-content {
+    border: none;
+  }
+
+  .ui-widget.ui-widget-content {
+    border: none;
+  }

@@ -1,0 +1,461 @@
+.grdTb2-1 {
+    display: grid;
+    grid-template-columns: 1fr repeat(3, 120px);
+    grid-template-rows: repeat(3, 48px);
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+    width: 95%;
+    padding-bottom: 20px;
+    grid-template-areas:
+        "title t1 t2 t3"
+        "l1 l1c2 l1c3 l1c4"
+        "l2 l2c2 l2c3 l2c4";
+
+    .title {
+        grid-area: title;
+        color: $clr_ps;
+        background-color: $clr_s;
+        border-left: 1px solid $clr_brdr;
+        border-top: 1px solid $clr_brdr;
+        border-bottom: 1px solid $clr_brdr;
+        display: flex;
+        align-items: center;
+        padding: 8px;
+    }
+
+    .t1 {
+        grid-area: t1;
+        color: $clr_ps;
+        background-color: $clr_s;
+        border-left: 1px solid $clr_brdr;
+        border-top: 1px solid $clr_brdr;
+        border-bottom: 1px solid $clr_brdr;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
+    }
+
+    .t2 {
+        grid-area: t2;
+        color: $clr_ps;
+        background-color: $clr_s;
+        border-left: 1px solid $clr_brdr;
+        border-top: 1px solid $clr_brdr;
+        border-bottom: 1px solid $clr_brdr;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
+    }
+
+    .t3 {
+        grid-area: t3;
+        color: $clr_ps;
+        background-color: $clr_s;
+        border-left: 1px solid $clr_brdr;
+        border-right: 1px solid $clr_brdr;
+        border-top: 1px solid $clr_brdr;
+        border-bottom: 1px solid $clr_brdr;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
+    }
+
+    .l1 {
+        grid-area: l1;
+        color: $clr_p;
+        background-color: $clr_ss;
+        border-left: 1px solid $clr_brdr;
+        border-bottom: 1px solid $clr_brdr;
+        display: flex;
+        align-items: center;
+        padding: 8px;
+    }
+
+    .l2 {
+        grid-area: l2;
+        color: $clr_p;
+        background-color: $clr_ss;
+        border-left: 1px solid $clr_brdr;
+        border-bottom: 1px solid $clr_brdr;
+        display: flex;
+        align-items: center;
+        padding: 8px;
+    }
+
+    .l1c2 {
+        grid-area: l1c2;
+        border-left: 1px solid $clr_brdr;
+        border-bottom: 1px solid $clr_brdr;
+
+        input {
+            width: 80%;
+            height: 80%;
+            border: none !important;
+            padding: 2px 8px;
+            text-align: right;
+        }
+    }
+
+    .l1c3 {
+        grid-area: l1c3;
+        border-left: 1px solid $clr_brdr;
+        border-bottom: 1px solid $clr_brdr;
+
+        input {
+            width: 80%;
+            height: 80%;
+            border: none !important;
+            padding: 2px 8px;
+            text-align: right;
+        }
+    }
+
+    .l1c4 {
+        grid-area: l1c4;
+        border-left: 1px solid $clr_brdr;
+        border-right: 1px solid $clr_brdr;
+        border-bottom: 1px solid $clr_brdr;
+
+        input {
+            width: 80%;
+            height: 80%;
+            border: none !important;
+            padding: 2px 8px;
+            text-align: right;
+        }
+    }
+
+    .l2c2 {
+        grid-area: l2c2;
+        border-left: 1px solid $clr_brdr;
+        border-bottom: 1px solid $clr_brdr;
+
+        input {
+            width: 80%;
+            height: 80%;
+            border: none !important;
+            padding: 2px 8px;
+            text-align: right;
+        }
+    }
+
+    .l2c3 {
+        grid-area: l2c3;
+        border-left: 1px solid $clr_brdr;
+        border-bottom: 1px solid $clr_brdr;
+
+        input {
+            width: 80%;
+            height: 80%;
+            border: none !important;
+            padding: 2px 8px;
+            text-align: right;
+        }
+    }
+
+    .l2c4 {
+        grid-area: l2c4;
+        border-left: 1px solid $clr_brdr;
+        border-right: 1px solid $clr_brdr;
+        border-bottom: 1px solid $clr_brdr;
+
+        input {
+            width: 80%;
+            height: 80%;
+            border: none !important;
+            padding: 2px 8px;
+            text-align: right;
+        }
+    }
+}
+
+.grdTb2-2 {
+    display: grid;
+    grid-template-columns: 1fr repeat(3, 120px);
+    grid-template-rows: repeat(5, 48px);
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+    width: 95%;
+    padding-bottom: 20px;
+    grid-template-areas:
+        "title t1 t2 t3"
+        "l1 l1c2 l1c3 l1c4"
+        "l2 l2c2 l2c3 l2c4"
+        "l3 l3c2 l3c3 l3c4"
+        "l4 l4c2 l4c3 l4c4";
+
+    .title {
+        grid-area: title;
+        color: $clr_ps;
+        background-color: $clr_s;
+        border-left: 1px solid $clr_brdr;
+        border-top: 1px solid $clr_brdr;
+        border-bottom: 1px solid $clr_brdr;
+        display: flex;
+        align-items: center;
+        padding: 8px;
+    }
+
+    .t1 {
+        grid-area: t1;
+        color: $clr_ps;
+        background-color: $clr_s;
+        border-left: 1px solid $clr_brdr;
+        border-top: 1px solid $clr_brdr;
+        border-bottom: 1px solid $clr_brdr;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
+    }
+
+    .t2 {
+        grid-area: t2;
+        color: $clr_ps;
+        background-color: $clr_s;
+        border-left: 1px solid $clr_brdr;
+        border-top: 1px solid $clr_brdr;
+        border-bottom: 1px solid $clr_brdr;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
+    }
+
+    .t3 {
+        grid-area: t3;
+        color: $clr_ps;
+        background-color: $clr_s;
+        border-left: 1px solid $clr_brdr;
+        border-right: 1px solid $clr_brdr;
+        border-top: 1px solid $clr_brdr;
+        border-bottom: 1px solid $clr_brdr;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
+    }
+
+    .l1 {
+        grid-area: l1;
+        color: $clr_p;
+        background-color: $clr_ss;
+        border-left: 1px solid $clr_brdr;
+        border-bottom: 1px solid $clr_brdr;
+        display: flex;
+        align-items: center;
+        padding: 8px;
+    }
+
+    .l2 {
+        grid-area: l2;
+        color: $clr_p;
+        background-color: $clr_ss;
+        border-left: 1px solid $clr_brdr;
+        border-bottom: 1px solid $clr_brdr;
+        display: flex;
+        align-items: center;
+        padding: 8px;
+    }
+
+    .l3 {
+        grid-area: l3;
+        color: $clr_p;
+        background-color: $clr_ss;
+        border-left: 1px solid $clr_brdr;
+        border-bottom: 1px solid $clr_brdr;
+        display: flex;
+        align-items: center;
+        padding: 8px;
+    }
+
+    .l4 {
+        grid-area: l4;
+        color: $clr_p;
+        background-color: $clr_ss;
+        border-left: 1px solid $clr_brdr;
+        border-bottom: 1px solid $clr_brdr;
+        display: flex;
+        align-items: center;
+        padding: 8px;
+    }
+
+    .l1c2 {
+        grid-area: l1c2;
+        border-left: 1px solid $clr_brdr;
+        border-bottom: 1px solid $clr_brdr;
+
+        input {
+            width: 80%;
+            height: 80%;
+            border: none !important;
+            padding: 2px 8px;
+            text-align: right;
+        }
+    }
+
+    .l1c3 {
+        grid-area: l1c3;
+        border-left: 1px solid $clr_brdr;
+        border-bottom: 1px solid $clr_brdr;
+
+        input {
+            width: 80%;
+            height: 80%;
+            border: none !important;
+            padding: 2px 8px;
+            text-align: right;
+        }
+    }
+
+    .l1c4 {
+        grid-area: l1c4;
+        border-left: 1px solid $clr_brdr;
+        border-right: 1px solid $clr_brdr;
+        border-bottom: 1px solid $clr_brdr;
+
+        input {
+            width: 80%;
+            height: 80%;
+            border: none !important;
+            padding: 2px 8px;
+            text-align: right;
+        }
+    }
+
+    .l2c2 {
+        grid-area: l2c2;
+        border-left: 1px solid $clr_brdr;
+        border-bottom: 1px solid $clr_brdr;
+
+        input {
+            width: 80%;
+            height: 80%;
+            border: none !important;
+            padding: 2px 8px;
+            text-align: right;
+        }
+    }
+
+    .l2c3 {
+        grid-area: l2c3;
+        border-left: 1px solid $clr_brdr;
+        border-bottom: 1px solid $clr_brdr;
+
+        input {
+            width: 80%;
+            height: 80%;
+            border: none !important;
+            padding: 2px 8px;
+            text-align: right;
+        }
+    }
+
+    .l2c4 {
+        grid-area: l2c4;
+        border-left: 1px solid $clr_brdr;
+        border-right: 1px solid $clr_brdr;
+        border-bottom: 1px solid $clr_brdr;
+
+        input {
+            width: 80%;
+            height: 80%;
+            border: none !important;
+            padding: 2px 8px;
+            text-align: right;
+        }
+    }
+
+    .l3c2 {
+        grid-area: l3c2;
+        border-left: 1px solid $clr_brdr;
+        border-bottom: 1px solid $clr_brdr;
+
+        input {
+            width: 80%;
+            height: 80%;
+            border: none !important;
+            padding: 2px 8px;
+            text-align: right;
+        }
+    }
+
+    .l3c3 {
+        grid-area: l3c3;
+        border-left: 1px solid $clr_brdr;
+        border-bottom: 1px solid $clr_brdr;
+
+        input {
+            width: 80%;
+            height: 80%;
+            border: none !important;
+            padding: 2px 8px;
+            text-align: right;
+        }
+    }
+
+    .l3c4 {
+        grid-area: l3c4;
+        border-left: 1px solid $clr_brdr;
+        border-right: 1px solid $clr_brdr;
+        border-bottom: 1px solid $clr_brdr;
+
+        input {
+            width: 80%;
+            height: 80%;
+            border: none !important;
+            padding: 2px 8px;
+            text-align: right;
+        }
+    }
+
+    .l4c2 {
+        grid-area: l4c2;
+        border-left: 1px solid $clr_brdr;
+        border-bottom: 1px solid $clr_brdr;
+
+        input {
+            width: 80%;
+            height: 80%;
+            border: none !important;
+            padding: 2px 8px;
+            text-align: right;
+        }
+    }
+
+    .l4c3 {
+        grid-area: l4c3;
+        border-left: 1px solid $clr_brdr;
+        border-bottom: 1px solid $clr_brdr;
+
+        input {
+            width: 80%;
+            height: 80%;
+            border: none !important;
+            padding: 2px 8px;
+            text-align: right;
+        }
+    }
+
+    .l4c4 {
+        grid-area: l4c4;
+        border-left: 1px solid $clr_brdr;
+        border-right: 1px solid $clr_brdr;
+        border-bottom: 1px solid $clr_brdr;
+
+        input {
+            width: 80%;
+            height: 80%;
+            border: none !important;
+            padding: 2px 8px;
+            text-align: right;
+        }
+    }
+}
