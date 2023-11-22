@@ -1,0 +1,125 @@
+.grid-SRH_ervices {
+  display: grid;
+  grid-template-columns: minmax(250px, auto) repeat(5, 1fr);
+  grid-gap: 0px;
+  border-top: 0.5px solid $clr4;
+  border-right: 0.5px solid $clr4;
+  margin-bottom: 20px;
+  .grid-header {
+    background-color: $momentum_clr8;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 0.5px solid $clr4;
+  }
+  .grid-cell {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-bottom: 0.5px solid $clr4;
+    border-left: 0.5px solid $clr4;
+    min-width: 90px;
+    input  {
+      margin: auto 0;
+      width: 90px;
+    }
+  }
+  .grid-cell-highlight {
+    background-color: #f0e4f7;
+  }
+}
+
+.grid-people_reached {
+  display: grid;
+  grid-template-columns: minmax(250px, auto) repeat(5, 1fr);
+  grid-gap: 0px;
+  border-top: 0.5px solid $clr4;
+  border-right: 0.5px solid $clr4;
+  margin-bottom: 20px;
+  .grid-header {
+    background-color: $momentum_clr8;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 0.5px solid $clr4;
+  }
+  .grid-cell {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-bottom: 0.5px solid $clr4;
+    border-left: 0.5px solid $clr4;
+    min-width: 90px;
+    input  {
+      margin: auto 0;
+      width: 90px;
+    }
+  }
+  .grid-cell-highlight {
+    background-color: #f0e4f7;
+  }
+}
+
+.grid-commodities {
+  display: grid;
+  grid-template-columns: minmax(250px, auto) repeat(10, 1fr);
+  grid-gap: 0px;
+  border-top: 0.5px solid $clr4;
+  border-right: 0.5px solid $clr4;
+  margin-bottom: 20px;
+  .grid-header {
+    background-color: $momentum_clr8;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 0.5px solid $clr4;
+  }
+  .grid-cell {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-bottom: 0.5px solid $clr4;
+    border-left: 0.5px solid $clr4;
+    min-width: 90px;
+    input  {
+      margin: auto 0;
+      width: 90px;
+    }
+  }
+  .grid-cell-highlight {
+    background-color: #f0e4f7;
+  }
+}
+
+
+.subtitle {
+  text-align: left;
+  background-color: $clr4 !important;
+  padding: 4px 10px !important;
+}
+
+.title_row {
+  text-align: left;
+}
+
+.data {
+  text-align: right;
+}
+
+.totals {
+  color: $momentum_clr9 !important;
+  background-color: $momentum_clr8 !important;
+}
+
+.lst{
+  padding-left: 30px!important;
+}
+
+.grid_cell_merge2 {
+  grid-column: span 2;
+}
+
+.grid_cell_merge6 {
+  grid-column: span 6;
+}
+
+.grid_cell_merge11 {
+  grid-column: span 11;
+}

@@ -3,8 +3,8 @@
   @import 'abstracts/_var.scss',
   'abstracts/_typography.scss';
 
-  //@import 'components/_grid.scss',
-  @import 'components/_tabs.scss';
+  @import 'components/tabs',
+  'components/grid';
 
   i,
   rem {

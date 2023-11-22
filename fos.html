@@ -3,7 +3,7 @@
 .custom_tab {
   border-top: none;
   border-right: none;
-  border-bottom: 1px solid #7D7D7D;
+  border-bottom: 1px solid #bfbfbf;
   border-left: none;
   border-radius: 0;
   background: transparent;
@@ -11,19 +11,19 @@
   font-weight: bold;
 }
 .custom_tab .ui-state-default {
-  border: 1px solid #7D7D7D;
-  background: rgba(181, 217, 179, 0.1725490196);
+  border: 1px solid #bfbfbf;
+  background: #858585;
   font-weight: bold;
   color: #323132;
 }
 .custom_tab .ui-state-active {
-  border: 1px solid #7D7D7D;
+  border: 1px solid #bfbfbf;
   background-color: #DAECDB;
   font-weight: bold;
   color: #323132;
 }
 .custom_tab a.ui-button:active {
-  border: 1px solid #7D7D7D;
+  border: 1px solid #bfbfbf;
   background-color: #DAECDB;
   font-weight: bold;
   color: #323132;
@@ -38,13 +38,57 @@
 .custom_tab a.ui-button,
 .custom_tab a:link.ui-button,
 .custom_tab .ui-button {
-  color: #7D7D7D;
+  color: #bfbfbf;
 }
 
 .content_tabs {
   width: 98%;
   min-height: 300px;
   overflow-y: auto;
+}
+
+.grid-SRH_ervices {
+  display: grid;
+  grid-template-columns: auto repeat(5, 1fr);
+  grid-gap: 0px;
+  border-top: 0.5px solid #858585;
+  border-right: 0.5px solid #858585;
+  margin-bottom: 20px;
+}
+.grid-SRH_ervices .grid-header {
+  background-color: #5C3873;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  border-bottom: 0.5px solid #858585;
+}
+.grid-SRH_ervices .grid-cell {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-bottom: 0.5px solid #858585;
+  border-left: 0.5px solid #858585;
+  min-width: 90px;
+}
+.grid-SRH_ervices .grid-cell input {
+  margin: auto 0;
+  width: 90px;
+}
+.grid-SRH_ervices .grid-cell-highlight {
+  background-color: #f0e4f7;
+}
+
+.subtitle {
+  text-align: left;
+  background-color: #858585 !important;
+  padding: 4px 10px !important;
+}
+
+.title_row {
+  text-align: left;
+}
+
+.data {
+  text-align: right;
 }
 
 i,
@@ -103,435 +147,544 @@ label {
     <p><span keyword="opt_c:cycleForm_loading_msg_SettingUpTheForm">Setting up the form</span>...</p>
   </div>
 
-  <div id="CustomForm_Content">
-    <div id="tabs" style="display:block;">
-      <ul class="custom_tab" id="mycustomtab">
-        <li><a href="#SRHS" keyword="opt_c:tb1title">SRH Services</a></li>
-        <li><a href="#PReacher" keyword="opt_c:tb2title">People Reached</a></li>
-        <li><a href="#CMDTS" keyword="opt_c:tb3title">Commodities</a></li>
-        <li><a href="#CSE" keyword="opt_c:tb4title">CSE</a></li>
-        <li><a href="#OIES" keyword="opt_c:tb5title">Other Information & Education Sessions</a></li>
-      </ul>
-
-      <div class="content_tabs" id="SRHS">SRH Services</div>
-
-      <div class="content_tabs" id="PReacher">People Reached</div>
-
-      <div class="content_tabs" id="CMDTS">Commodities</div>
-
-      <div class="content_tabs" id="CSE">CSE</div>
-
-      <div class="content_tabs" id="OIES">Other Information & Education Sessions</div>
-
+  <div id="SDPCustomForm">
+    <div id="invalidProjectMessage" style="display: none">&nbsp;</div>
+  
+    <div class="loaderDiv" id="processFormLoadingDiv" style="display: none">
+      <br />
+      <br />
+      <br />
+      <img src="../images/ajax-loader-circle.gif" /><br />
+      <br />
+      &nbsp;
+      <p>
+        <span keyword="opt_c:cycleForm_loading_msg_SettingUpTheForm"
+          >Setting up the form</span
+        >...
+      </p>
+    </div>
+  
+    <div id="CustomForm_Content">
+      <div id="tabs" style="display: block">
+        <ul class="custom_tab" id="mycustomtab">
+          <li><a href="#SRHS" keyword="opt_c:tb1title">SRH Services</a></li>
+          <li><a href="#PReacher" keyword="opt_c:tb2title">People Reached</a></li>
+          <li><a href="#CMDTS" keyword="opt_c:tb3title">Commodities</a></li>
+          <li><a href="#CSE" keyword="opt_c:tb4title">CSE</a></li>
+          <li>
+            <a href="#OIES" keyword="opt_c:tb5title"
+              >Other Information & Education Sessions</a
+            >
+          </li>
+        </ul>
+  
+        <div class="content_tabs" id="SRHS">
+  
+          <div class="grid-SRH_ervices">
+            <!-- Encabezados de la tabla -->
+            <div class="grid-header">Services and service subcategories</div>
+            <div class="grid-header">Static Clinics (CL)</div>
+            <div class="grid-header">Associated Clinics (AS)</div>
+            <div class="grid-header">
+              Community-Based Distribution / Services (CB)
+            </div>
+            <div class="grid-header">Mobile Outreach Units (OU)</div>
+            <div class="grid-header">Digital Platforms (VC)</div>
+  
+            <!-- data row 1 -->
+            <div class="grid-cell subtitle">Contraceptive Services - Term</div>
+            <div class="grid-cell subtitle"></div>
+            <div class="grid-cell subtitle"></div>
+            <div class="grid-cell subtitle"></div>
+            <div class="grid-cell subtitle"></div>
+            <div class="grid-cell subtitle"></div>
+  
+            <!-- data row 2 -->
+            <div class="grid-cell title_row">
+              Contraceptives – Counseling – General [PeDrIurYbaG]
+            </div>
+            <div class="grid-cell data"><input/></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 3 -->
+            <div class="grid-cell title_row">
+              Contraceptives – Oral Contraceptives – Consultation
+            </div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 4 -->
+            <div class="grid-cell title_row">
+              Contraceptives – Injectable – Consultation
+            </div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 5 -->
+            <div class="grid-cell title_row">
+              Contraceptives – Patch/Ring – Consultation
+            </div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+          </div>
+  
+          <div class="grid-SRH_ervices">
+            <!-- Encabezados de la tabla -->
+            <div class="grid-header">Services and service subcategories</div>
+            <div class="grid-header">Static Clinics (CL)</div>
+            <div class="grid-header">Associated Clinics (AS)</div>
+            <div class="grid-header">
+              Community-Based Distribution / Services (CB)
+            </div>
+            <div class="grid-header">Mobile Outreach Units (OU)</div>
+            <div class="grid-header">Digital Platforms (VC)</div>
+  
+            <!-- data row 1 -->
+            <div class="grid-cell title_row">Contraceptives – Male condom – Consultation</div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 2 -->
+            <div class="grid-cell title_row">Contraceptives – Female condom – Consultation</div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 3 -->
+            <div class="grid-cell title_row">Contraceptives – Male/Female condom – unable to categorize</div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 4 -->
+            <div class="grid-cell title_row">Contraceptives – Diaphragm/Cervical cap – Consultation</div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 5 -->
+            <div class="grid-cell title_row">Contraceptives – Spermicides – Consultation</div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 6 -->
+            <div class="grid-cell title_row">Implant – Consultation – Removal</div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 7 -->
+            <div class="grid-cell title_row">Implant – Consultation</div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 8 -->
+            <div class="grid-cell title_row">Intrauterine Device (IUD) – Consultation – Removal</div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 9 -->
+            <div class="grid-cell title_row">Intrauterine Device (IUD) – Consultation</div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 10 -->
+            <div class="grid-cell title_row">Female Voluntary Surgical Contraception (FVSC) – Counseling</div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 11 -->
+            <div class="grid-cell title_row">Female Voluntary Surgical Contraception (FVSC) – Consultation</div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 12 -->
+            <div class="grid-cell title_row">Female Voluntary Surgical Contraception (FVSC) – Management – Surgical – Reversal</div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 13 -->
+            <div class="grid-cell title_row">Contraceptives – Female Voluntary Surgical Contraception (FVSC) – Management – Surgical – Minilaparotomy</div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 14 -->
+            <div class="grid-cell title_row">Female Voluntary Surgical Contraception (FVSC) – Management – Surgical – Laparoscopy</div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 15 -->
+            <div class="grid-cell title_row">Female Voluntary Surgical Contraception (FVSC) – Management – Surgical – Laparotomy</div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 16 -->
+            <div class="grid-cell title_row">Female Voluntary Surgical Contraception (FVSC) – Management – Surgical – Hysteroscopic tubal occlusion</div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 17 -->
+            <div class="grid-cell title_row">Female Voluntary Surgical Contraception (FVSC) – Management – Surgical – Transvaginal tubal ligation</div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 18 -->
+            <div class="grid-cell title_row">Female Voluntary Surgical Contraception (FVSC) – Management – Surgical – Follow up</div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 19 -->
+            <div class="grid-cell title_row">Female Voluntary Surgical Contraception (FVSC) – Management – unable to categorize</div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+             <!-- data row 20 -->
+             <div class="grid-cell title_row">Male Voluntary Surgical Contraception (MVSC) – Counseling</div>
+             <div class="grid-cell data"></div>
+             <div class="grid-cell data"></div>
+             <div class="grid-cell data"></div>
+             <div class="grid-cell data"></div>
+             <div class="grid-cell data"></div>
+  
+          </div>
+  
+          <div class="grid-SRH_ervices">
+            <!-- Encabezados de la tabla -->
+            <div class="grid-header">Services and service subcategories</div>
+            <div class="grid-header">Static Clinics (CL)</div>
+            <div class="grid-header">Associated Clinics (AS)</div>
+            <div class="grid-header">
+              Community-Based Distribution / Services (CB)
+            </div>
+            <div class="grid-header">Mobile Outreach Units (OU)</div>
+            <div class="grid-header">Digital Platforms (VC)</div>
+  
+            <!-- data row 1 -->
+            <div class="grid-cell title_row">Male Voluntary Surgical Contraception (MVSC) – Consultation</div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 2 -->
+            <div class="grid-cell title_row">Male Voluntary Surgical Contraception (MVSC) – Management – Surgical – Reversal</div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 3 -->
+            <div class="grid-cell title_row">Male Voluntary Surgical Contraception (MVSC) – Management – Surgical – Incisional Vasectomy</div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 4 -->
+            <div class="grid-cell title_row">Male Voluntary Surgical Contraception (MVSC) – Management – Surgical – No-scalpel Vasectomy</div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 5 -->
+            <div class="grid-cell title_row">Male Voluntary Surgical Contraception (MVSC) – Management – Surgical – Follow up</div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 6 -->
+            <div class="grid-cell title_row">Male Voluntary Surgical Contraception (MVSC) – Management – unable to categorize</div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 7 -->
+            <div class="grid-cell title_row">Female/Male Voluntary Surgical Contraception – unable to categorize</div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 8 -->
+            <div class="grid-cell title_row">Emergency Contraception (EC) – Counseling</div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 9 -->
+            <div class="grid-cell title_row">Emergency Contraception (EC) – Consultation</div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 10 -->
+            <div class="grid-cell title_row">Fertility Awareness Based (FAB) – Consultation</div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 11 -->
+            <div class="grid-cell subtitle">Abortion Services</div>
+            <div class="grid-cell subtitle"></div>
+            <div class="grid-cell subtitle"></div>
+            <div class="grid-cell subtitle"></div>
+            <div class="grid-cell subtitle"></div>
+            <div class="grid-cell subtitle"></div>
+  
+            <!-- data row 12 -->
+            <div class="grid-cell title_row">Abortion – Counseling – Pre-abortion/Options Counseling</div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 13 -->
+            <div class="grid-cell title_row"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 14 -->
+            <div class="grid-cell title_row"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 15 -->
+            <div class="grid-cell title_row"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 16 -->
+            <div class="grid-cell title_row"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 17 -->
+            <div class="grid-cell title_row"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 18 -->
+            <div class="grid-cell title_row"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 19 -->
+            <div class="grid-cell title_row"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+          </div>
+  
+          <div class="grid-SRH_ervices">
+            <!-- Encabezados de la tabla -->
+            <div class="grid-header">Services and service subcategories</div>
+            <div class="grid-header">Static Clinics (CL)</div>
+            <div class="grid-header">Associated Clinics (AS)</div>
+            <div class="grid-header">
+              Community-Based Distribution / Services (CB)
+            </div>
+            <div class="grid-header">Mobile Outreach Units (OU)</div>
+            <div class="grid-header">Digital Platforms (VC)</div>
+  
+            <!-- data row 1 -->
+            <div class="grid-cell title_row"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 2 -->
+            <div class="grid-cell title_row"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 3 -->
+            <div class="grid-cell title_row"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 4 -->
+            <div class="grid-cell title_row"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 5 -->
+            <div class="grid-cell title_row"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 6 -->
+            <div class="grid-cell title_row"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 7 -->
+            <div class="grid-cell title_row"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 8 -->
+            <div class="grid-cell title_row"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 9 -->
+            <div class="grid-cell title_row"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+            <!-- data row 10 -->
+            <div class="grid-cell title_row"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+            <div class="grid-cell data"></div>
+  
+          </div>
+  
+        </div>
+  
+        <div class="content_tabs" id="PReacher">
+          
+        </div>
+  
+        <div class="content_tabs" id="CMDTS">Commodities</div>
+  
+        <div class="content_tabs" id="CSE">CSE</div>
+  
+        <div class="content_tabs" id="OIES">
+          Other Information & Education Sessions
+        </div>
+      </div>
     </div>
   </div>
 </div>
-<script>
-  $(document).ready(function () {
-
-    $("body").on("focus", "input", function (event) {
-      $(this).attr('autocomplete', 'off')
-    });
-
-    $('.custom_tab li').click(function (e) {
-      tab_selected = $(this).find('a').attr('href');
-      switch (tab_selected) {
-        case '#SRHS':
-          $(this).attr('tabindex', '0');
-          $(this).addClass('ui-state-hover');
-          $(this).addClass('ui-tabs-active');
-          $(this).addClass('ui-state-active');
-          $(this).attr('aria-selected', 'true');
-          $(this).attr('aria-expanded', 'true');
-          $('#SRHS').attr('aria-hidden', 'false');
-          $('#SRHS').css({
-            'display': 'block'
-          });
-          break;
-        case '#PReacher':
-          $(this).attr('tabindex', '0');
-          $(this).addClass('ui-state-hover');
-          $(this).addClass('ui-tabs-active');
-          $(this).addClass('ui-state-active');
-          $(this).attr('aria-selected', 'true');
-          $(this).attr('aria-expanded', 'true');
-          $('#PReacher').attr('aria-hidden', 'false');
-          $('#PReacher').css({
-            'display': 'block'
-          });
-          break;
-        case '#CMDTS':
-          $(this).attr('tabindex', '0');
-          $(this).addClass('ui-state-hover');
-          $(this).addClass('ui-tabs-active');
-          $(this).addClass('ui-state-active');
-          $(this).attr('aria-selected', 'true');
-          $(this).attr('aria-expanded', 'true');
-          $('#CMDTS').css({
-            'display': 'block'
-          });
-          break;
-        case '#CSE':
-          $(this).attr('tabindex', '0');
-          $(this).addClass('ui-state-hover');
-          $(this).addClass('ui-tabs-active');
-          $(this).addClass('ui-state-active');
-          $(this).attr('aria-selected', 'true');
-          $(this).attr('aria-expanded', 'true');
-          $('#CSE').attr('aria-hidden', 'false');
-          $('#CSE').css({
-            'display': 'block'
-          });
-          break;
-        case '#OIES':
-          $(this).attr('tabindex', '0');
-          $(this).addClass('ui-state-hover');
-          $(this).addClass('ui-tabs-active');
-          $(this).addClass('ui-state-active');
-          $(this).attr('aria-selected', 'true');
-          $(this).attr('aria-expanded', 'true');
-          $('#OIES').attr('aria-hidden', 'false');
-          $('#OIES').css({
-            'display': 'block'
-          });
-          break;
-        case '#CAC':
-          $(this).attr('tabindex', '0');
-          $(this).addClass('ui-state-hover');
-          $(this).addClass('ui-tabs-active');
-          $(this).addClass('ui-state-active');
-          $(this).attr('aria-selected', 'true');
-          $(this).attr('aria-expanded', 'true');
-          $('#CAC').attr('aria-hidden', 'false');
-          $('#CAC').css({
-            'display': 'block'
-          });
-          break;
-      }
-    });
-
-  });
-/*
-  function RenderRadioBtnTags() {
-    var me = this;
-
-    me.init = function () {
-      me.renderRadioBtnTags();
-    }
-
-
-    me.renderRadioBtnTags = function () {
-      function createRadioBtn(inputTag, label, value) {
-        inputTag.click(function () {
-          console.log(inputTag.val());
-          me.rbselected(inputTag.val());
-        });
-        $(this).append(inputTag);
-        $(this).append("<label for='" + label + "'>" + label + "</label>");
-      }
-
-      $(".rdOne, .rdTwo, .rd_oneyes, .rd_oneyes_n, .rd_oneno, .rd_oneno_n, .rd_twoyes, .rd_twoyes_n, .rd_twono, .rd_twono_n").each(function () {
-        $(this).html("");
-
-        var name = $(this).attr("name");
-        var values = $(this).attr("values").split(",");
-        var labels = $(this).attr("labels").split(",");
-
-        for (var i = 0; i < values.length; i++) {
-          var inputTag = $("<input name='" + name + "' type='radio' value='" + values[i] + "'/>");
-          createRadioBtn.call(this, inputTag, labels[i], values[i]);
-        }
-      });
-    };
-
-
-    me.rbselected = function (rbsctd) {
-      const oneyes = `<div id="oneyes" class="grdTb2-a1s"><div class="l1 lv1" keyword="opt_c:tb2q2">If yes, did your clinic provide emergency contraception to survivors during this reporting period?</div><div class="ans rd_oneyes" labels="Yes,No" name="q2" values="oneyes_y,oneyes_n"></div></div>`
-
-      const oneyes_n = `<div id="oneyes-n" class="grdTb2-a4"><div id="oneyes_n" class="l1 lv1" keyword="opt_c:tb2q_no">If no, why is this service not available?</div></div>`
-
-      const oneno = `<div id="oneno" class="grdTb2-a1s"><div class="l1 lv1" keyword="opt_c:tb2q4">If no, can your clinic support survivors to access emergency contraception elsewhere through a safe referral?</div><div class="ans rd_oneno" labels="Yes,No" name="q4" values="onenoyes,onenono"><input id="mQyauTEKafN-X66r2y4EuwS-val" name="entryfield" title="HUM-v1 - If no support surv. EC safe referral" value="[ HUM-v1 - If no support surv. EC safe referral ]"/><input id="AfvGjlOtbVQ-X66r2y4EuwS-val" name="entryfield" title="HUM-v1 - If no support surv. No EC safe referral" value="[ HUM-v1 - If no support surv. No EC safe referral ]"/></div></div>`
-
-      const oneno_n = `<div id="oneno-n" class="grdTb2-a2"><div id="oneno_n" class="l1 lv3" keyword="opt_c:tb2qwhy">If no, Why?</div></div>`
-
-      const twoyes = `<div id="twoyes" class="grdTb2-a1s"><div class="l1 lv1" keyword="opt_c:tb2q7">If yes, did your clinic provide Post-Exposure Prophylaxis for HIV to survivors during this reporting period?</div><div class="ans rd_twoyes" labels="Yes,No" name="q7" values="twoyes_y,twoyes_n"><input id="fkPXNirCbkU-X66r2y4EuwS-val" name="entryfield" title="HUM-v1 - Yes provide post-expo Prophylaxis HIV" value="[ HUM-v1 - Yes provide post-expo Prophylaxis HIV ]"/><input id="lSfjA6CzZnN-X66r2y4EuwS-val" name="entryfield" title="HUM-v1 - Yes no provide post-expo Prophylaxis HIV" value="[ HUM-v1 - Yes no provide post-expo Prophylaxis HIV ]"/></div></div>`
-
-      const twoyes_n = `<div id="twoyes-n" class="grdTb2-a4"><div id="twoyes_n" class="l1 lv1" keyword="opt_c:tb2q_no">If no, why is this service not available?</div><input id="zyofNFhIfkU-X66r2y4EuwS-val" name="entryfield" title="HUM-v1 - Clinic DIDN'T provide PP Prophylaxis" value="[ HUM-v1 - Clinic DIDN'T provide PP Prophylaxis ]"/></div>`
-
-      const twono = `<div id="twono" class="grdTb2-a1s"><div class="l1 lv2" keyword="opt_c:"tb2q9">If no, can your clinic support survivors to access Post-Exposure Prophylaxis for HIV elsewhere  through a safe referral?</div><div class="ans rd_twono" labels="Yes,No" name="q9" values="twono_y,twono_n"><input id="mUTKHsUqYtV-X66r2y4EuwS-val" name="entryfield" title="HUM-v1 - If no provide PP Prophylaxis safe referral" value="[ HUM-v1 - If no provide PP Prophylaxis safe referral ]"/><input id="EJYsbEsl4HW-X66r2y4EuwS-val" name="entryfield" title="HUM-v1 - If no provide no PP Prophylaxis safe referral" value="[ HUM-v1 - If no provide no PP Prophylaxis safe referral ]"/></div></div>`
-
-      const twono_n = `<div id="twono-n" class="grdTb2-a2"><div id="twono_n" class="l1 lv3" keyword="opt_c:tb2qwhy">If no, Why?</div></div>`
-
-      switch (rbsctd) {
-        // Q1
-        case 'oneyes':
-          if (!$("#oneyes").length) {
-            $("#oneyes-n").remove()
-            $("#oneno").remove()
-            $("#oneno-n").remove()
-            $("#one").after(oneyes)
-            me.renderRadioBtnTags()
-          }
-          break;
-        case 'oneyes_y':
-          if ($("#oneyes-n").length) {
-            $("#oneyes-n").remove()
-            $("#oneno").remove()
-            $("#oneno-n").remove()
-            me.renderRadioBtnTags()
-          }
-          break;
-        case 'oneyes_n':
-          if (!$("#oneyes-n").length) {
-            $("#oneyes").after(oneyes_n)
-            var rd1 = '<div class="ansa rd_oneyes_n" labels="National policy does not allow" name="q3" values="oneyes_n1"><input id="FRxe9vfwsY6-X66r2y4EuwS-val" name="entryfield" title="HUM-v1 - No EC because National Policy" value="[ HUM-v1 - No EC because National Policy ]"/></div>'
-            var rd2 = '<div class="ansb rd_oneyes_n" labels="No stock available" name="q3" values="oneoneyes_n2"><input id="GXtog0vfGDD-X66r2y4EuwS-val" name="entryfield" title="HUM-v1 - No EC because Stock out" value="[ HUM-v1 - No EC because Stock out ]"/></div>'
-            var rd3 = '<div class="ansc rd_oneyes_n" labels="No trained staff" name="q3" values="oneyes_n3"><input id="eHgHleG5Rv8-X66r2y4EuwS-val" name="entryfield" title="HUM-v1 - No EC because no trained staff" value="[ HUM-v1 - No EC because no trained staff ]"/></div>'
-            var rd4 = '<div class="ansd rd_oneyes_n" labels="Other" name="q3" values="oneyes_n4"><input id="wOBfIYXBmiC-X66r2y4EuwS-val" name="entryfield" title="HUM-v1 - No EC because no other" value="[ HUM-v1 - No EC because no other ]"/></div>'
-            var rd5 = '<div class="ansdtx"><input id="wMDweMbOIBU-X66r2y4EuwS-val" name="entryfield" title="HUM-v1 - No EC because no other (Text)" value="[ HUM-v1 - No EC because no other (Text) ]"/></div>'
-            // Other Text
-            $("#oneyes_n").after(rd1)
-            $("#oneyes_n").after(rd2)
-            $("#oneyes_n").after(rd3)
-            $("#oneyes_n").after(rd4)
-            $("#oneyes_n").after(rd5)
-            me.renderRadioBtnTags();
-            //$("#oneyes_n").after(rd5)
-          }
-          break;
-        case 'oneno':
-          me.renderRadioBtnTags();
-          if (!$("#oneno").length) {
-            $("#oneyes").remove();
-            $("#oneyes-n").remove();
-            $("#one").after(oneno)
-            me.renderRadioBtnTags();
-          }
-          break;
-        case 'onenoyes':
-          if ($("#oneno-n").length) {
-            $("#oneno-n").remove();
-          }
-          break;
-        case 'onenono':
-          if (!$("#oneno-n").length) {
-            $("#oneno").after(oneno_n)
-            var rd1 = '<div class="ans1 rd_oneno_n" labels="No one in the area provides this service" name="q5" values="oneno_n1"><input id="vl7bLeRkJtw-X66r2y4EuwS-val" name="entryfield" title="HUM-v1 - No supp. EC safe referral because no one provides" value="[ HUM-v1 - No supp. EC safe referral because no one provides ]"/></div>';
-            var rd2 = '<div class="ans2 rd_oneno_n" labels="Other:" name="q5" values="oneno_n2"><input id="WuX2PVXau71-X66r2y4EuwS-val" name="entryfield" title="HUM-v1 - No supp. EC safe referral other" value="[ HUM-v1 - No supp. EC safe referral other ]"/></div>';
-            var rd3 = '<div class="ans2tx"><input id="p3Q4euwKUhu-X66r2y4EuwS-val" name="entryfield" title="HUM-v1 - No supp. EC safe referral other (text)" value="[ HUM-v1 - No supp. EC safe referral other (text) ]"/></div>'
-            $("#oneno_n").after(rd1)
-            $("#oneno_n").after(rd2)
-            $("#oneno_n").after(rd3)
-            me.renderRadioBtnTags();
-          }
-          break;
-        // Q2
-        case 'twoyes':
-          if (!$("#twoyes").length) {
-            $("#twoyes-n").remove();
-            $("#twoyes").remove();
-            $("#twono").remove();
-            $("#twono-n").remove();
-            $("#two").after(twoyes)
-            me.renderRadioBtnTags();
-          }
-          break;
-        case 'twoyes_y':
-          if ($("#twoyes-n").length) {
-            $("#twoyes-n").remove();
-            $("#twono").remove();
-            $("#twono-n").remove();
-            me.renderRadioBtnTags();
-          }
-          break;
-        case 'twoyes_n':
-          if (!$("#twoyes-n").length) {
-            $("#twoyes").after(twoyes_n)
-            var rd1 = '<div class="ansa rd_twoyes_n" labels="National policy does not allow" name="q8" values="twoyes_n1"><input id="B0dsr4nUXnw-X66r2y4EuwS-val" name="entryfield" title="HUM-v1 - No provide PP Prophylaxis because National Policy" value="[ HUM-v1 - No provide PP Prophylaxis because National Policy ]"/></div>';
-            var rd2 = '<div class="ansb rd_twoyes_n" labels="No stock available" name="q8" values="twoyes_n2"><input id="NRz1O4eN3co-X66r2y4EuwS-val" name="entryfield" title="HUM-v1 - No provide PP Prophylaxis because Stock out" value="[ HUM-v1 - No provide PP Prophylaxis because Stock out ]"/></div>';
-            var rd3 = '<div class="ansc rd_twoyes_n" labels="No trained staff" name="q8" values="twoyes_n3"><input id="iSWZ0OSgMv8-X66r2y4EuwS-val" name="entryfield" title="HUM-v1 - No provide PP Prophylaxis because no trained staff" value="[ HUM-v1 - No provide PP Prophylaxis because no trained staff ]"/></div>';
-            var rd4 = '<div class="ansd rd_twoyes_n" labels="Other" name="q8" values="twoyes_n4"><input id="UGkuWRjx5cW-X66r2y4EuwS-val" name="entryfield" title="HUM-v1 - No provide PP Prophylaxis because no other" value="[ HUM-v1 - No provide PP Prophylaxis because no other ]"/></div>';
-            var rd5 = '<div class="ansdtx"><input id="IEgOux5KsfH-X66r2y4EuwS-val" name="entryfield" title="HUM-v1 - No provide PP Prophylaxis because no other (Text)" value="[ HUM-v1 - No provide PP Prophylaxis because no other (Text) ]"/></div>'
-            $("#twoyes_n").after(rd1)
-            $("#twoyes_n").after(rd2)
-            $("#twoyes_n").after(rd3)
-            $("#twoyes_n").after(rd4)
-            $("#twoyes_n").after(rd5)
-            me.renderRadioBtnTags();
-          }
-          break;
-        case 'twono':
-          if (!$("#twono").length) {
-            $("#twoyes").remove();
-            $("#twoyes-n").remove();
-            $("#two").after(twono)
-            me.renderRadioBtnTags();
-          }
-          break;
-        case 'twono_y':
-          if ($("#twono-n").length) {
-            $("#twono-n").remove();
-          }
-          break;
-        case 'twono_n':
-          if (!$("#twono-n").length) {
-            $("#twono").after(twono_n)
-            var rd1 = '<div class="ans1 rd_twono_n" labels="No one in the area provides this service" name="q10" values="twono_n1"><input id="WIeIuWxhraE-X66r2y4EuwS-val" name="entryfield" title="HUM-v1 - If no provide no PP Prophylaxis no service in area" value="[ HUM-v1 - If no provide no PP Prophylaxis no service in area ]"/></div>'
-            var rd2 = '<div class="ans2 rd_twono_n" labels="Other" name="q10" values="twono_n2"><input id="BRyL95wujhN-X66r2y4EuwS-val" name="entryfield" title="HUM-v1 - If no provide no PP Prophylaxis other" value="[ HUM-v1 - If no provide no PP Prophylaxis other ]"/></div>'
-            var rd3 = '<div class="ans2tx"><input id="Fh1xNLVDvFh-X66r2y4EuwS-val" name="entryfield" title="HUM-v1 - If no provide no PP Prophylaxis other (text)" value="[ HUM-v1 - If no provide no PP Prophylaxis other (text) ]"/></div>'
-            $("#twono_n").after(rd1)
-            $("#twono_n").after(rd2)
-            $("#twono_n").after(rd3)
-            me.renderRadioBtnTags();
-          }
-          break;
-      }
-    }
-
-
-    me.init();
-
-  }*/
-
-  /*
-  function SDFCustomForm() {
-    var me = this;
-
-    me.CAT_OPTION_SPRING = "MbvyMNdiX1V";
-    me.CAT_OPION_STREAM3 = "pIaOC2bXF9b";
-
-    me.catOptionTag = $("#category-GpsXo2XHyrI");
-    me.customEntryForm = $("#SDPCustomForm");
-
-    // -----------------------------------------------------------------------------
-    // Init method
-
-    me.init = function () {
-      me.catOptionOnChange();
-
-      me.setUpEvents();
-    }
-
-
-    // -----------------------------------------------------------------------------
-    // Setup Events
-
-    me.setUpEvents = function () {
-      me.catOptionTag.off('change').on('change', function () {
-        me.catOptionOnChange();
-      });
-    }
-
-    me.catOptionOnChange = function () {
-      var selectedCatOptionId = me.catOptionTag.val();
-      me.customEntryForm.find("[catoption]").hide();
-      me.customEntryForm.find("[catoption*='" + selectedCatOptionId + "']").show();
-    }
-
-    // -----------------------------------------------------------------------------
-    // RUN Init method
-
-    me.init();
-  }
-
-  $(document).off('dhis2.de.event.dataValuesLoaded').on('dhis2.de.event.dataValuesLoaded', function () {
-
-    new SDFCustomForm();
-  });
-*/
-  $(document).off('dhis2.de.event.formLoaded').on('dhis2.de.event.formLoaded', function () {
-    console.log("Loaded form.");
-    if ($("#SDPCustomForm").length > 0) {
-      $("#tabs").tabs();
-      $("#CustomForm_Content").hide();
-      $("#SDPCustomForm").find("[catoption]").hide();
-
-      new RenderRadioBtnTags();
-      $("#loaderDiv").show();
-
-      new dsetTranslation(function () {
-        $("#loaderDiv").hide();
-        $("#CustomForm_Content").show();
-      });
-    }
-
-    // ============================================================================================================
-    // GCACITranslation
-
-    function dsetTranslation(_exeFunc) {
-      var me = this;
-
-      me.exeFunc = _exeFunc;
-
-      me.optionSetTermId = "poTgmG2n7xT";
-
-      me.loadedDataSetElementList = false;
-      me.loadedOptionSetList = false;
-
-      me.OPTION_KEY = "opt_c";
-
-
-      // ----------------------------------------------------------------------------------------------
-      // URLs
-
-      me.QUERY_URL_TERMS = "../api/optionSets/" + me.optionSetTermId +
-        ".json?fields=options[code,displayName]&paging=false";
-
-
-      // ----------------------------------------------------------------------------------------------
-      // HTML Element
-
-
-      me.tableTag = $("body");
-
-      // ----------------------------------------------------------------------------------------------
-      // Init method
-
-      me.init = function () {
-        console.log("INIT translation ... ");
-        me.translateOptionSetList();
-      }
-
-      // ----------------------------------------------------------------------------------------------
-      // Supportive methods
-
-      me.translateOptionSetList = function () {
-        var url = encodeURI(me.QUERY_URL_TERMS);
-        me.loadMetadata(url, function (response) {
-
-          var options = response.options;
-          for (var j in options) {
-            var option = options[j];
-            var value = option.displayName;
-            me.tableTag.find("[keyword='" + me.OPTION_KEY + ":" + option.code + "']")
-              .html(value);
-          }
-
-          me.exeFunc();
-        });
-      }
-
-      me.loadMetadata = function (url, exeFunc) {
-        $.ajax({
-          type: "GET",
-          url: url,
-          contentType: "application/json;charset=utf-8",
-          beforeSend: function (xhr) {
-            //me.hideReportTag();
-          },
-          success: function (response) {
-            exeFunc(response);
-          }
-        });
-
-      }
-
-
-      // ----------------------------------------------------------------------------------------------
-      // init
-
-      me.init();
-
-    }
-  });
-</script>
