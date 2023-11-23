@@ -48,3 +48,24 @@ label {
     align-items: center;
     font-size: 16px;
 }
+
+.box {
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content {
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.arrow {
+  transition: transform 0.3s;
+}
+
+.arrow.up {
+  transform: rotate(-180deg); /* Rota la flecha hacia arriba */
+}

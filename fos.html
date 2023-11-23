@@ -1,287 +1,363 @@
-<style type="text/css">@charset "UTF-8";
-  @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap");
-  /* Estilo de las pestañas */
-  .tab {
-    overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
-  }
-  
-  /* Estilo de los botones dentro de las pestañas */
-  .tab button {
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-  }
-  
-  /* Cambia el color de fondo del botón cuando se hace mouseover */
-  .tab button:hover {
-    background-color: #ddd;
-  }
-  
-  /* Crea un estilo activo para los botones */
-  .tab button.active {
-    background-color: #ccc;
-  }
-  
-  /* Estilo del contenido de las pestañas */
-  .tabcontent {
-    display: none;
-    padding: 8px 8px;
-    border: 1px solid #ccc;
-    border-top: none;
-  }
-  
-  .grid-SRH_ervices {
-    display: grid;
-    grid-template-columns: minmax(250px, auto) repeat(5, 1fr);
-    grid-gap: 0px;
-    border-top: 0.5px solid #858585;
-    border-right: 0.5px solid #858585;
-    margin-bottom: 20px;
-  }
-  .grid-SRH_ervices .grid-header {
-    background-color: #5C3873;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    border-bottom: 0.5px solid #858585;
-  }
-  .grid-SRH_ervices .grid-cell {
-    background-color: #f4f4f4;
-    padding: 10px;
-    border-bottom: 0.5px solid #858585;
-    border-left: 0.5px solid #858585;
-    min-width: 90px;
-  }
-  .grid-SRH_ervices .grid-cell input {
-    margin: auto 0;
-    width: 90px;
-  }
-  .grid-SRH_ervices .grid-cell-highlight {
-    background-color: #f0e4f7;
-  }
-  
-  .grid-people_reached {
-    display: grid;
-    grid-template-columns: minmax(250px, auto) repeat(5, 1fr);
-    grid-gap: 0px;
-    border-top: 0.5px solid #858585;
-    border-right: 0.5px solid #858585;
-    margin-bottom: 20px;
-  }
-  .grid-people_reached .grid-header {
-    background-color: #5C3873;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    border-bottom: 0.5px solid #858585;
-  }
-  .grid-people_reached .grid-cell {
-    background-color: #f4f4f4;
-    padding: 10px;
-    border-bottom: 0.5px solid #858585;
-    border-left: 0.5px solid #858585;
-    min-width: 90px;
-  }
-  .grid-people_reached .grid-cell input {
-    margin: auto 0;
-    width: 90px;
-  }
-  .grid-people_reached .grid-cell-highlight {
-    background-color: #f0e4f7;
-  }
-  
-  .grid-commodities {
-    display: grid;
-    grid-template-columns: minmax(250px, auto) repeat(10, 1fr);
-    grid-gap: 0px;
-    border-top: 0.5px solid #858585;
-    border-right: 0.5px solid #858585;
-    margin-bottom: 20px;
-  }
-  .grid-commodities .grid-header {
-    background-color: #5C3873;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    border-bottom: 0.5px solid #858585;
-  }
-  .grid-commodities .grid-cell {
-    background-color: #f4f4f4;
-    padding: 10px;
-    border-bottom: 0.5px solid #858585;
-    border-left: 0.5px solid #858585;
-    min-width: 90px;
-  }
-  .grid-commodities .grid-cell input {
-    margin: auto 0;
-    width: 90px;
-  }
-  .grid-commodities .grid-cell-highlight {
-    background-color: #f0e4f7;
-  }
-  
-  .grid-CSE {
-    display: grid;
-    grid-template-columns: minmax(250px, auto) repeat(3, 1fr);
-    grid-gap: 0px;
-    border-top: 0.5px solid #858585;
-    border-right: 0.5px solid #858585;
-    margin-bottom: 20px;
-  }
-  .grid-CSE .grid-header {
-    background-color: #5C3873;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    border-bottom: 0.5px solid #858585;
-  }
-  .grid-CSE .grid-cell {
-    background-color: #f4f4f4;
-    padding: 10px;
-    border-bottom: 0.5px solid #858585;
-    border-left: 0.5px solid #858585;
-    min-width: 90px;
-  }
-  .grid-CSE .grid-cell input {
-    margin: auto 0;
-    width: 90px;
-  }
-  .grid-CSE .grid-cell-highlight {
-    background-color: #f0e4f7;
-  }
-  
-  .grid-OIES {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 0px;
-    border-top: 0.5px solid #858585;
-    border-right: 0.5px solid #858585;
-    margin-bottom: 20px;
-  }
-  .grid-OIES .grid-header {
-    background-color: #5C3873;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    border-bottom: 0.5px solid #858585;
-  }
-  .grid-OIES .grid-cell {
-    background-color: #f4f4f4;
-    padding: 10px;
-    border-bottom: 0.5px solid #858585;
-    border-left: 0.5px solid #858585;
-    min-width: 90px;
-  }
-  .grid-OIES .grid-cell input {
-    margin: auto 0;
-    width: 90px;
-  }
-  .grid-OIES .grid-cell-highlight {
-    background-color: #f0e4f7;
-  }
-  
-  /* extras */
-  .subtitle {
-    text-align: left;
-    background-color: #858585 !important;
-    padding: 4px 10px !important;
-  }
-  
-  .title_row {
-    text-align: left;
-  }
-  
-  .data {
-    text-align: right;
-  }
-  
-  .totals {
-    color: #FFFFFF !important;
-    background-color: #5C3873 !important;
-  }
-  
-  .lst {
-    padding-left: 30px !important;
-  }
-  
-  .grid_cell_merge2 {
-    grid-column: span 2;
-  }
-  
-  .grid_cell_merge6 {
-    grid-column: span 6;
-  }
-  
-  .grid_cell_merge11 {
-    grid-column: span 11;
-  }
-  
-  .tooltip-target {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .tooltip-content {
-    display: block;
-    position: absolute;
-    background-color: #333;
-    color: white;
-    padding: 5px;
-    border-radius: 4px;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  
-  i,
-  rem {
-    color: rgb(138, 116, 116);
-    font-weight: 300;
-    font-size: 0.5em;
-  }
-  
-  .ui-widget-content {
-    border: none;
-  }
-  
-  .ui-widget.ui-widget-content {
-    border: none;
-  }
-  
-  input[type=radio] {
-    margin: 10px 0 0 10px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border: 2px solid #ccc;
-    margin-right: 10px;
-    display: inline-block;
-    position: relative;
-    top: 3px;
-    cursor: pointer;
-  }
-  input[type=radio]:checked {
-    background-color: #00A6E2;
-    border-color: #00A6E2;
-  }
-  
-  label {
-    display: flex;
-    align-items: center;
-    font-size: 16px;
-  }
-  
-  /*# sourceMappingURL=main.css.map */
-  </style>
+<style type="text/css">
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap");
+/* Estilo de las pestañas */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Estilo de los botones dentro de las pestañas */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Cambia el color de fondo del botón cuando se hace mouseover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Crea un estilo activo para los botones */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Estilo del contenido de las pestañas */
+.tabcontent {
+  display: none;
+  padding: 8px 8px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+.grid-SRH_ervices {
+  display: grid;
+  grid-template-columns: minmax(250px, auto) repeat(5, 1fr);
+  grid-gap: 0px;
+  border-top: 0.5px solid #CACACE;
+  border-right: 0.5px solid #CACACE;
+  margin-bottom: 20px;
+}
+.grid-SRH_ervices .grid-header {
+  background-color: #5C3873;
+  color: #FFFFFF;
+  padding: 10px;
+  text-align: center;
+  border-bottom: 0.5px solid #CACACE;
+  position: sticky;
+  top: 48px;
+  z-index: 10;
+}
+.grid-SRH_ervices .grid-cell {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-bottom: 0.5px solid #CACACE;
+  border-left: 0.5px solid #CACACE;
+  min-width: 90px;
+}
+.grid-SRH_ervices .grid-cell input {
+  margin: auto 0;
+  width: 90px;
+}
+.grid-SRH_ervices .grid-cell-highlight {
+  background-color: #f0e4f7;
+}
+
+.grid-people_reached {
+  display: grid;
+  grid-template-columns: minmax(250px, auto) repeat(5, 1fr);
+  grid-gap: 0px;
+  border-top: 0.5px solid #CACACE;
+  border-right: 0.5px solid #CACACE;
+  margin-bottom: 20px;
+}
+.grid-people_reached .grid-header {
+  background-color: #5C3873;
+  color: #FFFFFF;
+  padding: 10px;
+  text-align: center;
+  border-bottom: 0.5px solid #CACACE;
+}
+.grid-people_reached .grid-cell {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-bottom: 0.5px solid #CACACE;
+  border-left: 0.5px solid #CACACE;
+  min-width: 90px;
+}
+.grid-people_reached .grid-cell input {
+  margin: auto 0;
+  width: 90px;
+}
+.grid-people_reached .grid-cell-highlight {
+  background-color: #f0e4f7;
+}
+
+.grid-commodities {
+  display: grid;
+  grid-template-columns: minmax(250px, auto) repeat(10, 1fr);
+  grid-gap: 0px;
+  border-top: 0.5px solid #CACACE;
+  border-right: 0.5px solid #CACACE;
+  margin-bottom: 20px;
+}
+.grid-commodities .grid-header {
+  background-color: #5C3873;
+  color: #FFFFFF;
+  padding: 10px;
+  text-align: center;
+  border-bottom: 0.5px solid #CACACE;
+  position: sticky;
+  top: 48px;
+  z-index: 10;
+}
+.grid-commodities .grid-cell {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-bottom: 0.5px solid #CACACE;
+  border-left: 0.5px solid #CACACE;
+  min-width: 90px;
+}
+.grid-commodities .grid-cell input {
+  margin: auto 0;
+  width: 90px;
+}
+.grid-commodities .grid-cell-highlight {
+  background-color: #f0e4f7;
+}
+
+.grid-CSE {
+  display: grid;
+  grid-template-columns: minmax(250px, auto) repeat(3, 1fr);
+  grid-gap: 0px;
+  border-top: 0.5px solid #CACACE;
+  border-right: 0.5px solid #CACACE;
+  margin-bottom: 20px;
+}
+.grid-CSE .grid-header {
+  background-color: #5C3873;
+  color: #FFFFFF;
+  padding: 10px;
+  text-align: center;
+  border-bottom: 0.5px solid #CACACE;
+}
+.grid-CSE .grid-cell {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-bottom: 0.5px solid #CACACE;
+  border-left: 0.5px solid #CACACE;
+  min-width: 90px;
+}
+.grid-CSE .grid-cell input {
+  margin: auto 0;
+  width: 90px;
+}
+.grid-CSE .grid-cell-highlight {
+  background-color: #f0e4f7;
+}
+
+.grid-OIES {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0px;
+  border-top: 0.5px solid #CACACE;
+  border-right: 0.5px solid #CACACE;
+  margin-bottom: 20px;
+}
+.grid-OIES .grid-header {
+  background-color: #5C3873;
+  color: #FFFFFF;
+  padding: 10px;
+  text-align: center;
+  border-bottom: 0.5px solid #CACACE;
+}
+.grid-OIES .grid-cell {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-bottom: 0.5px solid #CACACE;
+  border-left: 0.5px solid #CACACE;
+  min-width: 90px;
+}
+.grid-OIES .grid-cell input {
+  margin: auto 0;
+  width: 90px;
+}
+.grid-OIES .grid-cell-highlight {
+  background-color: #f0e4f7;
+}
+
+/* descipt tab */
+.grid-tab_descript {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 8px;
+  margin-bottom: 20px;
+}
+.grid-tab_descript .grid-row {
+  text-align: left;
+}
+.grid-tab_descript .grid-row textarea {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.grid-textarea {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 8px;
+  margin: 20px 0;
+}
+.grid-textarea .grid-row {
+  text-align: left;
+}
+.grid-textarea .grid-row textarea {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* extras */
+.subtitle {
+  text-align: left;
+  background-color: #CACACE !important;
+  padding: 4px 10px !important;
+}
+
+.title_row {
+  text-align: left;
+}
+
+.data {
+  text-align: right;
+}
+
+.totals {
+  color: #FFFFFF !important;
+  background-color: #5C3873 !important;
+}
+
+.lst {
+  padding-left: 30px !important;
+}
+
+.grid_cell_merge2 {
+  grid-column: span 2;
+}
+
+.grid_cell_merge4 {
+  grid-column: span 4;
+}
+.grid_cell_merge4 textarea {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.grid_cell_merge6 {
+  grid-column: span 6;
+}
+
+.grid_cell_merge11 {
+  grid-column: span 11;
+}
+
+.dotted_list {
+  list-style-type: disc;
+  padding-left: 50px;
+}
+.dotted_list li {
+  margin-bottom: 5px; /* Espacio entre elementos de la lista */
+}
+
+.tooltip-target {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tooltip-content {
+  display: block;
+  position: absolute;
+  background-color: #333;
+  color: white;
+  padding: 5px;
+  border-radius: 4px;
+  bottom: -28px;
+  left: 60px;
+  transform: translateX(-50%);
+  z-index: 999;
+}
+
+i,
+rem {
+  color: rgb(138, 116, 116);
+  font-weight: 300;
+  font-size: 0.5em;
+}
+
+.ui-widget-content {
+  border: none;
+}
+
+.ui-widget.ui-widget-content {
+  border: none;
+}
+
+input[type=radio] {
+  margin: 10px 0 0 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  margin-right: 10px;
+  display: inline-block;
+  position: relative;
+  top: 3px;
+  cursor: pointer;
+}
+input[type=radio]:checked {
+  background-color: #00A6E2;
+  border-color: #00A6E2;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+.box {
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content {
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.arrow {
+  transition: transform 0.3s;
+}
+
+.arrow.up {
+  transform: rotate(-180deg); /* Rota la flecha hacia arriba */
+}
+
+/*# sourceMappingURL=main.css.map */
+
+</style>
 <div id="SDPCustomForm">
   <div id="invalidProjectMessage" style="display: none">&nbsp;</div>
 
@@ -304,12 +380,62 @@
       <button class="tablinks" data-target="Tab1">SRH Services</button>
       <button class="tablinks" data-target="Tab2">People Reached</button>
       <button class="tablinks" data-target="Tab3">Commodities</button>
-      <button class="tablinks" data-target="Tab4">CSE</button>
-      <button class="tablinks" data-target="Tab5">Other Information & Education Sessions</button>
+      <button class="tablinks" data-target="Tab4">
+        Comprehensive Sexuality Education
+      </button>
+      <button class="tablinks" data-target="Tab5">
+        Other Information & Education Sessions
+      </button>
     </div>
-
+  
     <div id="Tab1" class="tabcontent">
-      
+      <div class="grid-tab_descript">
+        <div class="grid-row">
+          If your organization reached people with sexual and reproductive health
+          (SRH) services during the last year, please provide the following
+          summary information about these services. If your organization does not
+          provide services, skip to the next tab.
+        </div>
+        <div class="grid-row">
+          Services refer to direct SRH care – including counseling – that is
+          person-specific and non-directive, which is delivered by trained care
+          providers of your organization to an individual in order to protect or
+          improve their sexual and reproductive health. To be considered a
+          service, the following must occur in a space that allows for
+          confidentiality:
+        </div>
+        <div class="grid-row">
+          <ul class="dotted_list">
+            <li>
+              The service user
+              <b>expresses interest in initiating a personalized care process</b>
+              by sharing information with a trained care provider from your
+              organization.
+            </li>
+            <li>
+              A structured <b>two-way conversation</b> takes place between the
+              service user and the trained care provider in which information is
+              exchanged.
+            </li>
+            <li>
+              There is an exploration or identification of the service user’s
+              needs.
+            </li>
+            <li>
+              The service user is provided with
+              <b>guidance oriented towards decision-making</b> and/or the service
+              user’s needs are addressed in accordance with care protocols.
+            </li>
+          </ul>
+        </div>
+        <div class="grid-row">
+          Information, education, and communication activities, such as
+          comprehensive sexuality education or other information and education
+          sessions, are not SRH services. Please include those interventions under
+          the “CSE” and” Other Information & Education Sessions” tabs.
+        </div>
+      </div>
+  
       <div class="grid-SRH_ervices">
         <!-- Encabezados de la tabla -->
         <div class="grid-header">Services and service subcategories</div>
@@ -320,38 +446,53 @@
         </div>
         <div class="grid-header">Mobile Outreach Units (OU)</div>
         <div class="grid-header">Digital Platforms (VC)</div>
-
+  
         <!-- data row 1 -->
-        <div class="grid-cell subtitle grid_cell_merge6 tooltip-target">
-          Contraceptive Services - Term
+        <div
+          class="grid-cell subtitle grid_cell_merge6 tooltip-target"
+          data-tooltip-key="tooltip1"
+        >
+          <div id="toggleBox" class="box">
+            <span class="title">Contraceptive Services - Term</span>
+            <span class="arrow">&#9660;</span>
+            <!-- Flecha hacia abajo -->
+          </div>
+          <div id="content" class="content" style="display: none">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc egestas
+            auctor elit in tincidunt. Donec egestas hendrerit molestie. Duis non
+            est egestas, viverra magna sit amet, commodo est. Donec at est
+            vulputate, eleifend ipsum nec, faucibus ligula. Mauris faucibus vel
+            tellus nec viverra. Etiam hendrerit, turpis at eleifend faucibus,
+            lectus lorem facilisis tellus, quis gravida nisl tellus ac ex. Cras
+            vel erat sit amet urna fermentum porttitor.
+          </div>
         </div>
-
+  
         <!-- data row 2 -->
-        <div class="grid-cell title_row'">
-          Contraceptives – Counseling – General [PeDrIurYbaG]
+        <div
+          class="grid-cell title_row tooltip-target"
+          data-tooltip-key="tooltip2"
+        >
+          Contraceptives – Counseling – General
         </div>
-
+  
         <div class="grid-cell data"><input /></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 3 -->
-        <div class="grid-cell title_row tooltip-target">
+        <div class="grid-cell title_row">
           Contraceptives – Oral Contraceptives – Consultation
         </div>
-        <div class="tooltip-content">
-          FOS - Service List & Definitions - EN 100% C3 A trained service provider sees a person and gives comprehensive information about oral contraceptives either for the first time or as a follow up to ensure that medical eligibility criteria are met, monitor for side-effects or resupply the person, in a space which allows confidentiality. When a person receives a consultation service, it should be recorded as a service provided, even if the person does not adopt this contraceptive method.
-          Turn on screen reader support
-          To enable screen reader support, press Ctrl+Alt+Z To learn about keyboard shortcuts, press Ctrl+slash</div>
-
+  
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 4 -->
         <div class="grid-cell title_row">
           Contraceptives – Injectable – Consultation
@@ -361,7 +502,7 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 5 -->
         <div class="grid-cell title_row">
           Contraceptives – Patch/Ring – Consultation
@@ -371,20 +512,8 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-      </div>
-
-      <div class="grid-SRH_ervices">
-        <!-- Encabezados de la tabla -->
-        <div class="grid-header">Services and service subcategories</div>
-        <div class="grid-header">Static Clinics (CL)</div>
-        <div class="grid-header">Associated Clinics (AS)</div>
-        <div class="grid-header">
-          Community-Based Distribution / Services (CB)
-        </div>
-        <div class="grid-header">Mobile Outreach Units (OU)</div>
-        <div class="grid-header">Digital Platforms (VC)</div>
-
-        <!-- data row 1 -->
+  
+        <!-- data row 6 -->
         <div class="grid-cell title_row">
           Contraceptives – Male condom – Consultation
         </div>
@@ -393,8 +522,8 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 2 -->
+  
+        <!-- data row 7 -->
         <div class="grid-cell title_row">
           Contraceptives – Female condom – Consultation
         </div>
@@ -403,8 +532,8 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 3 -->
+  
+        <!-- data row 8 -->
         <div class="grid-cell title_row">
           Contraceptives – Male/Female condom – unable to categorize
         </div>
@@ -413,8 +542,8 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 4 -->
+  
+        <!-- data row 9 -->
         <div class="grid-cell title_row">
           Contraceptives – Diaphragm/Cervical cap – Consultation
         </div>
@@ -423,8 +552,8 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 5 -->
+  
+        <!-- data row 10 -->
         <div class="grid-cell title_row">
           Contraceptives – Spermicides – Consultation
         </div>
@@ -433,24 +562,24 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 6 -->
+  
+        <!-- data row 11 -->
         <div class="grid-cell title_row">Implant – Consultation – Removal</div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 7 -->
+  
+        <!-- data row 12 -->
         <div class="grid-cell title_row">Implant – Consultation</div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 8 -->
+  
+        <!-- data row 13 -->
         <div class="grid-cell title_row">
           Intrauterine Device (IUD) – Consultation – Removal
         </div>
@@ -459,8 +588,8 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 9 -->
+  
+        <!-- data row 14 -->
         <div class="grid-cell title_row">
           Intrauterine Device (IUD) – Consultation
         </div>
@@ -469,8 +598,8 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 10 -->
+  
+        <!-- data row 15 -->
         <div class="grid-cell title_row">
           Female Voluntary Surgical Contraception (FVSC) – Counseling
         </div>
@@ -479,8 +608,8 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 11 -->
+  
+        <!-- data row 16 -->
         <div class="grid-cell title_row">
           Female Voluntary Surgical Contraception (FVSC) – Consultation
         </div>
@@ -489,19 +618,19 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 12 -->
+  
+        <!-- data row 17 -->
         <div class="grid-cell title_row">
-          Female Voluntary Surgical Contraception (FVSC) – Management – Surgical
-          – Reversal
+          Female Voluntary Surgical Contraception (FVSC) – Management – Surgical –
+          Reversal
         </div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 13 -->
+  
+        <!-- data row 18 -->
         <div class="grid-cell title_row">
           Contraceptives – Female Voluntary Surgical Contraception (FVSC) –
           Management – Surgical – Minilaparotomy
@@ -511,74 +640,74 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 14 -->
-        <div class="grid-cell title_row">
-          Female Voluntary Surgical Contraception (FVSC) – Management – Surgical
-          – Laparoscopy
-        </div>
-        <div class="grid-cell data"></div>
-        <div class="grid-cell data"></div>
-        <div class="grid-cell data"></div>
-        <div class="grid-cell data"></div>
-        <div class="grid-cell data"></div>
-
-        <!-- data row 15 -->
-        <div class="grid-cell title_row">
-          Female Voluntary Surgical Contraception (FVSC) – Management – Surgical
-          – Laparotomy
-        </div>
-        <div class="grid-cell data"></div>
-        <div class="grid-cell data"></div>
-        <div class="grid-cell data"></div>
-        <div class="grid-cell data"></div>
-        <div class="grid-cell data"></div>
-
-        <!-- data row 16 -->
-        <div class="grid-cell title_row">
-          Female Voluntary Surgical Contraception (FVSC) – Management – Surgical
-          – Hysteroscopic tubal occlusion
-        </div>
-        <div class="grid-cell data"></div>
-        <div class="grid-cell data"></div>
-        <div class="grid-cell data"></div>
-        <div class="grid-cell data"></div>
-        <div class="grid-cell data"></div>
-
-        <!-- data row 17 -->
-        <div class="grid-cell title_row">
-          Female Voluntary Surgical Contraception (FVSC) – Management – Surgical
-          – Transvaginal tubal ligation
-        </div>
-        <div class="grid-cell data"></div>
-        <div class="grid-cell data"></div>
-        <div class="grid-cell data"></div>
-        <div class="grid-cell data"></div>
-        <div class="grid-cell data"></div>
-
-        <!-- data row 18 -->
-        <div class="grid-cell title_row">
-          Female Voluntary Surgical Contraception (FVSC) – Management – Surgical
-          – Follow up
-        </div>
-        <div class="grid-cell data"></div>
-        <div class="grid-cell data"></div>
-        <div class="grid-cell data"></div>
-        <div class="grid-cell data"></div>
-        <div class="grid-cell data"></div>
-
+  
         <!-- data row 19 -->
         <div class="grid-cell title_row">
-          Female Voluntary Surgical Contraception (FVSC) – Management – unable
-          to categorize
+          Female Voluntary Surgical Contraception (FVSC) – Management – Surgical –
+          Laparoscopy
         </div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 20 -->
+        <div class="grid-cell title_row">
+          Female Voluntary Surgical Contraception (FVSC) – Management – Surgical –
+          Laparotomy
+        </div>
+        <div class="grid-cell data"></div>
+        <div class="grid-cell data"></div>
+        <div class="grid-cell data"></div>
+        <div class="grid-cell data"></div>
+        <div class="grid-cell data"></div>
+  
+        <!-- data row 21 -->
+        <div class="grid-cell title_row">
+          Female Voluntary Surgical Contraception (FVSC) – Management – Surgical –
+          Hysteroscopic tubal occlusion
+        </div>
+        <div class="grid-cell data"></div>
+        <div class="grid-cell data"></div>
+        <div class="grid-cell data"></div>
+        <div class="grid-cell data"></div>
+        <div class="grid-cell data"></div>
+  
+        <!-- data row 22 -->
+        <div class="grid-cell title_row">
+          Female Voluntary Surgical Contraception (FVSC) – Management – Surgical –
+          Transvaginal tubal ligation
+        </div>
+        <div class="grid-cell data"></div>
+        <div class="grid-cell data"></div>
+        <div class="grid-cell data"></div>
+        <div class="grid-cell data"></div>
+        <div class="grid-cell data"></div>
+  
+        <!-- data row 23 -->
+        <div class="grid-cell title_row">
+          Female Voluntary Surgical Contraception (FVSC) – Management – Surgical –
+          Follow up
+        </div>
+        <div class="grid-cell data"></div>
+        <div class="grid-cell data"></div>
+        <div class="grid-cell data"></div>
+        <div class="grid-cell data"></div>
+        <div class="grid-cell data"></div>
+  
+        <!-- data row 24 -->
+        <div class="grid-cell title_row">
+          Female Voluntary Surgical Contraception (FVSC) – Management – unable to
+          categorize
+        </div>
+        <div class="grid-cell data"></div>
+        <div class="grid-cell data"></div>
+        <div class="grid-cell data"></div>
+        <div class="grid-cell data"></div>
+        <div class="grid-cell data"></div>
+  
+        <!-- data row 25 -->
         <div class="grid-cell title_row">
           Male Voluntary Surgical Contraception (MVSC) – Counseling
         </div>
@@ -587,20 +716,8 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-      </div>
-
-      <div class="grid-SRH_ervices">
-        <!-- Encabezados de la tabla -->
-        <div class="grid-header">Services and service subcategories</div>
-        <div class="grid-header">Static Clinics (CL)</div>
-        <div class="grid-header">Associated Clinics (AS)</div>
-        <div class="grid-header">
-          Community-Based Distribution / Services (CB)
-        </div>
-        <div class="grid-header">Mobile Outreach Units (OU)</div>
-        <div class="grid-header">Digital Platforms (VC)</div>
-
-        <!-- data row 1 -->
+  
+        <!-- data row 26 -->
         <div class="grid-cell title_row">
           Male Voluntary Surgical Contraception (MVSC) – Consultation
         </div>
@@ -609,8 +726,8 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 2 -->
+  
+        <!-- data row 27 -->
         <div class="grid-cell title_row">
           Male Voluntary Surgical Contraception (MVSC) – Management – Surgical –
           Reversal
@@ -620,8 +737,8 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 3 -->
+  
+        <!-- data row 28 -->
         <div class="grid-cell title_row">
           Male Voluntary Surgical Contraception (MVSC) – Management – Surgical –
           Incisional Vasectomy
@@ -631,8 +748,8 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 4 -->
+  
+        <!-- data row 29 -->
         <div class="grid-cell title_row">
           Male Voluntary Surgical Contraception (MVSC) – Management – Surgical –
           No-scalpel Vasectomy
@@ -642,8 +759,8 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 5 -->
+  
+        <!-- data row 30 -->
         <div class="grid-cell title_row">
           Male Voluntary Surgical Contraception (MVSC) – Management – Surgical –
           Follow up
@@ -653,8 +770,8 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 6 -->
+  
+        <!-- data row 31 -->
         <div class="grid-cell title_row">
           Male Voluntary Surgical Contraception (MVSC) – Management – unable to
           categorize
@@ -664,8 +781,8 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 7 -->
+  
+        <!-- data row 32 -->
         <div class="grid-cell title_row">
           Female/Male Voluntary Surgical Contraception – unable to categorize
         </div>
@@ -674,8 +791,8 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 8 -->
+  
+        <!-- data row 33 -->
         <div class="grid-cell title_row">
           Emergency Contraception (EC) – Counseling
         </div>
@@ -684,8 +801,8 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 9 -->
+  
+        <!-- data row 34 -->
         <div class="grid-cell title_row">
           Emergency Contraception (EC) – Consultation
         </div>
@@ -694,8 +811,8 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 10 -->
+  
+        <!-- data row 35 -->
         <div class="grid-cell title_row">
           Fertility Awareness Based (FAB) – Consultation
         </div>
@@ -704,11 +821,11 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 11 -->
+  
+        <!-- data row 36 -->
         <div class="grid-cell subtitle grid_cell_merge6">Abortion Services</div>
-
-        <!-- data row 12 -->
+  
+        <!-- data row 37 -->
         <div class="grid-cell title_row">
           Abortion – Counseling – Pre-abortion/Options Counseling
         </div>
@@ -717,8 +834,8 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 13 -->
+  
+        <!-- data row 38 -->
         <div class="grid-cell title_row">
           Abortion – Counseling – Post-abortion
         </div>
@@ -727,8 +844,8 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 14 -->
+  
+        <!-- data row 39 -->
         <div class="grid-cell title_row">
           Abortion – Counseling – unable to categorize
         </div>
@@ -737,16 +854,16 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 15 -->
+  
+        <!-- data row 40 -->
         <div class="grid-cell title_row">Abortion – Consultation</div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 16 -->
+  
+        <!-- data row 41 -->
         <div class="grid-cell title_row">
           Abortion – Consultation – Initial consultation – Harm reduction model
         </div>
@@ -755,19 +872,18 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 17 -->
+  
+        <!-- data row 42 -->
         <div class="grid-cell title_row">
-          Abortion – Consultation – Follow up consultation – Harm reduction
-          model
+          Abortion – Consultation – Follow up consultation – Harm reduction model
         </div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 18 -->
+  
+        <!-- data row 43 -->
         <div class="grid-cell title_row">
           Abortion – Consultation – unable to categorize
         </div>
@@ -776,8 +892,8 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 19 -->
+  
+        <!-- data row 44 -->
         <div class="grid-cell title_row">
           Abortion – Management – Medical – Misoprostol
         </div>
@@ -786,20 +902,8 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-      </div>
-
-      <div class="grid-SRH_ervices">
-        <!-- Encabezados de la tabla -->
-        <div class="grid-header">Services and service subcategories</div>
-        <div class="grid-header">Static Clinics (CL)</div>
-        <div class="grid-header">Associated Clinics (AS)</div>
-        <div class="grid-header">
-          Community-Based Distribution / Services (CB)
-        </div>
-        <div class="grid-header">Mobile Outreach Units (OU)</div>
-        <div class="grid-header">Digital Platforms (VC)</div>
-
-        <!-- data row 1 -->
+  
+        <!-- data row 45 -->
         <div class="grid-cell title_row">
           Abortion – Management – Medical – Mifepristone and Misoprostol
         </div>
@@ -808,8 +912,8 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 2 -->
+  
+        <!-- data row 46 -->
         <div class="grid-cell title_row">
           Abortion – Management – Medical – Follow up
         </div>
@@ -818,8 +922,8 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 3 -->
+  
+        <!-- data row 47 -->
         <div class="grid-cell title_row">
           Abortion – Management – Medical – Treatment of complications following
           medical procedure
@@ -829,8 +933,8 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 4 -->
+  
+        <!-- data row 48 -->
         <div class="grid-cell title_row">
           Abortion – Management – Medical – unable to categorize
         </div>
@@ -839,8 +943,8 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 5 -->
+  
+        <!-- data row 48 -->
         <div class="grid-cell title_row">
           Abortion – Management – Surgical – Vacuum aspiration
         </div>
@@ -849,8 +953,8 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 6 -->
+  
+        <!-- data row 50 -->
         <div class="grid-cell title_row">
           Abortion – Management – Surgical – Dilation and Evacuation (D&E)
         </div>
@@ -859,8 +963,8 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 7 -->
+  
+        <!-- data row 51 -->
         <div class="grid-cell title_row">
           Abortion – Management – Surgical – Dilation and Curettage (D&C)
         </div>
@@ -869,8 +973,8 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 8 -->
+  
+        <!-- data row 52 -->
         <div class="grid-cell title_row">
           Abortion – Management – Surgical – follow up
         </div>
@@ -879,19 +983,19 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 9 -->
+  
+        <!-- data row 53 -->
         <div class="grid-cell title_row">
-          Abortion – Management – Surgical – Treatment of complications
-          following a surgical procedure
+          Abortion – Management – Surgical – Treatment of complications following
+          a surgical procedure
         </div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 10 -->
+  
+        <!-- data row 54 -->
         <div class="grid-cell title_row">
           Abortion – Management – Surgical – unable to categorize
         </div>
@@ -900,8 +1004,8 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 11 -->
+  
+        <!-- data row 55 -->
         <div class="grid-cell title_row">
           Post abortion care – Management – Medical – Misoprostol
         </div>
@@ -910,8 +1014,8 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 12 -->
+  
+        <!-- data row 56 -->
         <div class="grid-cell title_row">
           Post abortion care – Management – Surgical – Vacuum aspiration
         </div>
@@ -920,8 +1024,8 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 13 -->
+  
+        <!-- data row 57 -->
         <div class="grid-cell title_row">
           Post abortion care – Management – Surgical – Dilation and Evacuation
           (D&E)
@@ -931,8 +1035,8 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 14 -->
+  
+        <!-- data row 58 -->
         <div class="grid-cell title_row">
           Post abortion care – Management – Surgical – Dilation and Curettage
           (D&C)
@@ -942,8 +1046,8 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 15 -->
+  
+        <!-- data row 59 -->
         <div class="grid-cell title_row">
           Post abortion care – unable to categorize
         </div>
@@ -952,96 +1056,82 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 16 -->
+  
+        <!-- data row 60 -->
         <div class="grid-cell subtitle grid_cell_merge6">
           Specialized Sexual and Gender Based Violence (SGBV) Service
         </div>
-
-        <!-- data row 17 -->
+  
+        <!-- data row 61 -->
         <div class="grid-cell title_row">SGBV – Prevention – Screening</div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 18 -->
+  
+        <!-- data row 62 -->
         <div class="grid-cell title_row">SGBV – Counseling</div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 19 -->
+  
+        <!-- data row 63 -->
         <div class="grid-cell title_row">SGBV – Case Management</div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 20 -->
-        <div class="grid-cell title_row">
-          SGBV – Clinical Management of Rape
-        </div>
+  
+        <!-- data row 64 -->
+        <div class="grid-cell title_row">SGBV – Clinical Management of Rape</div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-      </div>
-
-      <div class="grid-SRH_ervices">
-        <!-- Encabezados de la tabla -->
-        <div class="grid-header">Services and service subcategories</div>
-        <div class="grid-header">Static Clinics (CL)</div>
-        <div class="grid-header">Associated Clinics (AS)</div>
-        <div class="grid-header">
-          Community-Based Distribution / Services (CB)
-        </div>
-        <div class="grid-header">Mobile Outreach Units (OU)</div>
-        <div class="grid-header">Digital Platforms (VC)</div>
-
-        <!-- data row 1 -->
+  
+        <!-- data row 65 -->
         <div class="grid-cell title_row">SGBV – Psychosocial Support</div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 2 -->
+  
+        <!-- data row 66 -->
         <div class="grid-cell title_row">SGBV – Legal Support</div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 3 -->
+  
+        <!-- data row 67 -->
         <div class="grid-cell title_row">SGBV – Unable to Categorize</div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 4 -->
+  
+        <!-- data row 68 -->
         <div class="grid-cell subtitle grid_cell_merge6">
           Other Sexual and Reproductive Health Services
         </div>
-
-        <!-- data row 5 -->
+  
+        <!-- data row 69 -->
         <div class="grid-cell title_row">HIV Services</div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 6 -->
+  
+        <!-- data row 70 -->
         <div class="grid-cell title_row">
           Sexually Transmitted Infection (STI) Services
         </div>
@@ -1050,48 +1140,48 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 7 -->
+  
+        <!-- data row 71 -->
         <div class="grid-cell title_row">Gynecology Services</div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 8 -->
+  
+        <!-- data row 72 -->
         <div class="grid-cell title_row">Infertility Services</div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 9 -->
+  
+        <!-- data row 73 -->
         <div class="grid-cell title_row">Obstetric Services</div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 10 -->
+  
+        <!-- data row 74 -->
         <div class="grid-cell title_row">Pediatric Services</div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 11 -->
+  
+        <!-- data row 75 -->
         <div class="grid-cell title_row">Urology Services</div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 12 -->
+  
+        <!-- data row 76 -->
         <div class="grid-cell title_row">
           Specialized Sexuality and Relationship Counseling Services
         </div>
@@ -1100,8 +1190,8 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 13 -->
+  
+        <!-- data row 77 -->
         <div class="grid-cell title_row">
           Other Sexual and Reproductive Health (SRH) Services
         </div>
@@ -1110,7 +1200,7 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- totals -->
         <div class="grid-cell title_row totals">Total Services by Channel</div>
         <div class="grid-cell data totals"></div>
@@ -1119,11 +1209,29 @@
         <div class="grid-cell data totals"></div>
         <div class="grid-cell data totals"></div>
       </div>
-    
     </div>
   
     <div id="Tab2" class="tabcontent">
-      
+      <div class="grid-tab_descript">
+        <div class="grid-row">
+          People reached with SRH services refers to the total number of unique
+          individuals that received one or more SRH services from your
+          organization in the last year. A person is counted only once, even if
+          they had multiple visits where they received numerous different services
+          during the same year.
+        </div>
+        <div class="grid-row">
+          This total can be generated by using patient identifiers (such as
+          calculating the total number of unique patient record numbers or ID
+          numbers in your clinic management information system for the last year),
+          or it can be estimated.
+        </div>
+        <div class="grid-row">
+          If your organization does not provide SRH services to people, skip to
+          the next tab.
+        </div>
+      </div>
+  
       <div class="grid-people_reached">
         <!-- Encabezados de la tabla -->
         <div class="grid-header">
@@ -1134,7 +1242,7 @@
         <div class="grid-header">Community-Based Distribution / Services</div>
         <div class="grid-header">Mobile Outreach Units</div>
         <div class="grid-header">Digital Platforms</div>
-
+  
         <!-- data row 1 -->
         <div class="grid-cell title_row">
           Total # of all individuals reached with SRH services
@@ -1144,43 +1252,33 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 2 -->
-        <div class="grid-cell subtitle grid_cell_merge6">Subpopulations</div>
-
+        <div class="grid-cell subtitle grid_cell_merge6">Subpopulations *</div>
+  
         <!-- data row 3 -->
         <div class="grid-cell title_row lst">
-          # of women and girls reached with SRH services
+          # of <b>women and girls</b> reached with SRH services
         </div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 4 -->
         <div class="grid-cell title_row lst">
-          # of young people aged 10-24 reached with SRH services
+          # of <b>young people aged 10-24</b> reached with SRH services
         </div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 5 -->
         <div class="grid-cell title_row lst">
-          # of people affected by humanitarian crisis reached with SRH services
-        </div>
-        <div class="grid-cell data"></div>
-        <div class="grid-cell data"></div>
-        <div class="grid-cell data"></div>
-        <div class="grid-cell data"></div>
-        <div class="grid-cell data"></div>
-
-        <!-- data row 6 -->
-        <div class="grid-cell title_row lst">
-          # of individuals in situations of vulnerability reached with SRH
+          # of <b>people affected by humanitarian crisis</b> reached with SRH
           services
         </div>
         <div class="grid-cell data"></div>
@@ -1188,21 +1286,59 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
-        <!-- data row 7 -->
-        <div class="grid-cell title_row lst grid_cell_merge2">
-          Please describe what intersectional factors contribute to your
-          definition of vulnerability for your context:
+  
+        <!-- data row 6 -->
+        <div class="grid-cell title_row lst">
+          # of individuals in <b>situations of vulnerability</b> reached with SRH
+          services
         </div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
+        <div class="grid-cell data"></div>
+  
+        <!-- data row 7 -->
+        <div class="grid-cell title_row lst grid_cell_merge2">
+          Please describe
+          <b
+            >what intersectional factors contribute to your definition of
+            vulnerability</b
+          >
+          for your context:
+        </div>
+        <div class="grid-cell data grid_cell_merge4"><textarea></textarea></div>
       </div>
-    
+      <div class="grid-row">
+        * Each subpopulation is a subset of total people reached with SRH care,
+        and therefore they are less than or equal to “Total # of all individuals
+        reached with SRH services
+      </div>
+      <div class="grid-textarea">
+        <div class="grid-row">
+          Please describe
+          <b
+            >what intersectional factors contribute to your definition of
+            vulnerability</b
+          >
+          for your context:
+        </div>
+        <div class="grid-row"><textarea></textarea></div>
+      </div>
     </div>
   
     <div id="Tab3" class="tabcontent">
+      <div class="grid-tab_descript">
+        <div class="grid-row">
+          If your organization distributed modern contraceptive products to people
+          or other organizations, please provide the total number of contraceptive
+          items (by method and durations) distributed during the last year.
+        </div>
+        <div class="grid-row">
+          If your organization does not distribute contraceptives, this section
+          can be skipped.
+        </div>
+      </div>
       <div class="grid-commodities">
         <!-- Encabezados de la tabla -->
         <div class="grid-header">Commodities</div>
@@ -1216,12 +1352,12 @@
         <div class="grid-header">Social Marketing</div>
         <div class="grid-header">Commercial Marketing</div>
         <div class="grid-header">Other Agencies</div>
-
+  
         <!-- data row 1 -->
         <div class="grid-cell subtitle grid_cell_merge11">
           Contraceptive Products
         </div>
-
+  
         <!-- data row 2 -->
         <div class="grid-cell title_row">Oral contraceptives (combined)</div>
         <div class="grid-cell data"></div>
@@ -1234,7 +1370,7 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 3 -->
         <div class="grid-cell title_row">
           Oral contraceptives (progestogen only)
@@ -1249,7 +1385,7 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 4 -->
         <div class="grid-cell title_row">
           Oral contraceptives (unable to categorize)
@@ -1264,7 +1400,7 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 5 -->
         <div class="grid-cell title_row">Injectables (1 month)</div>
         <div class="grid-cell data"></div>
@@ -1277,7 +1413,7 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 6 -->
         <div class="grid-cell title_row">Injectables (2 month)</div>
         <div class="grid-cell data"></div>
@@ -1290,7 +1426,7 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 7 -->
         <div class="grid-cell title_row">Injectables (3 month)</div>
         <div class="grid-cell data"></div>
@@ -1303,7 +1439,7 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 8 -->
         <div class="grid-cell title_row">
           Injectables (3 month - Subcutaneous)
@@ -1318,7 +1454,7 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 9 -->
         <div class="grid-cell title_row">Implant (3 year)</div>
         <div class="grid-cell data"></div>
@@ -1331,7 +1467,7 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 10 -->
         <div class="grid-cell title_row">Implant (4 year)</div>
         <div class="grid-cell data"></div>
@@ -1344,9 +1480,9 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 11 -->
-        <div class="grid-cell title_row">Implant (5 year)	</div>
+        <div class="grid-cell title_row">Implant (5 year)</div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
@@ -1357,7 +1493,7 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 12 -->
         <div class="grid-cell title_row">Patch</div>
         <div class="grid-cell data"></div>
@@ -1370,7 +1506,7 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 13 -->
         <div class="grid-cell title_row">Ring</div>
         <div class="grid-cell data"></div>
@@ -1383,7 +1519,7 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 14 -->
         <div class="grid-cell title_row">Condoms (male)</div>
         <div class="grid-cell data"></div>
@@ -1396,7 +1532,7 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 15 -->
         <div class="grid-cell title_row">Condoms (female)</div>
         <div class="grid-cell data"></div>
@@ -1409,7 +1545,7 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 16 -->
         <div class="grid-cell title_row">Diaphragm</div>
         <div class="grid-cell data"></div>
@@ -1422,7 +1558,7 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 17 -->
         <div class="grid-cell title_row">Cervical cap</div>
         <div class="grid-cell data"></div>
@@ -1435,7 +1571,7 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 18 -->
         <div class="grid-cell title_row">Spermicides</div>
         <div class="grid-cell data"></div>
@@ -1448,7 +1584,7 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 19 -->
         <div class="grid-cell title_row">IUD (3 years)</div>
         <div class="grid-cell data"></div>
@@ -1461,7 +1597,7 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 20 -->
         <div class="grid-cell title_row">IUD (5 years)</div>
         <div class="grid-cell data"></div>
@@ -1474,9 +1610,9 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 21 -->
-        <div class="grid-cell title_row">IUD (10 years)	</div>
+        <div class="grid-cell title_row">IUD (10 years)</div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
@@ -1487,9 +1623,11 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 22 -->
-        <div class="grid-cell title_row">Emergency Contraception (progestogen only pills)</div>
+        <div class="grid-cell title_row">
+          Emergency Contraception (progestogen only pills)
+        </div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
@@ -1500,9 +1638,11 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 23 -->
-        <div class="grid-cell title_row">Emergency Contraception (10-year IUD)</div>
+        <div class="grid-cell title_row">
+          Emergency Contraception (10-year IUD)
+        </div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
@@ -1513,12 +1653,16 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 24 -->
-        <div class="grid-cell subtitle grid_cell_merge11">Abortion Medication</div>
-
+        <div class="grid-cell subtitle grid_cell_merge11">
+          Abortion Medication
+        </div>
+  
         <!-- data row 25 -->
-        <div class="grid-cell title_row">Misoprostol/Mifepristone (Combipacks)</div>
+        <div class="grid-cell title_row">
+          Misoprostol/Mifepristone (Combipacks)
+        </div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
@@ -1529,7 +1673,7 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 26 -->
         <div class="grid-cell title_row">Misoprostol only (Pack)</div>
         <div class="grid-cell data"></div>
@@ -1542,10 +1686,10 @@
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 27 -->
         <div class="grid-cell subtitle grid_cell_merge11">Other Commodities</div>
-
+  
         <!-- data row 10 -->
         <div class="grid-cell title_row">Menstrual Hygiene Products</div>
         <div class="grid-cell data"></div>
@@ -1560,94 +1704,204 @@
         <div class="grid-cell data"></div>
       </div>
     </div>
-
+  
     <div id="Tab4" class="tabcontent">
+      <div class="grid-tab_descript">
+        <div class="grid-row">
+          If your organization provides comprehensive sexuality education (CSE)
+          interventions to young people (≤ 24 years of age), please complete the
+          table below with the total number of young people reached directly by
+          your organization during the last year. If your organization does not
+          work on CSE, please skip to the next section.
+        </div>
+        <div class="grid-row">
+          <b>Comprehensive Sexuality Education (CSE)</b> refers to a
+          <b>curriculum-based process</b> of teaching and learning about the cognitive,
+          emotional, physical, and social aspects of sexuality. It aims to equip
+          young people with knowledge, skills, attitudes, and values they need to
+          determine and enjoy their sexuality.
+        </div>
+        <div class="grid-row">
+          <ul class="dotted_list">
+            <li>
+              <b>Curriculum:</b> A written, evidence-based guide for teaching and
+              learning that includes key objectives, as well as structured
+              guidance for the delivery of clear content and skills.
+            </li>
+          </ul>
+        </div>
+        <div class="grid-row" style="padding-left: 50px">
+          There are 4 types of CSE sessions that are conducted with young people:
+        </div>
+        <div class="grid-row">
+          <ul class="dotted_list">
+            <li>
+              <b>Peer Educator Training:</b> Initial training or ongoing
+              supportive training to young people as peer educators or as youth
+              health promoters who facilitate sexuality education sessions.
+            </li>
+            <li>
+              <b>Complete Series:</b> Engaging young people (who are not training
+              to be peer educators) in a complete set of multiple sexuality
+              education sessions that cover standard content areas. A complete
+              series covers topics such as sexual rights, gender, sexuality,
+              interpersonal relationships, communication and decision-making, and
+              sexual and reproductive health, among others.
+            </li>
+            <li>
+              <b>Partial series:</b> Engaging young people in a series of
+              sexuality education sessions that does not cover all standard
+              content areas of your organization’s CSE curriculum.
+            </li>
+            <li>
+              <b>Single Sessions:</b> Engaging young people in one sexuality
+              education session that covers a portion of content from your CSE
+              curriculum.
+            </li>
+          </ul>
+        </div>
+      </div>
       <div class="grid-CSE">
         <!-- Encabezados de la tabla -->
         <div class="grid-header">Direct CSE interventions</div>
         <div class="grid-header">In-person in Schools</div>
         <div class="grid-header">In-person in Communities</div>
         <div class="grid-header">Virtually via Digital Platforms</div>
-
+  
         <!-- data row 1 -->
-        <div class="grid-cell title_row"># of young people trained as PEER EDUCATORS</div>
+        <div class="grid-cell title_row">
+          # of young people trained as PEER EDUCATORS
+        </div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 2 -->
-        <div class="grid-cell title_row"># of young people reached with a COMPLETE series of your organization’s CSE curriculum</div>
+        <div class="grid-cell title_row">
+          # of young people reached with a COMPLETE series of your organization’s
+          CSE curriculum
+        </div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 3 -->
-        <div class="grid-cell title_row"># of young people reached with a PARTIAL series of your organization’s CSE curriculum</div>
+        <div class="grid-cell title_row">
+          # of young people reached with a PARTIAL series of your organization’s
+          CSE curriculum
+        </div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 4 -->
-        <div class="grid-cell title_row"># of young people reached with a SINGLE SESSION of your organization’s CSE curriculum</div>
+        <div class="grid-cell title_row">
+          # of young people reached with a SINGLE SESSION of your organization’s
+          CSE curriculum
+        </div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
       </div>
-
-      <p>Please upload the most recent version of your CSE curriculum below:</p>
-      <input/>
+  
+      <div class="grid-tab_descript">
+        <div class="grid-row">
+          Please upload the most recent version of your CSE curriculum below:
+        </div>
+        <div class="grid-row"><input /></div>
+      </div>
     </div>
-
+  
     <div id="Tab5" class="tabcontent">
+      <div class="grid-tab_descript">
+        <div class="grid-row"></div>
+        <div class="grid-row">
+          <ul class="dotted_list">
+            <li>
+              <b>Informational and educational activities</b> refer to in-person
+              or virtual sessions during which evidence-based narratives,
+              research, technical expertise, or other knowledge were shared so
+              that participants had the opportunity for synchronous exchange with
+              the presenter, other participants, and/or the materials in real
+              time.
+            </li>
+            <li>
+              <b>Stakeholder group</b> refers to the constituency to which people
+              reached through the activity belong (e.g., women, girls, and
+              gender-diverse people, community leaders, care providers, people
+              living with disabilities, parents and guardians, men and boys, sex
+              workers, etc.).
+            </li>
+          </ul>
+        </div>
+      </div>
       <div class="grid-OIES">
         <!-- Encabezados de la tabla -->
         <div class="grid-header">Stakeholder Group</div>
-        <div class="grid-header"># of People from Stakeholder Group Reached with Information & Education Sessions</div>
-
+        <div class="grid-header">
+          # of People from Stakeholder Group Reached with Information & Education
+          Sessions
+        </div>
+  
         <!-- data row 1 -->
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 2 -->
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 3 -->
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 4 -->
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 5 -->
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 6 -->
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 7 -->
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 8 -->
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 9 -->
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+  
         <!-- data row 10 -->
         <div class="grid-cell data"></div>
         <div class="grid-cell data"></div>
-
+      </div>
+      <div class="grid-tab_descript">
+        <div class="grid-row">
+          If your organization reached more than 10 different stakeholder groups
+          with information and education sessions, please upload a full list (in
+          Word, Excel, etc.) of the people reached with these sessions by
+          stakeholder group below:
+        </div>
+        <div class="grid-row">[Document upload]</div>
+      </div>
+      <div class="grid-tab_descript">
+        <div class="grid-row">
+          Please describe the topic(s) addressed with these informational and
+          educational sessions. Topic refers to the primary subject being
+          discussed in the informational or educational activity.
+        </div>
+        <div class="grid-row"><textarea></textarea></div>
       </div>
     </div>
-</div>
+  </div>
 </div>
 <script>
   var firstTab = $(".tablinks:first");
@@ -1661,6 +1915,31 @@
     $("#" + tabName).show();
     $(".tablinks").removeClass("active");
     $(this).addClass("active");
+  });
+
+  // tooltips
+
+  var tooltips = {
+    tooltip1: `Lorem ipsum 1`,
+    tooltip2: `Lorem ipsum 2`
+};
+
+$(".tooltip-target").each(function() {
+    var tooltipKey = $(this).data("tooltip-key");
+    $(this).attr("data-tooltip", tooltips[tooltipKey]);
+});
+
+$(".tooltip-target").mouseenter(function() {
+    var tooltipContent = $(this).attr("data-tooltip");
+    $('<div class="tooltip-content">' + tooltipContent + '</div>').appendTo(this);
+}).mouseleave(function() {
+    $(this).find(".tooltip-content").remove();
+});
+
+
+  $('#toggleBox').click(function() {
+    $('#content').toggle();
+    $('.arrow').toggleClass('up');
   });
 
 </script>

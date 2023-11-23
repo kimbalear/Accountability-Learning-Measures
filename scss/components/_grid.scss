@@ -2,27 +2,33 @@
   display: grid;
   grid-template-columns: minmax(250px, auto) repeat(5, 1fr);
   grid-gap: 0px;
-  border-top: 0.5px solid $clr4;
-  border-right: 0.5px solid $clr4;
+  border-top: 0.5px solid $momentum_clr10;
+  border-right: 0.5px solid $momentum_clr10;
   margin-bottom: 20px;
+
   .grid-header {
     background-color: $momentum_clr8;
-    color: white;
+    color: $momentum_clr9;
     padding: 10px;
     text-align: center;
-    border-bottom: 0.5px solid $clr4;
+    border-bottom: 0.5px solid $momentum_clr10;
+    position: sticky;
+    top: 48px;
+    z-index: 10;
   }
+
   .grid-cell {
     background-color: #f4f4f4;
     padding: 10px;
-    border-bottom: 0.5px solid $clr4;
-    border-left: 0.5px solid $clr4;
+    border-bottom: 0.5px solid $momentum_clr10;
+    border-left: 0.5px solid $momentum_clr10;
     min-width: 90px;
-    input  {
+    input {
       margin: auto 0;
       width: 90px;
     }
   }
+
   .grid-cell-highlight {
     background-color: #f0e4f7;
   }
@@ -32,23 +38,23 @@
   display: grid;
   grid-template-columns: minmax(250px, auto) repeat(5, 1fr);
   grid-gap: 0px;
-  border-top: 0.5px solid $clr4;
-  border-right: 0.5px solid $clr4;
+  border-top: 0.5px solid $momentum_clr10;
+  border-right: 0.5px solid $momentum_clr10;
   margin-bottom: 20px;
   .grid-header {
     background-color: $momentum_clr8;
-    color: white;
+    color: $momentum_clr9;
     padding: 10px;
     text-align: center;
-    border-bottom: 0.5px solid $clr4;
+    border-bottom: 0.5px solid $momentum_clr10;
   }
   .grid-cell {
     background-color: #f4f4f4;
     padding: 10px;
-    border-bottom: 0.5px solid $clr4;
-    border-left: 0.5px solid $clr4;
+    border-bottom: 0.5px solid $momentum_clr10;
+    border-left: 0.5px solid $momentum_clr10;
     min-width: 90px;
-    input  {
+    input {
       margin: auto 0;
       width: 90px;
     }
@@ -62,23 +68,27 @@
   display: grid;
   grid-template-columns: minmax(250px, auto) repeat(10, 1fr);
   grid-gap: 0px;
-  border-top: 0.5px solid $clr4;
-  border-right: 0.5px solid $clr4;
+  border-top: 0.5px solid $momentum_clr10;
+  border-right: 0.5px solid $momentum_clr10;
   margin-bottom: 20px;
+
   .grid-header {
     background-color: $momentum_clr8;
-    color: white;
+    color: $momentum_clr9;
     padding: 10px;
     text-align: center;
-    border-bottom: 0.5px solid $clr4;
+    border-bottom: 0.5px solid $momentum_clr10;
+    position: sticky;
+    top: 48px;
+    z-index: 10;
   }
   .grid-cell {
     background-color: #f4f4f4;
     padding: 10px;
-    border-bottom: 0.5px solid $clr4;
-    border-left: 0.5px solid $clr4;
+    border-bottom: 0.5px solid $momentum_clr10;
+    border-left: 0.5px solid $momentum_clr10;
     min-width: 90px;
-    input  {
+    input {
       margin: auto 0;
       width: 90px;
     }
@@ -92,23 +102,23 @@
   display: grid;
   grid-template-columns: minmax(250px, auto) repeat(3, 1fr);
   grid-gap: 0px;
-  border-top: 0.5px solid $clr4;
-  border-right: 0.5px solid $clr4;
+  border-top: 0.5px solid $momentum_clr10;
+  border-right: 0.5px solid $momentum_clr10;
   margin-bottom: 20px;
   .grid-header {
     background-color: $momentum_clr8;
-    color: white;
+    color: $momentum_clr9;
     padding: 10px;
     text-align: center;
-    border-bottom: 0.5px solid $clr4;
+    border-bottom: 0.5px solid $momentum_clr10;
   }
   .grid-cell {
     background-color: #f4f4f4;
     padding: 10px;
-    border-bottom: 0.5px solid $clr4;
-    border-left: 0.5px solid $clr4;
+    border-bottom: 0.5px solid $momentum_clr10;
+    border-left: 0.5px solid $momentum_clr10;
     min-width: 90px;
-    input  {
+    input {
       margin: auto 0;
       width: 90px;
     }
@@ -122,23 +132,23 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 0px;
-  border-top: 0.5px solid $clr4;
-  border-right: 0.5px solid $clr4;
+  border-top: 0.5px solid $momentum_clr10;
+  border-right: 0.5px solid $momentum_clr10;
   margin-bottom: 20px;
   .grid-header {
     background-color: $momentum_clr8;
-    color: white;
+    color: $momentum_clr9;
     padding: 10px;
     text-align: center;
-    border-bottom: 0.5px solid $clr4;
+    border-bottom: 0.5px solid $momentum_clr10;
   }
   .grid-cell {
     background-color: #f4f4f4;
     padding: 10px;
-    border-bottom: 0.5px solid $clr4;
-    border-left: 0.5px solid $clr4;
+    border-bottom: 0.5px solid $momentum_clr10;
+    border-left: 0.5px solid $momentum_clr10;
     min-width: 90px;
-    input  {
+    input {
       margin: auto 0;
       width: 90px;
     }
@@ -148,11 +158,45 @@
   }
 }
 
+/* descipt tab */
+
+.grid-tab_descript {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 8px;
+  margin-bottom: 20px;
+
+  .grid-row {
+    text-align: left;
+
+    textarea {
+      width: 100% !important;
+      height: 100% !important;
+    }
+  }
+}
+
+.grid-textarea {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 8px;
+  margin: 20px 0;
+
+  .grid-row {
+    text-align: left;
+
+    textarea {
+      width: 100% !important;
+      height: 100% !important;
+    }
+  }
+}
+
 /* extras */
 
 .subtitle {
   text-align: left;
-  background-color: $clr4 !important;
+  background-color: $momentum_clr10 !important;
   padding: 4px 10px !important;
 }
 
@@ -169,12 +213,21 @@
   background-color: $momentum_clr8 !important;
 }
 
-.lst{
-  padding-left: 30px!important;
+.lst {
+  padding-left: 30px !important;
 }
 
 .grid_cell_merge2 {
   grid-column: span 2;
+}
+
+.grid_cell_merge4 {
+  grid-column: span 4;
+
+  textarea {
+    width: 100% !important;
+    height: 100% !important;
+  }
 }
 
 .grid_cell_merge6 {
@@ -183,4 +236,13 @@
 
 .grid_cell_merge11 {
   grid-column: span 11;
+}
+
+.dotted_list {
+  list-style-type: disc;
+  padding-left: 50px;
+
+  li {
+    margin-bottom: 5px; /* Espacio entre elementos de la lista */
+  }
 }

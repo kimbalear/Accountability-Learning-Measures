@@ -15,8 +15,8 @@ $(document).ready(function () {
   // tooltips
 
   var tooltips = {
-    tooltip1: `Lorem ipsum 1`, // Contraceptive Services - Term
-    tooltip2: `Lorem ipsum 2`  // Más tooltips según sea necesario
+    tooltip1: `Lorem ipsum 1`,
+    tooltip2: `Lorem ipsum 2`
 };
 
 $(".tooltip-target").each(function() {
@@ -25,11 +25,16 @@ $(".tooltip-target").each(function() {
 });
 
 $(".tooltip-target").mouseenter(function() {
-    // Crear y mostrar el tooltip
     var tooltipContent = $(this).attr("data-tooltip");
     $('<div class="tooltip-content">' + tooltipContent + '</div>').appendTo(this);
 }).mouseleave(function() {
-    // Eliminar el tooltip
     $(this).find(".tooltip-content").remove();
 });
+
+
+  $('#toggleBox').click(function() {
+    $('#content').toggle();
+    $('.arrow').toggleClass('up');
+  });
+
 });
