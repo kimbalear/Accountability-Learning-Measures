@@ -1,5 +1,5 @@
 <style type="text/css">
-@charset "UTF-8";
+  @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap");
 /* Estilo de las pestañas */
 .tab {
@@ -336,7 +336,6 @@ label {
 
 .box {
   cursor: pointer;
-  padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -377,18 +376,19 @@ label {
 
   <div id="CustomForm_Content">
     <div class="tab">
-      <button class="tablinks" data-target="Tab1">SRH Services</button>
-      <button class="tablinks" data-target="Tab2">People Reached</button>
-      <button class="tablinks" data-target="Tab3">Commodities</button>
-      <button class="tablinks" data-target="Tab4">
+      <button class="tablinks" data-target="Tab1" keyword="opt_c:Tab1">SRH Services</button>
+      <button class="tablinks" data-target="Tab2" keyword="opt_c:Tab2">People Reached</button>
+      <button class="tablinks" data-target="Tab3" keyword="opt_c:Tab3">Commodities</button>
+      <button class="tablinks" data-target="Tab4" keyword="opt_c:Tab4">
         Comprehensive Sexuality Education
       </button>
-      <button class="tablinks" data-target="Tab5">
+      <button class="tablinks" data-target="Tab5" keyword="opt_c:Tab5">
         Other Information & Education Sessions
       </button>
     </div>
   
     <div id="Tab1" class="tabcontent">
+  
       <div class="grid-tab_descript">
         <div class="grid-row">
           If your organization reached people with sexual and reproductive health
@@ -438,14 +438,14 @@ label {
   
       <div class="grid-SRH_ervices">
         <!-- Encabezados de la tabla -->
-        <div class="grid-header">Services and service subcategories</div>
-        <div class="grid-header">Static Clinics (CL)</div>
-        <div class="grid-header">Associated Clinics (AS)</div>
-        <div class="grid-header">
+        <div class="grid-header" keyword="opt_c:Tab1grid1c1">Services and service subcategories</div>
+        <div class="grid-header" keyword="opt_c:Tab1grid1c2">Static Clinics (CL)</div>
+        <div class="grid-header" keyword="opt_c:Tab1grid1c3">Associated Clinics (AS)</div>
+        <div class="grid-header" keyword="opt_c:Tab1grid1c4">
           Community-Based Distribution / Services (CB)
         </div>
-        <div class="grid-header">Mobile Outreach Units (OU)</div>
-        <div class="grid-header">Digital Platforms (VC)</div>
+        <div class="grid-header" keyword="opt_c:Tab1grid1c5">Mobile Outreach Units (OU)</div>
+        <div class="grid-header" keyword="opt_c:Tab1grid1c6">Digital Platforms (VC)</div>
   
         <!-- data row 1 -->
         <div
@@ -453,7 +453,7 @@ label {
           data-tooltip-key="tooltip1"
         >
           <div id="toggleBox" class="box">
-            <span class="title">Contraceptive Services - Term</span>
+            <span class="title">Contraceptive Services</span>
             <span class="arrow">&#9660;</span>
             <!-- Flecha hacia abajo -->
           </div>
@@ -1902,8 +1902,14 @@ label {
       </div>
     </div>
   </div>
+
 </div>
 <script>
+  
+  $("body").on("focus", "input", function (event) {
+    $(this).attr("autocomplete", "off");
+  });
+
   var firstTab = $(".tablinks:first");
   firstTab.addClass("active");
   $("#" + firstTab.attr("data-target")).show();
@@ -1921,25 +1927,119 @@ label {
 
   var tooltips = {
     tooltip1: `Lorem ipsum 1`,
-    tooltip2: `Lorem ipsum 2`
-};
+    tooltip2: `Lorem ipsum 2`,
+  };
 
-$(".tooltip-target").each(function() {
+  $(".tooltip-target").each(function () {
     var tooltipKey = $(this).data("tooltip-key");
     $(this).attr("data-tooltip", tooltips[tooltipKey]);
-});
-
-$(".tooltip-target").mouseenter(function() {
-    var tooltipContent = $(this).attr("data-tooltip");
-    $('<div class="tooltip-content">' + tooltipContent + '</div>').appendTo(this);
-}).mouseleave(function() {
-    $(this).find(".tooltip-content").remove();
-});
-
-
-  $('#toggleBox').click(function() {
-    $('#content').toggle();
-    $('.arrow').toggleClass('up');
   });
+
+  $(".tooltip-target")
+    .mouseenter(function () {
+      var tooltipContent = $(this).attr("data-tooltip");
+      $('<div class="tooltip-content">' + tooltipContent + "</div>").appendTo(
+        this
+      );
+    })
+    .mouseleave(function () {
+      $(this).find(".tooltip-content").remove();
+    });
+
+  $("#toggleBox").click(function () {
+    $("#content").toggle();
+    $(".arrow").toggleClass("up");
+  });
+
+  $(document).off('dhis2.de.event.formLoaded').on('dhis2.de.event.formLoaded', function () {
+    if ($("#CustomForm").length > 0) {
+        $("#CustomForm_Content").hide();
+        $("#loaderDiv").show();
+
+        new dsetTranslation(function () {
+            $("#loaderDiv").hide();
+            $("#CustomForm_Content").show();
+        });
+    }
+
+    // ============================================================================================================
+    // Translation
+
+    function dsetTranslation(_exeFunc) {
+        var me = this;
+
+        me.exeFunc = _exeFunc;
+
+        me.optionSetTermId = "xdBjO8vRHss";
+
+        me.loadedDataSetElementList = false;
+        me.loadedOptionSetList = false;
+
+        me.OPTION_KEY = "opt_c";
+
+
+        // ----------------------------------------------------------------------------------------------
+        // URLs
+
+        me.QUERY_URL_TERMS = "../api/optionSets/" + me.optionSetTermId +
+            ".json?fields=options[code,displayName]&paging=false";
+
+
+        // ----------------------------------------------------------------------------------------------
+        // HTML Element
+
+
+        me.tableTag = $("body");
+
+        // ----------------------------------------------------------------------------------------------
+        // Init method
+
+        me.init = function () {
+            console.log("INIT translation ... ");
+            me.translateOptionSetList();
+        }
+
+        // ----------------------------------------------------------------------------------------------
+        // Supportive methods
+
+        me.translateOptionSetList = function () {
+            var url = encodeURI(me.QUERY_URL_TERMS);
+            me.loadMetadata(url, function (response) {
+
+                var options = response.options;
+                for (var j in options) {
+                    var option = options[j];
+                    var value = option.displayName;
+                    me.tableTag.find("[keyword='" + me.OPTION_KEY + ":" + option.code + "']")
+                        .html(value);
+                }
+
+                me.exeFunc();
+            });
+        }
+
+        me.loadMetadata = function (url, exeFunc) {
+            $.ajax({
+                type: "GET",
+                url: url,
+                contentType: "application/json;charset=utf-8",
+                beforeSend: function (xhr) {
+                    //me.hideReportTag();
+                },
+                success: function (response) {
+                    exeFunc(response);
+                }
+            });
+
+        }
+
+
+        // ----------------------------------------------------------------------------------------------
+        // init
+
+        me.init();
+
+    }
+});
 
 </script>
