@@ -82,30 +82,21 @@
 
       <!-- data row 1 -->
       <div
-        class="grid-cell subtitle grid_cell_merge6 tooltip-target"
-        data-tooltip-key="tooltip1"
-      >
-        <div id="toggleBox" class="box">
-          <span class="title">Contraceptive Services</span>
-          <span class="arrow">&#9660;</span>
-          <!-- Flecha hacia abajo -->
-        </div>
-        <div id="content" class="content" style="display: none">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc egestas
-          auctor elit in tincidunt. Donec egestas hendrerit molestie. Duis non
-          est egestas, viverra magna sit amet, commodo est. Donec at est
-          vulputate, eleifend ipsum nec, faucibus ligula. Mauris faucibus vel
-          tellus nec viverra. Etiam hendrerit, turpis at eleifend faucibus,
-          lectus lorem facilisis tellus, quis gravida nisl tellus ac ex. Cras
-          vel erat sit amet urna fermentum porttitor.
-        </div>
+        class="grid-cell subtitle grid_cell_merge6"
+      >Contraceptive Services
       </div>
 
       <!-- data row 2 -->
       <div
-        class="grid-cell title_row tooltip-target"
-        data-tooltip-key="tooltip2">
-        Contraceptives – Counseling – General
+        class="grid-cell title_row">
+        <div class="toggle" data-target="#content1">
+          <span class="title">Contraceptives – Counseling – General</span>
+          <span class="info-icon"></span>
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div id="content1" class="content" style="display: none">
+          A trained counselor/service provider shares person-specific non-directive advice about all available contraceptive methods before the person decides which is most suitable for them, to ensure their individual situation is considered in method selection, and that all possible options are made clear to them, in a space which allows confidentiality. This service should be recorded for people attending a contraceptive consultation for the first time and when considering switching methods, regardless of the method they select and even if they decide not to take up a method at that time.
+        </div>
       </div>
 
       <div class="grid-cell data"><input /></div>
@@ -116,7 +107,14 @@
 
       <!-- data row 3 -->
       <div class="grid-cell title_row">
-        Contraceptives – Oral Contraceptives – Consultation
+        <div class="toggle" data-target="#content2">
+          <span class="title">Contraceptives – Oral Contraceptives – Consultation</span>
+          <span class="info-icon"></span>
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div id="content2" class="content" style="display: none">
+          A trained service provider sees a person and gives comprehensive information about oral contraceptives either for the first time or as a follow up to ensure that medical eligibility criteria are met, monitor for side-effects or resupply the person, in a space which allows confidentiality. When a person receives a consultation service, it should be recorded as a service provided, even if the person does not adopt this contraceptive method.
+        </div>
       </div>
 
       <div class="grid-cell data"></div>
@@ -127,7 +125,14 @@
 
       <!-- data row 4 -->
       <div class="grid-cell title_row">
-        Contraceptives – Injectable – Consultation
+        <div class="toggle" data-target="#content3">
+          <span class="title">Contraceptives – Injectable – Consultation</span>
+          <span class="info-icon"></span>
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div id="content3" class="content" style="display: none">
+          A trained service provider sees a person and gives comprehensive information about injectable contraceptives (1, 2 or 3 months), either for the first time or as a follow up to ensure that medical eligibility criteria are met, monitor for side-effects or resupply the person, in a space which allows confidentiality. When a person receives a consultation service, it should be recorded as a service provided, even if the person does not adopt this contraceptive method.
+        </div>
       </div>
       <div class="grid-cell data"></div>
       <div class="grid-cell data"></div>
@@ -454,6 +459,16 @@
       <div class="grid-cell data"></div>
       <div class="grid-cell data"></div>
 
+      <!-- data row Subtotals -->
+      <div class="grid-cell title_row">
+        Subtotals
+      </div>
+      <div class="grid-cell data"></div>
+      <div class="grid-cell data"></div>
+      <div class="grid-cell data"></div>
+      <div class="grid-cell data"></div>
+      <div class="grid-cell data"></div>
+
       <!-- data row 36 -->
       <div class="grid-cell subtitle grid_cell_merge6">Abortion Services</div>
 
@@ -689,6 +704,16 @@
       <div class="grid-cell data"></div>
       <div class="grid-cell data"></div>
 
+      <!-- data row Subtotals -->
+      <div class="grid-cell title_row">
+        Subtotals
+      </div>
+      <div class="grid-cell data"></div>
+      <div class="grid-cell data"></div>
+      <div class="grid-cell data"></div>
+      <div class="grid-cell data"></div>
+      <div class="grid-cell data"></div>
+
       <!-- data row 60 -->
       <div class="grid-cell subtitle grid_cell_merge6">
         Specialized Sexual and Gender Based Violence (SGBV) Service
@@ -744,6 +769,16 @@
 
       <!-- data row 67 -->
       <div class="grid-cell title_row">SGBV – Unable to Categorize</div>
+      <div class="grid-cell data"></div>
+      <div class="grid-cell data"></div>
+      <div class="grid-cell data"></div>
+      <div class="grid-cell data"></div>
+      <div class="grid-cell data"></div>
+
+      <!-- data row Subtotals -->
+      <div class="grid-cell title_row">
+        Subtotals
+      </div>
       <div class="grid-cell data"></div>
       <div class="grid-cell data"></div>
       <div class="grid-cell data"></div>
@@ -826,6 +861,16 @@
       <!-- data row 77 -->
       <div class="grid-cell title_row">
         Other Sexual and Reproductive Health (SRH) Services
+      </div>
+      <div class="grid-cell data"></div>
+      <div class="grid-cell data"></div>
+      <div class="grid-cell data"></div>
+      <div class="grid-cell data"></div>
+      <div class="grid-cell data"></div>
+
+      <!-- data row Subtotals -->
+      <div class="grid-cell title_row">
+        Subtotals
       </div>
       <div class="grid-cell data"></div>
       <div class="grid-cell data"></div>
@@ -932,16 +977,6 @@
       <div class="grid-cell data"></div>
       <div class="grid-cell data"></div>
 
-      <!-- data row 7 -->
-      <div class="grid-cell title_row lst grid_cell_merge2">
-        Please describe
-        <b
-          >what intersectional factors contribute to your definition of
-          vulnerability</b
-        >
-        for your context:
-      </div>
-      <div class="grid-cell data grid_cell_merge4"><textarea></textarea></div>
     </div>
 
     <div class="grid-row" keyword="opt_c:Subpop">
@@ -1443,7 +1478,7 @@
       <div class="grid-row" keyword="opt_c:CSECurr">
         Please upload the most recent version of your CSE curriculum below:
       </div>
-      <div class="grid-row"><input /></div>
+      <div class="grid-row"></div>
     </div>
   </div>
 
@@ -1481,44 +1516,104 @@
       </div>
 
       <!-- data row 1 -->
-      <div class="grid-cell data"></div>
-      <div class="grid-cell data"></div>
+      <div class="grid-cell">
+        <div class="grid-number">1º</div>
+        <div class="grid-data"></div>
+      </div>
+      <div class="grid-cell">
+        <div class="grid-number">1º</div>
+        <div class="grid-data"></div>
+      </div>
 
       <!-- data row 2 -->
-      <div class="grid-cell data"></div>
-      <div class="grid-cell data"></div>
+      <div class="grid-cell">
+        <div class="grid-number">2º</div>
+        <div class="grid-data"></div>
+      </div>
+      <div class="grid-cell">
+        <div class="grid-number">2º</div>
+        <div class="grid-data"></div>
+      </div>
 
       <!-- data row 3 -->
-      <div class="grid-cell data"></div>
-      <div class="grid-cell data"></div>
+      <div class="grid-cell">
+        <div class="grid-number">3º</div>
+        <div class="grid-data"></div>
+      </div>
+      <div class="grid-cell">
+        <div class="grid-number">3º</div>
+        <div class="grid-data"></div>
+      </div>
 
       <!-- data row 4 -->
-      <div class="grid-cell data"></div>
-      <div class="grid-cell data"></div>
+      <div class="grid-cell">
+        <div class="grid-number">4º</div>
+        <div class="grid-data"></div>
+      </div>
+      <div class="grid-cell">
+        <div class="grid-number">4º</div>
+        <div class="grid-data"></div>
+      </div>
 
       <!-- data row 5 -->
-      <div class="grid-cell data"></div>
-      <div class="grid-cell data"></div>
+      <div class="grid-cell">
+        <div class="grid-number">5º</div>
+        <div class="grid-data"></div>
+      </div>
+      <div class="grid-cell">
+        <div class="grid-number">5º</div>
+        <div class="grid-data"></div>
+      </div>
 
       <!-- data row 6 -->
-      <div class="grid-cell data"></div>
-      <div class="grid-cell data"></div>
+      <div class="grid-cell">
+        <div class="grid-number">6º</div>
+        <div class="grid-data"></div>
+      </div>
+      <div class="grid-cell">
+        <div class="grid-number">6º</div>
+        <div class="grid-data"></div>
+      </div>
 
       <!-- data row 7 -->
-      <div class="grid-cell data"></div>
-      <div class="grid-cell data"></div>
+      <div class="grid-cell">
+        <div class="grid-number">7º</div>
+        <div class="grid-data"></div>
+      </div>
+      <div class="grid-cell">
+        <div class="grid-number">7º</div>
+        <div class="grid-data"></div>
+      </div>
 
       <!-- data row 8 -->
-      <div class="grid-cell data"></div>
-      <div class="grid-cell data"></div>
+      <div class="grid-cell">
+        <div class="grid-number">8º</div>
+        <div class="grid-data"></div>
+      </div>
+      <div class="grid-cell">
+        <div class="grid-number">8º</div>
+        <div class="grid-data"></div>
+      </div>
 
       <!-- data row 9 -->
-      <div class="grid-cell data"></div>
-      <div class="grid-cell data"></div>
+      <div class="grid-cell">
+        <div class="grid-number">9º</div>
+        <div class="grid-data"></div>
+      </div>
+      <div class="grid-cell">
+        <div class="grid-number">9º</div>
+        <div class="grid-data"></div>
+      </div>
 
       <!-- data row 10 -->
-      <div class="grid-cell data"></div>
-      <div class="grid-cell data"></div>
+      <div class="grid-cell">
+        <div class="grid-number">10º</div>
+        <div class="grid-data"></div>
+      </div>
+      <div class="grid-cell">
+        <div class="grid-number">10º</div>
+        <div class="grid-data"></div>
+      </div>
     </div>
 
     <div class="grid-tab_descript">

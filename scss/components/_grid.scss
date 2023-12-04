@@ -147,10 +147,22 @@
     padding: 10px;
     border-bottom: 0.5px solid $momentum_clr10;
     border-left: 0.5px solid $momentum_clr10;
-    min-width: 90px;
-    input {
-      margin: auto 0;
-      width: 90px;
+    min-width: 200px;
+
+    .grid-number {
+      float: left;
+      width: 32px;
+      height: auto;
+      border-right: 0.5px solid $momentum_clr10;
+    }
+    .grid-data {
+      float: left;
+      width: calc(100% - 42px);
+      margin-right: 8px;
+      input {
+        margin: auto 0;
+        width: 90px;
+      }
     }
   }
   .grid-cell-highlight {

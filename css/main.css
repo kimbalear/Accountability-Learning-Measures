@@ -182,9 +182,20 @@
   padding: 10px;
   border-bottom: 0.5px solid #CACACE;
   border-left: 0.5px solid #CACACE;
-  min-width: 90px;
+  min-width: 200px;
 }
-.grid-OIES .grid-cell input {
+.grid-OIES .grid-cell .grid-number {
+  float: left;
+  width: 32px;
+  height: auto;
+  border-right: 0.5px solid #CACACE;
+}
+.grid-OIES .grid-cell .grid-data {
+  float: left;
+  width: calc(100% - 42px);
+  margin-right: 8px;
+}
+.grid-OIES .grid-cell .grid-data input {
   margin: auto 0;
   width: 90px;
 }
@@ -273,25 +284,6 @@
   margin-bottom: 5px; /* Espacio entre elementos de la lista */
 }
 
-.tooltip-target {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-}
-
-.tooltip-content {
-  display: block;
-  position: absolute;
-  background-color: #333;
-  color: white;
-  padding: 5px;
-  border-radius: 4px;
-  bottom: -28px;
-  left: 60px;
-  transform: translateX(-50%);
-  z-index: 999;
-}
-
 i,
 rem {
   color: rgb(138, 116, 116);
@@ -333,11 +325,14 @@ label {
   font-size: 16px;
 }
 
-.box {
+.toggle {
   cursor: pointer;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
+}
+.toggle .title {
+  padding-right: 8px;
 }
 
 .content {
@@ -350,7 +345,18 @@ label {
 }
 
 .arrow.up {
-  transform: rotate(-180deg); /* Rota la flecha hacia arriba */
+  transform: rotate(-180deg);
+}
+
+.info-icon {
+  padding-right: 10px;
+}
+
+.info-icon {
+  min-width: 24px;
+  height: 24px;
+  padding: 0px;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="%23CACACE"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>');
 }
 
 /*# sourceMappingURL=main.css.map */

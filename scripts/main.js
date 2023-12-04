@@ -39,10 +39,11 @@ $(document).ready(function () {
       $(this).find(".tooltip-content").remove();
     });
 
-  $("#toggleBox").click(function () {
-    $("#content").toggle();
-    $(".arrow").toggleClass("up");
-  });
+    $(".toggle").click(function () {
+      var target = $(this).data('target');
+      $(target).toggle();
+      $(this).find(".arrow").toggleClass("up");
+    });
 
   $(document).off('dhis2.de.event.formLoaded').on('dhis2.de.event.formLoaded', function () {
     if ($("#CustomForm").length > 0) {
