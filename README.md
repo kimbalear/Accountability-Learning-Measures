@@ -12,11 +12,11 @@ sass --watch scss/main.scss:css/main.css
 
 
 
-<div class="toggle" data-target="#content1">
+<div class="toggle" data-target="#content5">
   <span class="title">Titulo 1</span>
-  <span class="info-icon"></span>
+  <span class="info-icon">&#x2139;</span>
   <span class="arrow">&#9660;</span>
 </div>
-<div id="content1" class="content" style="display: none">
+<div id="content5" class="content" style="display: none">
   Contenido 1
 </div>
