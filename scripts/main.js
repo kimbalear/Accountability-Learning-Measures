@@ -42,7 +42,7 @@ $(document).ready(function () {
     $(".toggle").click(function () {
       var target = $(this).data('target');
       $(target).toggle();
-      $(this).find(".arrow").toggleClass("up");
+      //$(this).find(".arrow").toggleClass("up");
     });
 
   $(document).off('dhis2.de.event.formLoaded').on('dhis2.de.event.formLoaded', function () {
