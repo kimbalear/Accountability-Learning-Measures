@@ -1,0 +1,5431 @@
+<style type="text/css">
+  @charset "UTF-8";
+  @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap");
+  /* Estilo de las pestañas */
+  .tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+  }
+
+  /* Estilo de los botones dentro de las pestañas */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+  }
+
+  /* Cambia el color de fondo del botón cuando se hace mouseover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+
+  /* Crea un estilo activo para los botones */
+  .tab button.active {
+    background-color: #ccc;
+  }
+
+  /* Estilo del contenido de las pestañas */
+  .tabcontent {
+    display: none;
+    padding: 8px 8px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
+
+  .grid-SRH_ervices {
+    display: grid;
+    grid-template-columns: minmax(250px, auto) repeat(5, 1fr);
+    grid-gap: 0px;
+    border-top: 0.5px solid #cacace;
+    border-right: 0.5px solid #cacace;
+    margin-bottom: 20px;
+  }
+  .grid-SRH_ervices .grid-header {
+    background-color: #5c3873;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 0.5px solid #cacace;
+    position: sticky;
+    top: 48px;
+    z-index: 10;
+  }
+  .grid-SRH_ervices .grid-cell {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-bottom: 0.5px solid #cacace;
+    border-left: 0.5px solid #cacace;
+    min-width: 90px;
+  }
+  .grid-SRH_ervices .grid-cell input {
+    margin: auto 0;
+    width: 90px;
+  }
+  .grid-SRH_ervices .grid-cell-highlight {
+    background-color: #f0e4f7;
+  }
+
+  .grid-people_reached {
+    display: grid;
+    grid-template-columns: minmax(250px, auto) repeat(5, 1fr);
+    grid-gap: 0px;
+    border-top: 0.5px solid #cacace;
+    border-right: 0.5px solid #cacace;
+    margin-bottom: 20px;
+  }
+  .grid-people_reached .grid-header {
+    background-color: #5c3873;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 0.5px solid #cacace;
+  }
+  .grid-people_reached .grid-cell {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-bottom: 0.5px solid #cacace;
+    border-left: 0.5px solid #cacace;
+    min-width: 90px;
+  }
+  .grid-people_reached .grid-cell input {
+    margin: auto 0;
+    width: 90px;
+  }
+  .grid-people_reached .grid-cell-highlight {
+    background-color: #f0e4f7;
+  }
+
+  .grid-commodities {
+    display: grid;
+    grid-template-columns: minmax(250px, auto) repeat(10, 1fr);
+    grid-gap: 0px;
+    border-top: 0.5px solid #cacace;
+    border-right: 0.5px solid #cacace;
+    margin-bottom: 20px;
+  }
+  .grid-commodities .grid-header {
+    background-color: #5c3873;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 0.5px solid #cacace;
+    position: sticky;
+    top: 48px;
+    z-index: 10;
+  }
+  .grid-commodities .grid-cell {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-bottom: 0.5px solid #cacace;
+    border-left: 0.5px solid #cacace;
+    min-width: 90px;
+  }
+  .grid-commodities .grid-cell input {
+    margin: auto 0;
+    width: 90px;
+  }
+  .grid-commodities .grid-cell-highlight {
+    background-color: #f0e4f7;
+  }
+
+  .grid-CSE {
+    display: grid;
+    grid-template-columns: minmax(250px, auto) repeat(3, 1fr);
+    grid-gap: 0px;
+    border-top: 0.5px solid #cacace;
+    border-right: 0.5px solid #cacace;
+    margin-bottom: 20px;
+  }
+  .grid-CSE .grid-header {
+    background-color: #5c3873;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 0.5px solid #cacace;
+  }
+  .grid-CSE .grid-cell {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-bottom: 0.5px solid #cacace;
+    border-left: 0.5px solid #cacace;
+    min-width: 90px;
+  }
+  .grid-CSE .grid-cell input {
+    margin: auto 0;
+    width: 90px;
+  }
+  .grid-CSE .grid-cell-highlight {
+    background-color: #f0e4f7;
+  }
+
+  .grid-OIES {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0px;
+    border-top: 0.5px solid #cacace;
+    border-right: 0.5px solid #cacace;
+    margin-bottom: 20px;
+  }
+  .grid-OIES .grid-header {
+    background-color: #5c3873;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 0.5px solid #cacace;
+  }
+  .grid-OIES .grid-cell {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-bottom: 0.5px solid #cacace;
+    border-left: 0.5px solid #cacace;
+    min-width: 200px;
+  }
+  .grid-OIES .grid-cell .grid-number {
+    float: left;
+    width: 32px;
+    height: auto;
+    border-right: 0.5px solid #cacace;
+  }
+  .grid-OIES .grid-cell .grid-data {
+    float: left;
+    width: calc(100% - 42px);
+    margin-right: 8px;
+  }
+  .grid-OIES .grid-cell .grid-data input {
+    margin: auto 0;
+    width: 90px;
+  }
+  .grid-OIES .grid-cell-highlight {
+    background-color: #f0e4f7;
+  }
+
+  /* descipt tab */
+  .grid-tab_descript {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 8px;
+    margin-bottom: 20px;
+  }
+  .grid-tab_descript .grid-row {
+    text-align: left;
+  }
+  .grid-tab_descript .grid-row textarea {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .grid-textarea {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 8px;
+    margin: 20px 0;
+  }
+  .grid-textarea .grid-row {
+    text-align: left;
+  }
+  .grid-textarea .grid-row textarea {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  /* extras */
+  .subtitle {
+    text-align: left;
+    background-color: #cacace !important;
+    padding: 4px 10px !important;
+  }
+
+  .title_row {
+    text-align: left;
+  }
+
+  .data {
+    text-align: right;
+  }
+
+  .totals {
+    color: #ffffff !important;
+    background-color: #5c3873 !important;
+  }
+
+  .lst {
+    padding-left: 30px !important;
+  }
+
+  .grid_cell_merge2 {
+    grid-column: span 2;
+  }
+
+  .grid_cell_merge4 {
+    grid-column: span 4;
+  }
+  .grid_cell_merge4 textarea {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .grid_cell_merge6 {
+    grid-column: span 6;
+  }
+
+  .grid_cell_merge11 {
+    grid-column: span 11;
+  }
+
+  .dotted_list {
+    list-style-type: disc;
+    padding-left: 50px;
+  }
+  .dotted_list li {
+    margin-bottom: 5px; /* Espacio entre elementos de la lista */
+  }
+
+  i,
+  rem {
+    color: rgb(138, 116, 116);
+    font-weight: 300;
+    font-size: 0.5em;
+  }
+
+  .ui-widget-content {
+    border: none;
+  }
+
+  .ui-widget.ui-widget-content {
+    border: none;
+  }
+
+  input[type="radio"] {
+    margin: 10px 0 0 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    margin-right: 10px;
+    display: inline-block;
+    position: relative;
+    top: 3px;
+    cursor: pointer;
+  }
+  input[type="radio"]:checked {
+    background-color: #00a6e2;
+    border-color: #00a6e2;
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+  }
+
+  .toggle-data  {
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .toggle-data  .title {
+    padding-right: 8px;
+  }
+
+  .content {
+    padding: 10px;
+    margin-top: 5px;
+  }
+
+  .arrow {
+    transition: transform 0.3s;
+  }
+
+  .arrow.up {
+    transform: rotate(-180deg);
+  }
+
+  .info-icon {
+    padding-right: 10px;
+  }
+
+  .subtotals {
+    background-color: #f7e2fd !important;
+  }
+
+  /*# sourceMappingURL=main.css.map */
+</style>
+<div class="fosGrandChildrenOUsCustomForm">
+  <div class="div-table entryForm">
+    <div class="tab">
+      <button class="tablinks" data-target="Tab1" keyword="opt_c:SrhServ">
+        SRH Services</button
+      ><button class="tablinks" data-target="Tab2" keyword="opt_c:PeopReach">
+        People Reached</button
+      ><button class="tablinks" data-target="Tab3" keyword="opt_c:Commod">
+        Commodities</button
+      ><button class="tablinks" data-target="Tab4" keyword="opt_c:CSEduc">
+        Comprehensive Sexuality Education</button
+      ><button class="tablinks" data-target="Tab5" keyword="opt_c:InfoEduSess">
+        Other Information &amp; Education Sessions
+      </button>
+    </div>
+    <!----------------------------------------------------------------------- --><!-- START TAB 1 -->
+
+    <div class="tabcontent" id="Tab1">
+      <div class="grid-tab_descript" keyword="de_id:Su5N7TepfGr">&nbsp;</div>
+
+      <div class="grid-SRH_ervices tableData">
+        <!-- Encabezados de la tabla -->
+        <div class="grid-header" keyword="opt_c:ServSubcat">
+          Services and service subcategories
+        </div>
+
+        <div
+          class="grid-header headerData"
+          oulistdata="CL:StaticCL,AS:AssocCL,CB:CommDist,OU:MobileOU,VC:DigPlat"
+        >
+          &nbsp;
+        </div>
+        <!-- data row 1 -->
+
+        <div class="grid-cell subtitle grid_cell_merge6">
+          Contraceptive Services
+        </div>
+        <!-- data row 2 -->
+
+        <div
+          class="rowData"
+          deid="j54Hd4Q6LtQ"
+          optcomboid="mYU1cpPLbA3"
+          outypes="*"
+        >
+          &nbsp;
+        </div>
+        <!-- DE 1, List of OUs --><!-- data row 3 -->
+
+        <div
+          class="rowData"
+          deid="j54Hd4Q6LtQ"
+          optcomboid="mYU1cpPLbA3"
+          outypes="CL"
+        >
+          &nbsp;
+        </div>
+        <!-- data row 4 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content3">
+            <span class="title"
+              >Contraceptives &ndash; Injectable &ndash; Consultation</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content3" style="display: none">
+            A trained service provider sees a person and gives comprehensive
+            information about injectable contraceptives (1, 2 or 3 months),
+            either for the first time or as a follow up to ensure that medical
+            eligibility criteria are met, monitor for side-effects or resupply
+            the person, in a space which allows confidentiality. When a person
+            receives a consultation service, it should be recorded as a service
+            provided, even if the person does not adopt this contraceptive
+            method.
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 5 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content4">
+            <span class="title"
+              >Contraceptives &ndash; Patch/Ring &ndash; Consultation</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content4" style="display: none">
+            A trained service provider sees a person and gives comprehensive
+            information about patch/ring contraceptives either for the first
+            time or as a follow up to ensure that medical eligibility criteria
+            are met, monitor for side-effects or resupply the person, in a space
+            which allows confidentiality. When a person receives a consultation
+            service, it should be recorded as a service provided, even if the
+            person does not adopt this contraceptive method.
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 6 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content5">
+            <span class="title"
+              >Contraceptives &ndash; Male condom &ndash; Consultation</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content5" style="display: none">
+            A trained service provider sees a person and gives comprehensive
+            information about male condoms (including how to use) either for the
+            first time or as a follow up to ensure that medical eligibility
+            criteria are met, monitor for side-effects or resupply the person,
+            in a space which allows confidentiality. When a person receives a
+            consultation service, it should be recorded as a service provided,
+            even if the person does not adopt this contraceptive method.
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 7 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content6">
+            <span class="title">Female condom &ndash; Consultation</span>
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content6" style="display: none">
+            A trained service provider sees a person and gives comprehensive
+            information about female condoms (including how to use) either for
+            the first time or as a follow up to ensure that medical eligibility
+            criteria are met, monitor for side-effects or resupply the person,
+            in a space which allows confidentiality. When a person receives a
+            consultation service, it should be recorded as a service provided,
+            even if the person does not adopt this contraceptive method.
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 7 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content7">
+            <span class="title"
+              >Contraceptives &ndash; Male/Female condom &ndash; unable to
+              categorize</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content7" style="display: none">
+            A trained service provider sees a person and gives comprehensive
+            information about male or female condoms (including how to use)
+            either for the first time or as a follow up to ensure that medical
+            eligibility criteria are met, monitor for side-effects or resupply
+            the person, in a space which allows confidentiality. (ONLY REPORT
+            SERVICES HERE WHEN THEY ARE ONE OF THE MALE OR FEMALE CONDOM
+            SERVICES DESCRIBED ON THE SERVICE LIST BUT YOUR DATA IS TOO
+            AGGREGATED TO CATEGORIZE THEM INTO ONE OF THESE. When a person
+            receives a consultation service, it should be recorded as a service
+            provided, even if the person does not adopt this contraceptive
+            method. If the male or female condom service you are reporting is
+            not specified on the service list, please report it under &lsquo;SRH
+            &ndash; Other &ndash; Consultation, Counseling, Management,
+            Investigation or Prevention&rsquo; as appropriate).
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 8 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content59">
+            <span class="title"
+              >Contraceptives &ndash; Diaphragm/Cervical cap &ndash;
+              Consultation</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content59" style="display: none">
+            A trained service provider sees a person and gives comprehensive
+            information about diaphragms or cervical caps either for the first
+            time or as a follow up to ensure that medical eligibility criteria
+            are met, monitor for side-effects or resupply the person, in a space
+            which allows confidentiality. When a person receives a consultation
+            service, it should be recorded as a service provided, even if the
+            person does not adopt this contraceptive method.
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 9 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content8">
+            <span class="title"
+              >Contraceptives &ndash; Spermicides &ndash; Consultation</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content8" style="display: none">
+            A trained service provider sees a person and gives comprehensive
+            information about spermicides (in any form, eg foam, tabs, jellies,
+            pessaries etc), either for the first time or as a follow up to
+            ensure that medical eligibility criteria are met, monitor for
+            side-effects or resupply the person, in a space which allows
+            confidentiality. When a person receives a consultation service, it
+            should be recorded as a service provided, even if the person does
+            not adopt this contraceptive method.
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 10 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content9">
+            <span class="title"
+              >Contraceptives &ndash; Spermicides &ndash; Consultation</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content9" style="display: none">
+            A trained service provider sees a person and gives comprehensive
+            information about spermicides (in any form, eg foam, tabs, jellies,
+            pessaries etc), either for the first time or as a follow up to
+            ensure that medical eligibility criteria are met, monitor for
+            side-effects or resupply the person, in a space which allows
+            confidentiality. When a person receives a consultation service, it
+            should be recorded as a service provided, even if the person does
+            not adopt this contraceptive method.
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 11 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content10">
+            <span class="title"
+              >Implant &ndash; Consultation &ndash; Removal</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content10" style="display: none">
+            A trained service provider safely removes a contraceptive implant
+            (3, 4 or 5 years) after the designated time and/or at the request of
+            the person to ensure maximum contraceptive effectiveness and respect
+            of personal choice, in a space which allows confidentiality. (This
+            service should be used to report removal of all implants: 3, 4 and 5
+            years).
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 12 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content11">
+            <span class="title">Implant &ndash; Consultation</span>
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content11" style="display: none">
+            A trained service provider sees a person and gives comprehensive
+            information about contraceptive implants (3, 4 or 5 years), either
+            for the first time or as a follow up to ensure that medical
+            eligibility criteria are met, monitor for side-effects or resupply
+            the person, in a space which allows confidentiality. This
+            consultation service includes the insertion of the implant where
+            relevant. When a person receives a consultation service, it should
+            be recorded as a service provided, even if the person does not adopt
+            this contraceptive method.
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 13 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content12">
+            <span class="title"
+              >Intrauterine Device (IUD) &ndash; Consultation &ndash;
+              Removal</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content12" style="display: none">
+            A trained service provider safely removes a contraceptive
+            intrauterine device or intrauterine system after the designated time
+            and/or at the request of the person to ensure maximum contraceptive
+            effectiveness and respect of personal choice, in a space which
+            allows confidentiality. (This service should be used to report
+            removal of all IUDs: 5 and 10 years).
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 14 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content13">
+            <span class="title"
+              >Intrauterine Device (IUD) &ndash; Consultation</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content13" style="display: none">
+            A trained service provider sees a person and gives comprehensive
+            information about intrauterine devices or systems (5 or 10 years),
+            either for the first time or as a follow up to ensure that medical
+            eligibility criteria are met, monitor for side-effects or resupply
+            the person, in a space which allows confidentiality. Consultation
+            includes the insertion of the IUD where relevant. When a person
+            receives a consultation service, it should be recorded as a service
+            provided, even if the person does not adopt this contraceptive
+            method.
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 15 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content14">
+            <span class="title"
+              >Female Voluntary Surgical Contraception (FVSC) &ndash;
+              Counseling</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content14" style="display: none">
+            A trained counselor/service provider shares person-specific
+            non-directive advice about female voluntary surgical contraception
+            (FVSC) before the person consents to the surgery to ensure surgical
+            contraception is a suitable option in their individual situation and
+            to obtain informed consent, in a space which allows confidentiality.
+            (This counseling is separate from contraceptive general counseling
+            because the risks involved in the surgical procedure and the
+            permanency of the method must be made clear to the person).
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 16 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content15">
+            <span class="title"
+              >Female Voluntary Surgical Contraception (FVSC) &ndash;
+              Consultation</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content15" style="display: none">
+            A trained service provider sees a person and gives comprehensive
+            information about female voluntary surgical contraception (FVSC)
+            before the person consents to the surgery to ensure they are fully
+            aware of the consequences and possible risks involved in the
+            surgery, in a space which allows confidentiality. Clients should
+            receive FVSC &ndash; counseling as well as a FVSC consultation. When
+            a person receives a consultation service, it should be recorded as a
+            service provided, even if the person does not adopt this
+            contraceptive method.
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 17 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content16">
+            <span class="title"
+              >Female Voluntary Surgical Contraception (FVSC) &ndash; Management
+              &ndash; Surgical &ndash; Reversal</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content16" style="display: none">
+            A trained service provider provides a person with a female voluntary
+            surgical contraception (FVSC) management service as specified above.
+            (ONLY REPORT THESE SERVICES HERE WHEN THEY ARE ONE OF THE SPECIFIC
+            FVSC MANAGEMENT SERVICES DESCRIBED ON THE SERVICE LIST BUT YOUR DATA
+            IS TOO AGGREGATED TO CATEGORIZE THEM INTO ONE OF THESE. If the FVSC
+            service you are reporting is not specified above, please report it
+            under &lsquo;SRH &ndash; Other &ndash; Management&rsquo;).
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 18 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content17">
+            <span class="title"
+              >Contraceptives &ndash; Female Voluntary Surgical Contraception
+              (FVSC) &ndash; Management &ndash; Surgical &ndash;
+              Minilaparotomy</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content17" style="display: none">
+            A trained service provider performs surgical reversal of female
+            voluntary surgical contraception (FVSC), when it is not
+            contraindicated and at the request of the person in a suitable
+            facility where universal precautions are adhered to, privacy is
+            ensured and which is equipped to handle life-threatening situations
+            if necessary. (Any routine non-SRH lab tests carried out in the
+            course of VSC surgery should be reported under &lsquo;non-SRH
+            Medical &ndash; Investigation&rsquo;, for example, full blood count
+            or liver function tests).
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 19 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content18">
+            <span class="title"
+              >Female Voluntary Surgical Contraception (FVSC) &ndash; Management
+              &ndash; Surgical &ndash; Laparoscopy</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content18" style="display: none">
+            A trained service provider performs female voluntary surgical
+            contraceptive (FVSC) surgery using the laparoscopy method, after the
+            person has received FVSC counseling to ensure their consent is
+            voluntary and informed, in a suitable facility where universal
+            precautions are adhered to, privacy is ensured and which is equipped
+            to handle life-threatening situations if necessary. (Any routine
+            non-SRH lab tests carried out in the course of VSC surgery should be
+            reported under &lsquo;non-SRH Medical &ndash; Investigation&rsquo;,
+            for example, full blood count or liver function tests).
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 20 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content19">
+            <span class="title"
+              >Female Voluntary Surgical Contraception (FVSC) &ndash; Management
+              &ndash; Surgical &ndash; Laparotomy</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content19" style="display: none">
+            A trained service provider performs female voluntary surgical
+            contraceptive (FVSC) using the minilaparotomy method, after the
+            person has received FVSC counseling to ensure their consent is
+            voluntary and informed, in a suitable facility where universal
+            precautions are adhered to, privacy is ensured and which is equipped
+            to handle life-threatening situations if necessary. (Any routine
+            non-SRH lab tests carried out in the course of VSC surgery should be
+            reported under &lsquo;non-SRH Medical &ndash; Investigation&rsquo;,
+            for example, full blood count or liver function tests).
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 21 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content20">
+            <span class="title"
+              >Female Voluntary Surgical Contraception (FVSC) &ndash; Management
+              &ndash; Surgical &ndash; Hysteroscopic tubal occlusion</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content20" style="display: none">
+            A trained service provider performs female voluntary surgical
+            contraceptive (FVSC) surgery using the hysteroscopic tubal occlusion
+            method, after the person has received FVSC counseling to ensure
+            their consent is voluntary and informed, in a suitable facility
+            where universal precautions are adhered to, privacy is ensured and
+            which is equipped to handle life-threatening situations if
+            necessary. (Any routine non-SRH lab tests carried out in the course
+            of VSC surgery should be reported under &lsquo;non-SRH Medical
+            &ndash; Investigation&rsquo;, for example, full blood count or liver
+            function tests).
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 22 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content21">
+            <span class="title"
+              >Female Voluntary Surgical Contraception (FVSC) &ndash; Management
+              &ndash; Surgical &ndash; Transvaginal tubal ligation</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content21" style="display: none">
+            A trained service provider performs female voluntary surgical
+            contraceptive (FVSC) surgery using a transvaginal method (usually
+            culdoscopy or colpotomy), after the person has received FVSC
+            counseling to ensure their consent is voluntary and informed, in a
+            suitable facility where universal precautions are adhered to,
+            privacy is ensured and which is equipped to handle life-threatening
+            situations if necessary. (The F&ograve;s Feminista Team does not
+            recommend transvaginal methods of FVSC due to the increased
+            infection rates associated with these methods. Any routine non-SRH
+            lab tests carried out in the course of VSC surgery should be
+            reported under &lsquo;non-SRH Medical &ndash; Investigation&rsquo;,
+            for example, full blood count or liver function tests).
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 23 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content22">
+            <span class="title"
+              >Female Voluntary Surgical Contraception (FVSC) &ndash; Management
+              &ndash; Surgical &ndash; Follow up</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content22" style="display: none">
+            A trained service provider provides a follow-up for a person
+            including physical examination and assessment for pain, infection or
+            other complications after a voluntary surgical female contraception
+            procedure (FVSC), to ensure they are not experiencing any side
+            effects or complications in a space which allows confidentiality.
+            (Any routine non-SRH lab tests carried out in the course of VSC
+            follow up should be reported under &lsquo;non-SRH Medical &ndash;
+            Investigation&rsquo;, for example, full blood count or liver
+            function tests).
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 24 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content23">
+            <span class="title"
+              >Female Voluntary Surgical Contraception (FVSC) &ndash; Management
+              &ndash; unable to categorize</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content23" style="display: none">
+            A trained service provider provides a person with a female voluntary
+            surgical contraception (FVSC) management service as specified above.
+            (ONLY REPORT THESE SERVICES HERE WHEN THEY ARE ONE OF THE SPECIFIC
+            FVSC MANAGEMENT SERVICES DESCRIBED ON THE SERVICE LIST BUT YOUR DATA
+            IS TOO AGGREGATED TO CATEGORIZE THEM INTO ONE OF THESE. If the FVSC
+            service you are reporting is not specified above, please report it
+            under &lsquo;SRH &ndash; Other &ndash; Management&rsquo;).
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 25 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content24">
+            <span class="title"
+              >Male Voluntary Surgical Contraception (MVSC) &ndash;
+              Counseling</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content24" style="display: none">
+            A trained counselor/service provider shares person-specific
+            non-directive advice about male voluntary surgical contraception
+            (MVSC) before the person consents to the surgery to ensure surgical
+            contraception is a suitable option in their individual situation and
+            to obtain informed consent, in a space which allows confidentiality.
+            (This counseling is separate from contraceptive general counseling
+            because the risks involved in the surgical procedure and the
+            permanency of the method must be made clear to the person).
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 26 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content25">
+            <span class="title"
+              >Male Voluntary Surgical Contraception (MVSC) &ndash;
+              Consultation</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content25" style="display: none">
+            A trained service provider sees a person and gives comprehensive
+            information about male voluntary surgical contraception (MVSC)
+            before the person consents to the surgery to ensure they are fully
+            aware of the consequences and possible risks involved in the
+            surgery, in a space which allows confidentiality. Clients should
+            receive MVSC &ndash; counseling as well as an MVSC &ndash;
+            consultation. When a person receives a consultation service, it
+            should be recorded as a service provided, even if the person does
+            not adopt this contraceptive method.
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 27 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content26">
+            <span class="title"
+              >Male Voluntary Surgical Contraception (MVSC) &ndash; Management
+              &ndash; Surgical &ndash; Reversal</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content26" style="display: none">
+            A trained service provider provides a person with an MVSC
+            consultation, counseling or management service as specified above.
+            (ONLY REPORT THESE SERVICES HERE WHEN THEY ARE ONE OF THE SPECIFIC
+            MVSC MANAGEMENT SERVICES DESCRIBED ON THE SERVICE LIST BUT YOUR DATA
+            IS TOO AGGREGATED TO CATEGORIZE THEM INTO ONE OF THESE. If the MVSC
+            service you are reporting is not specified above, please report it
+            under &lsquo;SRH &ndash; Other &ndash; Management&rsquo;).
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 28 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content27">
+            <span class="title"
+              >Male Voluntary Surgical Contraception (MVSC) &ndash; Management
+              &ndash; Surgical &ndash; Incisional Vasectomy</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content27" style="display: none">
+            A trained service provider performs male voluntary surgical
+            contraceptive surgery (MVSC) using the incisional vasectomy method,
+            after the person has received method-specific counseling to ensure
+            their consent is voluntary and informed, in a suitable facility
+            where universal precautions are adhered to, privacy is ensured and
+            which is equipped to handle life-threatening situations if
+            necessary. (Any routine non-SRH lab tests carried out in the course
+            of VSC surgery should be reported under &lsquo;non-SRH Medical
+            &ndash; Investigation&rsquo;, for example, full blood count or liver
+            function tests).
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 29 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content28">
+            <span class="title"
+              >Male Voluntary Surgical Contraception (MVSC) &ndash; Management
+              &ndash; Surgical &ndash; No-scalpel Vasectomy</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content28" style="display: none">
+            A trained service provider performs male voluntary surgical
+            contraceptive surgery (MVSC) using the no-scalpel vasectomy method,
+            after the person has received method-specific counseling to ensure
+            their consent is voluntary and informed, in a suitable facility
+            where universal precautions are adhered to, privacy is ensured and
+            which is equipped to handle life-threatening situations if
+            necessary. (Any routine non-SRH lab tests carried out in the course
+            of VSC surgery should be reported under &lsquo;non-SRH Medical
+            &ndash; Investigation&rsquo;, for example, full blood count or liver
+            function tests).
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 30 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content29">
+            <span class="title"
+              >Male Voluntary Surgical Contraception (MVSC) &ndash; Management
+              &ndash; Surgical &ndash; Follow up</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content29" style="display: none">
+            A trained service provider provides a follow-up for a person
+            including physical examination and assessment for pain, infection or
+            other complications after a surgical MVSC procedure, to ensure he is
+            not experiencing any side effects or complications in a space which
+            allows confidentiality. (Any routine non-SRH lab tests carried out
+            in the course of VSC follow up should be reported under
+            &lsquo;non-SRH Medical &ndash; Investigation&rsquo;, for example,
+            full blood count or liver function tests).
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 31 -->
+
+        <div class="grid-cell title_row">
+          Male Voluntary Surgical Contraception (MVSC) &ndash; Management
+          &ndash; unable to categorize
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 32 -->
+
+        <div class="grid-cell title_row">
+          Female/Male Voluntary Surgical Contraception &ndash; unable to
+          categorize
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 33 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content30">
+            <span class="title"
+              >Emergency Contraception (EC) &ndash; Counseling</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content30" style="display: none">
+            A trained counselor/service provider shares person-specific
+            non-directive advice about all emergency contraceptive (EC) methods
+            following an act of unprotected sex to ensure the person fully
+            understands their emergency contraceptive options and the method
+            failure rates, in a space which allows confidentiality. This
+            counseling is separate from contraceptive general counseling because
+            of the distinct nature of the counseling content: for example in
+            relation to sexual violence and negotiation skills of safe sex;
+            consideration of STI exposure and the need for contraceptive general
+            counseling to encourage the person to take up a modern method of
+            contraception.
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 34 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content31">
+            <span class="title"
+              >Emergency Contraception (EC) &ndash; Consultation</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content31" style="display: none">
+            A trained service provider sees a person and gives comprehensive
+            information about all emergency contraceptive (EC) methods following
+            an act of unprotected sex to ensure that medical eligibility
+            criteria are met, monitor for side-effects and minimize the chances
+            of an unplanned pregnancy, in a space which allows confidentiality.
+            (Clients should receive EC &ndash; counseling as well as an EC
+            consultation. When a person receives a consultation service, it
+            should be recorded as a service provided, even if the person does
+            not adopt this contraceptive method.
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 35 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content32">
+            <span class="title"
+              >Fertility Awareness Based (FAB) &ndash; Consultation</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content32" style="display: none">
+            A trained service provider sees a person and gives comprehensive
+            information about fertility based awareness (FAB) contraceptive
+            methods, either for the first time or as a follow up to ensure that
+            medical eligibility criteria are met, monitor for side-effects or
+            resupply the person, in a space which allows confidentiality. When a
+            person receives a consultation service, it should be recorded as a
+            service provided, even if the person does not adopt this
+            contraceptive method.
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row Subtotals -->
+
+        <div class="grid-cell title_row subtotals">Subtotals</div>
+
+        <div class="grid-cell data subtotals">&nbsp;</div>
+
+        <div class="grid-cell data subtotals">&nbsp;</div>
+
+        <div class="grid-cell data subtotals">&nbsp;</div>
+
+        <div class="grid-cell data subtotals">&nbsp;</div>
+
+        <div class="grid-cell data subtotals">&nbsp;</div>
+        <!-- data row 36 -->
+
+        <div class="grid-cell subtitle grid_cell_merge6">Abortion Services</div>
+        <!-- data row 37 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content33">
+            <span class="title"
+              >Abortion &ndash; Counseling &ndash; Pre-abortion/Options
+              Counseling</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content33" style="display: none">
+            When a person has an unplanned pregnancy, a trained
+            counselor/service provider provides person-specific non-directive
+            advice about pregnancy options (abortion, continuing pregnancy and
+            adoption); discussion of available abortion methods suitable to the
+            person (risks and benefits); post-abortion contraceptive options;
+            and identification of other sexual and reproductive health needs.
+            This service ensures that the person is aware of all options
+            available to them if they decide to have an abortion, and that
+            informed consent is obtained, in a space which allows
+            confidentiality. This counseling should be reported regardless of
+            which of the options the person chooses, including the decision not
+            to have an abortion. This may also be referred to as &lsquo;Options
+            counseling&rsquo;.
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 38 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content34">
+            <span class="title"
+              >Abortion &ndash; Counseling &ndash; Post-abortion</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content34" style="display: none">
+            A trained counselor/service provider provides person-specific advice
+            and guidance about after-care and psycho-social support (if needed)
+            following an induced abortion or treatment of incomplete abortion
+            (provided by the partner organization or outside) to ensure the
+            person has no remaining questions or concerns and to determine
+            whether further psyco-social support is required, in a space which
+            allows confidentiality. (Contraceptive counseling should also be
+            given and reported under &lsquo;Contraceptives &ndash; Counseling
+            &ndash; General&rsquo;).
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 39 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content35">
+            <span class="title"
+              >Abortion &ndash; Counseling &ndash; unable to categorize</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content35" style="display: none">
+            A trained service provider provides a person with an abortion
+            service as specified on the service list. (ONLY REPORT SERVICES HERE
+            WHEN THEY ARE ONE OF THE SPECIFIC ABORTION SERVICES DESCRIBED ON THE
+            SERVICE LIST BUT YOUR DATA IS TOO AGGREGATED TO CATEGORIZE THEM INTO
+            ONE OF THESE. If the abortion service you are reporting is not
+            specified above, please report it under &lsquo;SRH &ndash; Other
+            &ndash; Consultation, Counseling, Management, Investigation or
+            Prevention&rsquo; as appropriate).
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 40 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content36">
+            <span class="title">Abortion &ndash; Consultation</span>
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content36" style="display: none">
+            A trained service provider sees a person and gives comprehensive
+            information about available abortion methods and their risks and
+            benefits, including options that are not provided by the partner
+            organization due to legal or institutional restrictions, either for
+            the first time or as a follow up to ensure the person is fully
+            informed, in a space which allows confidentiality. All people should
+            be recorded as having a consultation even if they do not take
+            subsequent abortion-related services or commodities. Confirmatory
+            pregnancy tests should be reported under &lsquo;Obstetrics &ndash;
+            Investigation &ndash; Lab test &ndash; Pregnancy test&rsquo;.
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 41 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content37">
+            <span class="title"
+              >Abortion &ndash; Consultation &ndash; Initial consultation
+              &ndash; Harm reduction model</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content37" style="display: none">
+            &quot;THE HARM REDUCTION APPROACH IS ONLY USED IN CIRCUMSTANCES
+            WHERE ABORTION IS SEVERELY LEGALLY RESTRICTED. HARM REDUCTION
+            SERVICES SHOULD BE PROVIDED WITHIN A DEFINED HARM REDUCTION MODEL. A
+            trained service provider provides comprehensive information about
+            safer and less safe methods of abortion to a person who wants to end
+            a pregnancy and has chosen to receive this information after
+            pre-abortion counseling, in a space which allows confidentiality.
+            &quot;
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 42 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content38">
+            <span class="title"
+              >Abortion &ndash; Consultation &ndash; Follow up consultation
+              &ndash; Harm reduction model</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content38" style="display: none">
+            THE HARM REDUCTION MODEL APPROACH IS ONLY USED IN CIRCUMSTANCES
+            WHERE ABORTION IS SEVERELY LEGALLY RESTRICTED. HARM REDUCTION
+            SERVICES SHOULD BE PROVIDED WITHIN A DEFINED HARM REDUCTION MODEL. A
+            trained service provider confirms completion of abortion, assesses
+            for complications, and, if necessary, provides treatment of
+            complications to ensure all of the person&rsquo;s needs are met in a
+            space which allows confidentiality. This service is unique from any
+            intermediate follow-up visits in which a person returns for more
+            information without having attempted to interrupt the pregnancy, or
+            where the interruption is not complete. Please note, these services
+            will be included in &lsquo;medical abortion&rsquo; service numbers.
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 43 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content39">
+            <span class="title"
+              >Abortion &ndash; Consultation &ndash; unable to categorize</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content39" style="display: none">
+            A trained service provider provides a person with an abortion
+            service as specified on the service list. (ONLY REPORT SERVICES HERE
+            WHEN THEY ARE ONE OF THE SPECIFIC ABORTION SERVICES DESCRIBED ON THE
+            SERVICE LIST BUT YOUR DATA IS TOO AGGREGATED TO CATEGORIZE THEM INTO
+            ONE OF THESE. If the abortion service you are reporting is not
+            specified above, please report it under &lsquo;SRH &ndash; Other
+            &ndash; Consultation, Counseling, Management, Investigation or
+            Prevention&rsquo; as appropriate).
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 44 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content40">
+            <span class="title"
+              >Abortion &ndash; Management &ndash; Medical &ndash;
+              Misoprostol</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content40" style="display: none">
+            A trained service provider performs a medical abortion using
+            misoprostol after the person has received pre-abortion counseling to
+            ensure their consent is voluntary and informed, in a space which
+            allows confidentiality.
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 45 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content41">
+            <span class="title"
+              >Abortion &ndash; Management &ndash; Medical &ndash; Mifepristone
+              and Misoprostol</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content41" style="display: none">
+            A trained service provider performs a medical abortion using
+            mifepristone and misoprostol after the person has received
+            pre-abortion counseling to ensure their consent is voluntary and
+            informed, in a space which allows confidentiality.
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 46 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content42">
+            <span class="title"
+              >Abortion &ndash; Management &ndash; Medical &ndash; Follow
+              up</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content42" style="display: none">
+            A trained service provider confirms completion of abortion, assesses
+            for complications, and if necessary, provides treatment of
+            complications and other SRH services to ensure all of the
+            person&rsquo;s needs are met; this includes contraceptive services
+            to minimize risk from future unplanned pregnancies, in a space which
+            allows confidentiality. (Post-abortion counseling should also be
+            provided but recorded under &lsquo;Abortion &ndash; counseling
+            &ndash; post-abortion&rsquo;).
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 47 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content43">
+            <span class="title"
+              >Abortion &ndash; Management &ndash; Medical &ndash; Treatment of
+              complications following medical procedure</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content43" style="display: none">
+            A trained service provider provides treatment for complications
+            (including vaginal bleeding, abdominal pain, signs of infection and
+            adverse reaction to a prostaglandin), following a medical abortion
+            (either self-induced or induced outside the partner organization or
+            within the partner organization), to ensure the complications are
+            fully treated in a space which allows confidentiality. This service
+            is for treatment of complications, other than incomplete abortion,
+            following a medical abortion procedure whether the abortion was
+            complete or incomplete. (Where relevant, treatment for incomplete
+            abortion should instead be recorded under &lsquo;Incomplete abortion
+            &ndash; Management &ndash; Surgical/Medical&rsquo; as appropriate).
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 48 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content44">
+            <span class="title"
+              >Abortion &ndash; Management &ndash; Medical &ndash; unable to
+              categorize</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content44" style="display: none">
+            A trained service provider provides a person with a medical abortion
+            management service as specified on the service list. (ONLY REPORT
+            SERVICES HERE WHEN THEY ARE ONE OF THE SPECIFIC MEDICAL ABORTION
+            SERVICES DESCRIBED ON THE SERVICE LIST BUT YOUR DATA IS TOO
+            AGGREGATED TO CATEGORIZE THEM INTO ONE OF THESE. If the abortion
+            service you are reporting is not specified above, please report it
+            under &lsquo;SRH &ndash; Other &ndash; Management&rsquo;).
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 48 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content45">
+            <span class="title"
+              >Abortion &ndash; Management &ndash; Surgical &ndash; Vacuum
+              aspiration</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content45" style="display: none">
+            A trained service provider performs a surgical abortion using the
+            vacuum aspiration method (manual or electric) after the person has
+            received pre-abortion counseling to ensure their consent is
+            voluntary and informed, in a suitable facility where universal
+            precautions are adhered to, privacy is ensured and which is equipped
+            to handle life-threatening situations if necessary. (Any routine
+            non-SRH lab tests carried out in the course of abortion services
+            should be reported under &lsquo;non-SRH Medical &ndash;
+            Investigation&rsquo;, for example, full blood count or liver
+            function tests).
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 50 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content46">
+            <span class="title"
+              >Abortion &ndash; Management &ndash; Surgical &ndash; Dilation and
+              Evacuation (D&amp;E)</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content46" style="display: none">
+            A trained service provider performs a surgical abortion using the
+            dilatation and evacuation (D&amp;E) method after the person has
+            received pre-abortion counseling to ensure their consent is
+            voluntary and informed, in a suitable facility where universal
+            precautions are adhered to, privacy is ensured and which is equipped
+            to handle life-threatening situations if necessary. (Any routine
+            non-SRH lab tests carried out in the course of situations if
+            necessary. (Any routine non-SRH lab tests carried out in the course
+            of abortion services should be reported under &lsquo;non-SRH Medical
+            &ndash; Investigation&rsquo;, for example, full blood count or liver
+            function tests).
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 51 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content47">
+            <span class="title"
+              >Abortion &ndash; Management &ndash; Surgical &ndash; Dilation and
+              Curettage (D&amp;C)</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content47" style="display: none">
+            A trained service provider performs a surgical abortion using the
+            dilatation and curettage (D&amp;C) method after the person has
+            received pre-abortion counseling to ensure their consent is
+            voluntary and informed, in a suitable facility where universal
+            precautions are adhered to, privacy is ensured and which is equipped
+            to handle life-threatening situations if necessary. (Any routine
+            non-SRH lab tests carried out in the course of abortion services
+            should be reported under &lsquo;non-SRH Medical &ndash;
+            Investigation&rsquo;, for example, full blood count or liver
+            function tests).
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 52 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content48">
+            <span class="title"
+              >Abortion &ndash; Management &ndash; Surgical &ndash; follow
+              up</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content48" style="display: none">
+            A trained service provider confirms completion of abortion, assesses
+            for complications, and if necessary, provides treatment of
+            complications and other SRH services to ensure all of the
+            person&rsquo;s needs are met; this includes contraceptive services
+            to minimize risk from future unplanned pregnancies, in a space which
+            allows confidentiality. (Post-abortion counseling should also be
+            provided but recorded under &lsquo;Abortion &ndash; counseling
+            &ndash; post- abortion&rsquo;. Any routine non-SRH lab tests carried
+            out in the course of abortion services should be reported under
+            &lsquo;non-SRH Medical &ndash; Investigation&rsquo;, for example,
+            full blood count or liver function tests).
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 53 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content49">
+            <span class="title"
+              >Abortion &ndash; Management &ndash; Surgical &ndash; Treatment of
+              complications following a surgical procedure</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content49" style="display: none">
+            A trained service provider provides treatment for complications
+            (including continued pregnancy, haemorrhage, infection, uterine
+            perforation and local anaesthesia-related complications), following
+            a surgical abortion (either self-induced or induced outside the
+            partner organization or within the partner organization), to ensure
+            the complications are fully treated, in a space which allows
+            confidentiality. This service is for treatment of complications,
+            other than incomplete abortion, following a surgical abortion
+            procedure. (Where relevant, treatment for incomplete abortion should
+            be recorded under &lsquo;Incomplete abortion &ndash; Management
+            &ndash; Surgical/Medical&rsquo; as appropriate. Any routine non-SRH
+            lab tests carried out in the course of abortion services should be
+            reported under &lsquo;non-SRH Medical &ndash; Investigation&rsquo;,
+            for example, full blood count or liver function tests).
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 54 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content50">
+            <span class="title"
+              >Abortion &ndash; Management &ndash; Surgical &ndash; unable to
+              categorize</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content50" style="display: none">
+            A trained service provider provides a person with a surgical
+            abortion management service as specified on the service list. (ONLY
+            REPORT SERVICES HERE WHEN THEY ARE ONE OF THE SPECIFIC SURGICAL
+            ABORTION SERVICES DESCRIBED ON THE SERVICE LIST BUT YOUR DATA IS TOO
+            AGGREGATED TO CATEGORIZE THEM INTO ONE OF THESE. If the abortion
+            service you are reporting is not specified above, please report it
+            under &lsquo;SRH &ndash; Other &ndash; Management&rsquo;).
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 55 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content51">
+            <span class="title"
+              >Post abortion care &ndash; Management &ndash; Medical &ndash;
+              Misoprostol</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content51" style="display: none">
+            A trained service provider provides medical treatment for incomplete
+            abortion using misoprostol when the person presents with incomplete
+            abortion (either self-induced or induced outside the partner
+            organization or within the partner organization), to safely manage
+            the incomplete abortion and prevent the need for higher level care,
+            in a space which allows confidentiality.
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 56 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content52">
+            <span class="title"
+              >Post abortion care &ndash; Management &ndash; Surgical &ndash;
+              Vacuum aspiration</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content52" style="display: none">
+            A trained service provider performs a surgical abortion using the
+            vacuum aspiration method (manual or electric) after the person has
+            received pre-abortion counseling to ensure their consent is
+            voluntary and informed, in a suitable facility where universal
+            precautions are adhered to, privacy is ensured and which is equipped
+            to handle life-threatening situations if necessary. (Any routine
+            non-SRH lab tests carried out in the course of abortion services
+            should be reported under &lsquo;non-SRH Medical &ndash;
+            Investigation&rsquo;, for example, full blood count or liver
+            function tests).
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 57 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content53">
+            <span class="title"
+              >Post abortion care &ndash; Management &ndash; Surgical &ndash;
+              Dilation and Evacuation (D&amp;E)</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content53" style="display: none">
+            A trained service provider performs a surgical abortion using the
+            dilatation and evacuation (D&amp;E) method after the person has
+            received pre-abortion counseling to ensure their consent is
+            voluntary and informed, in a suitable facility where universal
+            precautions are adhered to, privacy is ensured and which is equipped
+            to handle life-threatening situations if necessary. (Any routine
+            non-SRH lab tests carried out in the course of situations if
+            necessary. (Any routine non-SRH lab tests carried out in the course
+            of abortion services should be reported under &lsquo;non-SRH Medical
+            &ndash; Investigation&rsquo;, for example, full blood count or liver
+            function tests).
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 58 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content54">
+            <span class="title"
+              >Post abortion care &ndash; Management &ndash; Surgical &ndash;
+              Dilation and Curettage (D&amp;C)</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content54" style="display: none">
+            A trained service provider performs a surgical abortion using the
+            dilatation and curettage (D&amp;C) method after the person has
+            received pre-abortion counseling to ensure their consent is
+            voluntary and informed, in a suitable facility where universal
+            precautions are adhered to, privacy is ensured and which is equipped
+            to handle life-threatening situations if necessary. (Any routine
+            non-SRH lab tests carried out in the course of abortion services
+            should be reported under &lsquo;non-SRH Medical &ndash;
+            Investigation&rsquo;, for example, full blood count or liver
+            function tests).
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 59 -->
+
+        <div class="grid-cell title_row">
+          <div class="toggle-data " data-target="#content55">
+            <span class="title"
+              >Post abortion care &ndash; unable to categorize</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content55" style="display: none">
+            A trained service provider provides a person with an incomplete
+            abortion management service as specified on the service list. (ONLY
+            REPORT SERVICES HERE WHEN THEY ARE ONE OF THE SPECIFIC INCOMPLETE
+            ABORTION SERVICES DESCRIBED ON THE SERVICE LIST BUT YOUR DATA IS TOO
+            AGGREGATED TO CATEGORIZE THEM INTO ONE OF THESE. If the incomplete
+            abortion service you are reporting is not specified above, please
+            report it under &lsquo;SRH &ndash; Other &ndash; Consultation,
+            Counseling, Management, Investigation or Prevention&rsquo; as
+            appropriate).
+          </div>
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row Subtotals -->
+
+        <div class="grid-cell title_row subtotals">Subtotals</div>
+
+        <div class="grid-cell data subtotals">&nbsp;</div>
+
+        <div class="grid-cell data subtotals">&nbsp;</div>
+
+        <div class="grid-cell data subtotals">&nbsp;</div>
+
+        <div class="grid-cell data subtotals">&nbsp;</div>
+
+        <div class="grid-cell data subtotals">&nbsp;</div>
+        <!-- data row 60 -->
+
+        <div class="grid-cell subtitle grid_cell_merge6">
+          Specialized Sexual and Gender Based Violence (SGBV) Service
+        </div>
+        <!-- data row 61 -->
+
+        <div class="grid-cell title_row">
+          SGBV &ndash; Prevention &ndash; Screening
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 62 -->
+
+        <div class="grid-cell title_row">SGBV &ndash; Counseling</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 63 -->
+
+        <div class="grid-cell title_row">SGBV &ndash; Case Management</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 64 -->
+
+        <div class="grid-cell title_row">
+          SGBV &ndash; Clinical Management of Rape
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 65 -->
+
+        <div class="grid-cell title_row">SGBV &ndash; Psychosocial Support</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 66 -->
+
+        <div class="grid-cell title_row">SGBV &ndash; Legal Support</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 67 -->
+
+        <div class="grid-cell title_row">SGBV &ndash; Unable to Categorize</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row Subtotals -->
+
+        <div class="grid-cell title_row subtotals">Subtotals</div>
+
+        <div class="grid-cell data subtotals">&nbsp;</div>
+
+        <div class="grid-cell data subtotals">&nbsp;</div>
+
+        <div class="grid-cell data subtotals">&nbsp;</div>
+
+        <div class="grid-cell data subtotals">&nbsp;</div>
+
+        <div class="grid-cell data subtotals">&nbsp;</div>
+        <!-- data row 68 -->
+
+        <div class="grid-cell subtitle grid_cell_merge6">
+          <div class="toggle-data " data-target="#content56">
+            <span class="title"
+              >Other Sexual and Reproductive Health Services</span
+            >
+            <span class="info-icon">ℹ</span>
+          </div>
+
+          <div class="content" id="content56" style="display: none">
+            A trained counselor/service provider provides person specific
+            non-directive advice about any other sexual and reproductive health
+            related matter that is not specifically identified in this list of
+            services. (Please only report services here when they are not
+            represented anywhere else on the F&ograve;s Feminista service list.
+            You will be asked to explain further what the services you report
+            here are and you might be asked to move them to another category.)
+          </div>
+        </div>
+        <!-- data row 69 -->
+
+        <div class="grid-cell title_row">HIV Services</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 70 -->
+
+        <div class="grid-cell title_row">
+          Sexually Transmitted Infection (STI) Services
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 71 -->
+
+        <div class="grid-cell title_row">Gynecology Services</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 72 -->
+
+        <div class="grid-cell title_row">Infertility Services</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 73 -->
+
+        <div class="grid-cell title_row">Obstetric Services</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 74 -->
+
+        <div class="grid-cell title_row">Pediatric Services</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 75 -->
+
+        <div class="grid-cell title_row">Urology Services</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 76 -->
+
+        <div class="grid-cell title_row">
+          Specialized Sexuality and Relationship Counseling Services
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 77 -->
+
+        <div class="grid-cell title_row">
+          Other Sexual and Reproductive Health (SRH) Services
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row Subtotals -->
+
+        <div class="grid-cell title_row subtotals">Subtotals</div>
+
+        <div class="grid-cell data subtotals">&nbsp;</div>
+
+        <div class="grid-cell data subtotals">&nbsp;</div>
+
+        <div class="grid-cell data subtotals">&nbsp;</div>
+
+        <div class="grid-cell data subtotals">&nbsp;</div>
+
+        <div class="grid-cell data subtotals">&nbsp;</div>
+        <!-- totals -->
+
+        <div class="grid-cell title_row totals">Total Services by Channel</div>
+
+        <div class="grid-cell data totals">&nbsp;</div>
+
+        <div class="grid-cell data totals">&nbsp;</div>
+
+        <div class="grid-cell data totals">&nbsp;</div>
+
+        <div class="grid-cell data totals">&nbsp;</div>
+
+        <div class="grid-cell data totals">&nbsp;</div>
+      </div>
+    </div>
+    <!-- END TAB 1 --><!----------------------------------------------------------------------- --><!----------------------------------------------------------------------- --><!-- START TAB 2 -->
+
+    <div class="tabcontent" id="Tab2">
+      <div class="grid-tab_descript">
+        <div class="grid-row">
+          People reached with SRH services refers to the total number of unique
+          individuals that received one or more SRH services from your
+          organization in the last year. A person is counted only once, even if
+          they had multiple visits where they received numerous different
+          services during the same year.
+        </div>
+
+        <div class="grid-row">
+          This total can be generated by using patient identifiers (such as
+          calculating the total number of unique patient record numbers or ID
+          numbers in your clinic management information system for the last
+          year), or it can be estimated.
+        </div>
+
+        <div class="grid-row">
+          If your organization does not provide SRH services to people, skip to
+          the next tab.
+        </div>
+      </div>
+
+      <div class="grid-people_reached">
+        <!-- Encabezados de la tabla -->
+        <div class="grid-header" keyword="opt_c:SRHReach">
+          People reached with SRH services, by total &amp; subpopulations
+        </div>
+
+        <div class="grid-header" keyword="opt_c:StaticCL">
+          Static Clinics (CL)
+        </div>
+
+        <div class="grid-header" keyword="opt_c:AssocCL">
+          Associated Clinics (AS)
+        </div>
+
+        <div class="grid-header" keyword="opt_c:CommDist">
+          Community-Based Distribution / Services (CB)
+        </div>
+
+        <div class="grid-header" keyword="opt_c:MobileOU">
+          Mobile Outreach Units (OU)
+        </div>
+
+        <div class="grid-header" keyword="opt_c:DigPlat">
+          Digital Platforms (VC)
+        </div>
+        <!-- data row 1 -->
+
+        <div class="grid-cell title_row">
+          Total # of all individuals reached with SRH services
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 2 -->
+
+        <div class="grid-cell subtitle grid_cell_merge6">Subpopulations *</div>
+        <!-- data row 3 -->
+
+        <div class="grid-cell title_row lst">
+          # of <b>women and girls</b> reached with SRH services
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 4 -->
+
+        <div class="grid-cell title_row lst">
+          # of <b>young people aged 10-24</b> reached with SRH services
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 5 -->
+
+        <div class="grid-cell title_row lst">
+          # of <b>people affected by humanitarian crisis</b> reached with SRH
+          services
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 6 -->
+
+        <div class="grid-cell title_row lst">
+          # of individuals in <b>situations of vulnerability</b> reached with
+          SRH services
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+      </div>
+
+      <div class="grid-row" keyword="opt_c:Subpop">
+        * Each subpopulation is a subset of total people reached with SRH care,
+        and therefore they are less than or equal to &ldquo;Total # of all
+        individuals reached with SRH services
+      </div>
+
+      <div class="grid-textarea">
+        <div class="grid-row" keyword="opt_c:VulnFactor9">
+          Please describe
+          <b
+            >what intersectional factors contribute to your definition of
+            vulnerability</b
+          >
+          for your context:
+        </div>
+
+        <div class="grid-row"><textarea></textarea></div>
+      </div>
+    </div>
+    <!-- END TAB 2 --><!----------------------------------------------------------------------- --><!----------------------------------------------------------------------- --><!-- START TAB 3 -->
+
+    <div class="tabcontent" id="Tab3">
+      <div class="grid-tab_descript">
+        <div class="grid-row">
+          If your organization distributed modern contraceptive products to
+          people or other organizations, please provide the total number of
+          contraceptive items (by method and durations) distributed during the
+          last year.
+        </div>
+
+        <div class="grid-row">
+          If your organization does not distribute contraceptives, this section
+          can be skipped.
+        </div>
+      </div>
+
+      <div class="grid-commodities">
+        <!-- Encabezados de la tabla -->
+        <div class="grid-header" keyword="opt_c:Commod">Commodities</div>
+
+        <div class="grid-header" keyword="opt_c:StaticCL">
+          Static Clinics (CL)
+        </div>
+
+        <div class="grid-header" keyword="opt_c:AssocCL">
+          Associated Clinics (AS)
+        </div>
+
+        <div class="grid-header" keyword="opt_c:CommDist">
+          Community-Based Distribution / Services (CB)
+        </div>
+
+        <div class="grid-header" keyword="opt_c:MobileOU">
+          Mobile Outreach Units (OU)
+        </div>
+
+        <div class="grid-header" keyword="opt_c:DigPlat">
+          Digital Platforms (VC)
+        </div>
+
+        <div class="grid-header" keyword="opt_c:Gov">Governments</div>
+
+        <div class="grid-header" keyword="opt_c:PrivPhys">
+          Private Physicians
+        </div>
+
+        <div class="grid-header" keyword="opt_c:SocMark">Social Marketing</div>
+
+        <div class="grid-header" keyword="opt_c:CommMark">
+          Commercial Marketing
+        </div>
+
+        <div class="grid-header" keyword="opt_c:OthAgen">Other Agencies</div>
+        <!-- data row 1 -->
+
+        <div class="grid-cell subtitle grid_cell_merge11">
+          Contraceptive Products
+        </div>
+        <!-- data row 2 -->
+
+        <div class="grid-cell title_row">Oral contraceptives (combined)</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 3 -->
+
+        <div class="grid-cell title_row">
+          Oral contraceptives (progestogen only)
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 4 -->
+
+        <div class="grid-cell title_row">
+          Oral contraceptives (unable to categorize)
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 5 -->
+
+        <div class="grid-cell title_row">Injectables (1 month)</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 6 -->
+
+        <div class="grid-cell title_row">Injectables (2 month)</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 7 -->
+
+        <div class="grid-cell title_row">Injectables (3 month)</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 8 -->
+
+        <div class="grid-cell title_row">
+          Injectables (3 month - Subcutaneous)
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 9 -->
+
+        <div class="grid-cell title_row">Implant (3 year)</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 10 -->
+
+        <div class="grid-cell title_row">Implant (4 year)</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 11 -->
+
+        <div class="grid-cell title_row">Implant (5 year)</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 12 -->
+
+        <div class="grid-cell title_row">Patch</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 13 -->
+
+        <div class="grid-cell title_row">Ring</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 14 -->
+
+        <div class="grid-cell title_row">Condoms (male)</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 15 -->
+
+        <div class="grid-cell title_row">Condoms (female)</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 16 -->
+
+        <div class="grid-cell title_row">Diaphragm</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 17 -->
+
+        <div class="grid-cell title_row">Cervical cap</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 18 -->
+
+        <div class="grid-cell title_row">Spermicides</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 19 -->
+
+        <div class="grid-cell title_row">IUD (3 years)</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 20 -->
+
+        <div class="grid-cell title_row">IUD (5 years)</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 21 -->
+
+        <div class="grid-cell title_row">IUD (10 years)</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 22 -->
+
+        <div class="grid-cell title_row">
+          Emergency Contraception (progestogen only pills)
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 23 -->
+
+        <div class="grid-cell title_row">
+          Emergency Contraception (10-year IUD)
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 24 -->
+
+        <div class="grid-cell subtitle grid_cell_merge11">
+          Abortion Medication
+        </div>
+        <!-- data row 25 -->
+
+        <div class="grid-cell title_row">
+          Misoprostol/Mifepristone (Combipacks)
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 26 -->
+
+        <div class="grid-cell title_row">Misoprostol only (Pack)</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 27 -->
+
+        <div class="grid-cell subtitle grid_cell_merge11">
+          Other Commodities
+        </div>
+        <!-- data row 10 -->
+
+        <div class="grid-cell title_row">Menstrual Hygiene Products</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+      </div>
+    </div>
+    <!-- END TAB 3 --><!----------------------------------------------------------------------- --><!----------------------------------------------------------------------- --><!-- START TAB 4 -->
+
+    <div class="tabcontent" id="Tab4">
+      <div class="grid-tab_descript">
+        <div class="grid-row">
+          If your organization provides comprehensive sexuality education (CSE)
+          interventions to young people (&le; 24 years of age), please complete
+          the table below with the total number of young people reached directly
+          by your organization during the last year. If your organization does
+          not work on CSE, please skip to the next section.
+        </div>
+
+        <div class="grid-row">
+          <b>Comprehensive Sexuality Education (CSE)</b> refers to a
+          <b>curriculum-based process</b> of teaching and learning about the
+          cognitive, emotional, physical, and social aspects of sexuality. It
+          aims to equip young people with knowledge, skills, attitudes, and
+          values they need to determine and enjoy their sexuality.
+        </div>
+
+        <div class="grid-row">
+          <ul class="dotted_list">
+            <li>
+              <b>Curriculum:</b> A written, evidence-based guide for teaching
+              and learning that includes key objectives, as well as structured
+              guidance for the delivery of clear content and skills.
+            </li>
+          </ul>
+        </div>
+
+        <div class="grid-row" style="padding-left: 50px">
+          There are 4 types of CSE sessions that are conducted with young
+          people:
+        </div>
+
+        <div class="grid-row">
+          <ul class="dotted_list">
+            <li>
+              <b>Peer Educator Training:</b> Initial training or ongoing
+              supportive training to young people as peer educators or as youth
+              health promoters who facilitate sexuality education sessions.
+            </li>
+            <li>
+              <b>Complete Series:</b> Engaging young people (who are not
+              training to be peer educators) in a complete set of multiple
+              sexuality education sessions that cover standard content areas. A
+              complete series covers topics such as sexual rights, gender,
+              sexuality, interpersonal relationships, communication and
+              decision-making, and sexual and reproductive health, among others.
+            </li>
+            <li>
+              <b>Partial series:</b> Engaging young people in a series of
+              sexuality education sessions that does not cover all standard
+              content areas of your organization&rsquo;s CSE curriculum.
+            </li>
+            <li>
+              <b>Single Sessions:</b> Engaging young people in one sexuality
+              education session that covers a portion of content from your CSE
+              curriculum.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid-CSE">
+        <!-- Encabezados de la tabla -->
+        <div class="grid-header" keyword="opt_c:CSEInt">
+          Direct CSE interventions
+        </div>
+
+        <div class="grid-header" keyword="opt_c:SchlInPer">
+          In-person in Schools
+        </div>
+
+        <div class="grid-header" keyword="opt_c:CommInPer">
+          In-person in Communities
+        </div>
+
+        <div class="grid-header" keyword="opt_c:VirtDig">
+          Virtually via Digital Platforms
+        </div>
+        <!-- data row 1 -->
+
+        <div class="grid-cell title_row">
+          # of young people trained as PEER EDUCATORS
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 2 -->
+
+        <div class="grid-cell title_row">
+          # of young people reached with a COMPLETE series of your
+          organization&rsquo;s CSE curriculum
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 3 -->
+
+        <div class="grid-cell title_row">
+          # of young people reached with a PARTIAL series of your
+          organization&rsquo;s CSE curriculum
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+        <!-- data row 4 -->
+
+        <div class="grid-cell title_row">
+          # of young people reached with a SINGLE SESSION of your
+          organization&rsquo;s CSE curriculum
+        </div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+
+        <div class="grid-cell data">&nbsp;</div>
+      </div>
+
+      <div class="grid-tab_descript">
+        <div class="grid-row" keyword="opt_c:CSECurr">
+          Please upload the most recent version of your CSE curriculum below:
+        </div>
+
+        <div class="grid-row"><input /></div>
+      </div>
+    </div>
+    <!-- END TAB 4 --><!----------------------------------------------------------------------- --><!----------------------------------------------------------------------- --><!-- START TAB 5 -->
+
+    <div class="tabcontent" id="Tab5">
+      <div class="grid-tab_descript">
+        <div class="grid-row">&nbsp;</div>
+
+        <div class="grid-row">
+          <ul class="dotted_list">
+            <li>
+              <b>Informational and educational activities</b> refer to in-person
+              or virtual sessions during which evidence-based narratives,
+              research, technical expertise, or other knowledge were shared so
+              that participants had the opportunity for synchronous exchange
+              with the presenter, other participants, and/or the materials in
+              real time.
+            </li>
+            <li>
+              <b>Stakeholder group</b> refers to the constituency to which
+              people reached through the activity belong (e.g., women, girls,
+              and gender-diverse people, community leaders, care providers,
+              people living with disabilities, parents and guardians, men and
+              boys, sex workers, etc.).
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid-OIES">
+        <!-- Encabezados de la tabla -->
+        <div class="grid-header" keyword="opt_c:StakeGrp">
+          Stakeholder Group
+        </div>
+
+        <div class="grid-header" keyword="opt_c:InfoEdu">
+          # of People from Stakeholder Group Reached with Information &amp;
+          Education Sessions
+        </div>
+        <!-- data row 1 -->
+
+        <div class="grid-cell">
+          <div class="grid-number">1&ordm;</div>
+
+          <div class="grid-data">&nbsp;</div>
+        </div>
+
+        <div class="grid-cell">
+          <div class="grid-number">1&ordm;</div>
+
+          <div class="grid-data">&nbsp;</div>
+        </div>
+        <!-- data row 2 -->
+
+        <div class="grid-cell">
+          <div class="grid-number">2&ordm;</div>
+
+          <div class="grid-data">&nbsp;</div>
+        </div>
+
+        <div class="grid-cell">
+          <div class="grid-number">2&ordm;</div>
+
+          <div class="grid-data">&nbsp;</div>
+        </div>
+        <!-- data row 3 -->
+
+        <div class="grid-cell">
+          <div class="grid-number">3&ordm;</div>
+
+          <div class="grid-data">&nbsp;</div>
+        </div>
+
+        <div class="grid-cell">
+          <div class="grid-number">3&ordm;</div>
+
+          <div class="grid-data">&nbsp;</div>
+        </div>
+        <!-- data row 4 -->
+
+        <div class="grid-cell">
+          <div class="grid-number">4&ordm;</div>
+
+          <div class="grid-data">&nbsp;</div>
+        </div>
+
+        <div class="grid-cell">
+          <div class="grid-number">4&ordm;</div>
+
+          <div class="grid-data">&nbsp;</div>
+        </div>
+        <!-- data row 5 -->
+
+        <div class="grid-cell">
+          <div class="grid-number">5&ordm;</div>
+
+          <div class="grid-data">&nbsp;</div>
+        </div>
+
+        <div class="grid-cell">
+          <div class="grid-number">5&ordm;</div>
+
+          <div class="grid-data">&nbsp;</div>
+        </div>
+        <!-- data row 6 -->
+
+        <div class="grid-cell">
+          <div class="grid-number">6&ordm;</div>
+
+          <div class="grid-data">&nbsp;</div>
+        </div>
+
+        <div class="grid-cell">
+          <div class="grid-number">6&ordm;</div>
+
+          <div class="grid-data">&nbsp;</div>
+        </div>
+        <!-- data row 7 -->
+
+        <div class="grid-cell">
+          <div class="grid-number">7&ordm;</div>
+
+          <div class="grid-data">&nbsp;</div>
+        </div>
+
+        <div class="grid-cell">
+          <div class="grid-number">7&ordm;</div>
+
+          <div class="grid-data">&nbsp;</div>
+        </div>
+        <!-- data row 8 -->
+
+        <div class="grid-cell">
+          <div class="grid-number">8&ordm;</div>
+
+          <div class="grid-data">&nbsp;</div>
+        </div>
+
+        <div class="grid-cell">
+          <div class="grid-number">8&ordm;</div>
+
+          <div class="grid-data">&nbsp;</div>
+        </div>
+        <!-- data row 9 -->
+
+        <div class="grid-cell">
+          <div class="grid-number">9&ordm;</div>
+
+          <div class="grid-data">&nbsp;</div>
+        </div>
+
+        <div class="grid-cell">
+          <div class="grid-number">9&ordm;</div>
+
+          <div class="grid-data">&nbsp;</div>
+        </div>
+        <!-- data row 10 -->
+
+        <div class="grid-cell">
+          <div class="grid-number">10&ordm;</div>
+
+          <div class="grid-data">&nbsp;</div>
+        </div>
+
+        <div class="grid-cell">
+          <div class="grid-number">10&ordm;</div>
+
+          <div class="grid-data">&nbsp;</div>
+        </div>
+      </div>
+
+      <div class="grid-tab_descript">
+        <div class="grid-row">
+          If your organization reached more than 10 different stakeholder groups
+          with information and education sessions, please upload a full list (in
+          Word, Excel, etc.) of the people reached with these sessions by
+          stakeholder group below:
+        </div>
+
+        <div class="grid-row">[Document upload]</div>
+      </div>
+
+      <div class="grid-tab_descript">
+        <div class="grid-row">
+          Please describe the topic(s) addressed with these informational and
+          educational sessions. Topic refers to the primary subject being
+          discussed in the informational or educational activity.
+        </div>
+
+        <div class="grid-row"><textarea></textarea></div>
+      </div>
+    </div>
+    <!-- END TAB 5 --><!----------------------------------------------------------------------- -->
+  </div>
+
+  <div class="inputCriteria" style="margin-top: 20px">
+    <button class="completeBtn">Complete</button
+    ><button class="runValidateBtn">Run Validation</button
+    ><button class="approvalBtn" style="display: none">Approval Data</button>
+  </div>
+
+  <div class="dialog" style="display: none">&nbsp;</div>
+</div>
+<script>
+  $("body").on("focus", "input", function (event) {
+    $(this).attr("autocomplete", "off");
+  });
+
+  var firstTab = $(".tablinks:first");
+  firstTab.addClass("active");
+  $("#" + firstTab.attr("data-target")).show();
+
+  $(".tablinks").click(function () {
+    var tabName = $(this).attr("data-target");
+
+    $(".tabcontent").hide();
+    $("#" + tabName).show();
+    $(".tablinks").removeClass("active");
+    $(this).addClass("active");
+  });
+
+  // $(".toggle-data ").click(function () {
+  // 	var target = $(this).data("target");
+  // 	$(target).toggle();
+  // 	//$(this).find(".arrow").toggleClass("up");
+  // });
+
+  var BASE_QUERY_URL = "../api";
+
+  // /**
+  //  * 0. data set with catoption ( default OR something else )
+  //  * 1. Load grand-children of selected OUs
+  //  * 2. Generate the header with grand-children OU list
+  //  * 3. Reder rows with INPUT tags based on the deId and combId. Only render these INPUT fields based on the orgUnitType
+  //  * 	3.1. Save data values, NEED TO take care of data set catOptionCombo ????
+  //  * 4. Translation with content as HTML --> used a data element to save some common information ???
+  //  * 5. Complete data set
+  //  * 6. Validation Rules
+  //  * 7. Approval Data
+  // */
+
+  // $(document).ready(function() {
+
+  // });
+
+  var app = new FosGrandChildrenOUsApp();
+
+  // dhis2.de.event.formLoaded
+  $(document)
+    .off("dhis2.de.event.dataValuesLoaded")
+    .on("dhis2.de.event.dataValuesLoaded", function () {
+      // Hide the Hide "Completed", "Validation", ... buttons which are generated from DHIS2 module for this form
+      if ($(".fosGrandChildrenOUsCustomForm").length > 0) {
+        $("#completenessDiv").hide();
+        $("#actions").hide();
+      } else {
+        $("#completenessDiv").show();
+        $("#actions").hide();
+      }
+
+      // Generate form
+      app.generateEntryForm(
+        $("#selectedPeriodId").val(),
+        dhis2.de.currentOrganisationUnitId
+      );
+    });
+
+  // === START - FosGrandChildrenOUsApp ============================================================
+  function FosGrandChildrenOUsApp() {
+    var me = this;
+
+    me.selectedDataSetId;
+    me.selectedOrgUnitId;
+    me.selectedPeriodId;
+
+    me.entryFormObj;
+    me.inputFieldObj;
+    me.approvalDataObj;
+    me.validateDataObj;
+    me.completeFormObj;
+
+    me.grandChildOrgUnitList;
+    me.isGeneratingForm = false;
+
+    me.dataSetIdTag = $("#selectedDataSetId");
+    me.periodIdSelectorTag = $("#selectedPeriodId");
+    me.loaderDivTag = $("#loaderDiv");
+
+    //
+    me.entryFormTag = $(".fosGrandChildrenOUsCustomForm");
+
+    me.entryFormHeaderTags = me.entryFormTag.find(".headerData");
+    me.rowDataTags = me.entryFormTag.find(".rowData");
+
+    me.dialogTag = me.entryFormTag.find(".dialog");
+    me.completeBtnTag = me.entryFormTag.find(".completeBtn");
+    me.runValidateBtnTag = me.entryFormTag.find(".runValidateBtn");
+    me.approvalBtnTag = me.entryFormTag.find(".approvalBtn");
+
+    // ----------------------------------------------------------------------------------------
+    // INIT method
+
+    me.initilize = function () {
+      me.entryFormTag.hide();
+
+      me.isGeneratingForm = false;
+      me.selectedDataSetId = me.dataSetIdTag.val();
+
+      me.entryFormObj = new FosGrandChildrenOUs_EntryForm();
+    };
+
+    me.generateEntryForm = function (periodId, orgUnitId) {
+      if (me.isGeneratingForm) {
+        console.log("Form is generating ... ");
+        return;
+      }
+      me.isGeneratingForm = true;
+
+      me.loaderDivTag.show();
+      me.entryFormTag.hide();
+
+      /**
+       * A. If the new orgunit is selected
+       * 	1. Load grand-child orgunits again
+       * 	2. If this selected orgunit has grand-child,
+       *  	2.1. Generate emty form
+       * 		2.2. Render input fields
+       * 		2.3. Populate data values.
+       * 		2.4. Load validation rules configuration and approval data information
+       *  	2.5. Set up events for buttons ( Complete, Approve, Run Validate, ...).
+       *
+       *
+       * B. If the orgunit is not changed, periodId is changed
+       * 	1. Render input fields again
+       * 	2. Populate data values.
+       * 	3. Load the new approval data information
+       *  4. Set up events for buttons ( Complete, Approve, Run Validate, ...).
+       *
+       * **/
+      try {
+        if (orgUnitId != me.selectedOrgUnitId) {
+          // A case
+          // STEP 0. Reset the form
+          me.entryFormHeaderTags.html("");
+          me.rowDataTags.html("");
+
+          // STEP 1. Get the selected orgunit information
+          me.generateEntryForm_OrgUnitChanged(periodId, orgUnitId);
+        } else if (periodId != me.selectedPeriodId) {
+          // B case
+          me.generateEntryForm_PeriodChanged(periodId, orgUnitId);
+        }
+      } catch (ex) {
+        me.isGeneratingForm = false;
+        me.loaderDivTag.hide();
+        me.entryFormTag.hide();
+        alert("ERROR. Details: " + ex);
+      }
+    };
+
+    me.generateEntryForm_OrgUnitChanged = function (
+      periodId,
+      orgUnitId,
+      execFunc
+    ) {
+      /**
+       * A. If the new orgunit is selected
+       * 	1. Load grand-child orgunits again
+       * 	2. If this selected orgunit has grand-child,
+       *  	2.1. Generate emty form
+       * 		2.2. Render input fields
+       * 		2.3. Populate data values.
+       * 		2.4. Load validation rules configuration, completed form information and approval data information
+       *  	2.5. Set up events for buttons ( Complete, Approve, Run Validate, ...).
+       * **/
+
+      // STEP 1: Generate an emty form with header as grand-child orgUnits, and first columns as data element names
+      me.entryFormObj.generateEntryForm(
+        me.selectedDataSetId,
+        orgUnitId,
+        me.entryFormTag,
+        function (response) {
+          if (
+            response.status == FosGrandChildrenOUsApp.RESPONSE_STATUS_SUCCESS
+          ) {
+            me.orgUnitList = response.data;
+
+            // STEP 4. Load validation rules configuration
+            me.validateDataObj = new FosGrandChildrenOUs_Validation(
+              me.selectedDataSetId,
+              function (validationResponse) {
+                if (
+                  validationResponse.status ==
+                  FosGrandChildrenOUsApp.RESPONSE_STATUS_SUCCESS
+                ) {
+                  me.generateEntryForm_PeriodChanged(
+                    periodId,
+                    orgUnitId,
+                    execFunc
+                  );
+                } else {
+                  me.generateEntryForm_Error(
+                    validationResponse,
+                    periodId,
+                    orgUnitId,
+                    execFunc
+                  );
+                }
+              }
+            ); // END validateDataObj
+          } else {
+            me.generateEntryForm_Error(response, periodId, orgUnitId, execFunc);
+          }
+        }
+      ); // END retrieveAndPopulateDataValues
+    };
+
+    me.generateEntryForm_PeriodChanged = function (
+      periodId,
+      orgUnitId,
+      execFunc
+    ) {
+      /**
+       * B. If the orgunit is not changed, periodId is changed
+       * 	1. Render input fields again
+       * 	2. Populate data values.
+       * 	3. Load the new approval data information, and completed form information.
+       * 		3.1. Block form if the form is approved
+       *  4. Set up events for buttons ( Complete, Approve, Run Validate, ...).
+       * **/
+
+      // STEP 1. Render input fields
+      me.entryFormObj.renderInputFields(
+        me.selectedDataSetId,
+        me.entryFormTag,
+        periodId
+      );
+
+      // STEP 2. Populate data values
+      me.entryFormObj.retrieveAndPopulateDataValues(
+        me.selectedDataSetId,
+        periodId,
+        me.orgUnitList,
+        me.entryFormTag,
+        function () {
+          // STEP 3. Load COMPLETED form information
+          me.completeFormObj = new FosGrandChildrenOUs_CompleteForm(
+            me.selectedDataSetId,
+            periodId,
+            me.orgUnitList,
+            function (completedResponse) {
+              if (
+                completedResponse.status ==
+                FosGrandChildrenOUsApp.RESPONSE_STATUS_SUCCESS
+              ) {
+                if (completedResponse.data.length > 0)
+                  me.completeBtnTag.html("In-Complete");
+                else me.completeBtnTag.html("Complete");
+
+                // // STEP 3. Load approval data information
+                // me.approvalDataObj = new FosGrandChildrenOUs_ApprovalData( me.selectedDataSetId, periodId, orgUnitId, function(approvalDataResponse){
+                // 	if( approvalDataResponse.status == FosGrandChildrenOUsApp.RESPONSE_STATUS_SUCCESS )
+                // 	{
+                // 		if( me.approvalDataObj.allowToApproveData ) {
+                // 			// UnBlock the entry form so that user can enter data values
+                // 			me.entryFormObj.blockEntryForm( me.entryFormTag, false ); // Block the entry form
+                // 			me.approvalBtnTag.html("Approve");
+                // 		}
+                // 		else {
+                // 			// Block the entry form
+                // 			me.entryFormObj.blockEntryForm( me.entryFormTag, true );
+                // 			me.approvalBtnTag.html("Un-Approve");
+                // 		}
+
+                // translation
+
+                me.entryFormObj.translatePage(me.entryFormTag);
+
+                // STEP 4. Set up events for buttons ( Complete, Approve, Run Validate, ...)
+                me.setUp_Events(me.orgUnitList);
+
+                me.isGeneratingForm = false;
+                me.selectedPeriodId = periodId;
+                me.selectedOrgUnitId = orgUnitId;
+                me.loaderDivTag.hide();
+                me.entryFormTag.show();
+
+                if (execFunc) execFunc();
+                // 	}
+                // 	else
+                // 	{
+                // 		me.generateEntryForm_Error( approvalDataResponse, periodId, orgUnitId, execFunc );
+                // 	}
+
+                // }); // END FosGrandChildrenOUs_ApprovalData
+              } else {
+                me.generateEntryForm_Error(
+                  completedResponse,
+                  periodId,
+                  orgUnitId,
+                  execFunc
+                );
+              }
+            }
+          ); // END FosGrandChildrenOUs_CompleteForm
+        }
+      ); // retrieveAndPopulateDataValues
+    };
+
+    me.generateEntryForm_Error = function (
+      response,
+      periodId,
+      orgUnitId,
+      execFunc
+    ) {
+      if (response.status == FosGrandChildrenOUsApp.RESPONSE_STATUS_ERROR) {
+        if (response.code == FosGrandChildrenOUsApp.ERROR_NO_CHILDREN_ORGUNIT) {
+          alert("No Grand Children orgunits. Cannot generate the form.");
+        } else if (
+          response.code == FosGrandChildrenOUsApp.ERROR_DATA_SET_HAS_CAT_COMBO
+        ) {
+          alert("Data set with caterory combo is not suppported.");
+        } else if (response.code == FosGrandChildrenOUsApp.UNKNOWN) {
+          alert(RESTUtils.getResponseErrorMsgIfAny(response));
+        }
+
+        me.isGeneratingForm = false;
+        me.selectedPeriodId = periodId;
+        me.selectedOrgUnitId = orgUnitId;
+        me.loaderDivTag.hide();
+        me.entryFormTag.hide();
+
+        if (execFunc) execFunc();
+      }
+    };
+
+    me.setUp_Events = function (orgUnitList) {
+      me.completeBtnTag.off("click").on("click", function () {
+        /**
+         * Check Data set configuration, if the 'validCompleteOnly' is true OR 'compulsoryFieldsCompleteOnly' is true ==> Run validation / Make sure all compulsory data elements have data values.
+         *
+         * **/
+        // me.validCompleteOnly
+        // me.compulsoryFieldsCompleteOnly
+
+        var confirmMsg = me.completeFormObj.isCompleted
+          ? "Are you sure you want to in-complete the form ?"
+          : "Are you sure you want to complete the form ?";
+        var ok = confirm(confirmMsg);
+        if (ok) {
+          var valid = true;
+
+          // Current status is "In-complete" ==> need to check 'compulsary' and 'validations' to complete a form
+          if (!me.completeFormObj.isCompleted) {
+            // Check compulsary data elements if needed
+            if (
+              me.entryFormObj.dataSetConfig.compulsoryFieldsCompleteOnly ||
+              me.entryFormObj.dataSetConfig.fieldCombinationRequired
+            ) {
+              valid = me.entryFormObj.checkCompulsaryDEs(me.entryFormTag);
+              if (!valid) {
+                alert("Please enter values for compulsary fields.");
+              }
+            }
+
+            // Check validations if all of them are passed ONLY when it's needed
+            if (valid && me.entryFormObj.dataSetConfig.validCompleteOnly) {
+              me.validateDataObj.runValidations(
+                me.selectedPeriodId,
+                me.orgUnitList,
+                function (response) {
+                  if (response.data.valid) {
+                    // Run Complete/In-Complete Data set
+                    me.executeCompleteForm(me.selectedPeriodId, me.orgUnitList);
+                  } else {
+                    me.showValidationRuleDialog(response);
+                    alert("Please resolve the violated validations.");
+                  }
+                }
+              );
+            } else if (valid) {
+              // Run Complete/In-Complete Data set
+              me.executeCompleteForm(me.selectedPeriodId, me.orgUnitList);
+            }
+          } else {
+            // Run Complete/In-Complete Data set
+            me.executeCompleteForm(me.selectedPeriodId, me.orgUnitList);
+          }
+        }
+      });
+
+      me.approvalBtnTag.off("click").on("click", function () {
+        var confirmMsg = me.approvalDataObj.allowToApproveData
+          ? "Are you sure you want to approve data ?"
+          : "Are you sure you want to unapprove data ?";
+        var ok = confirm(confirmMsg);
+        if (ok) {
+          me.approvalDataObj.runApprovalData(
+            me.selectedPeriodId,
+            me.selectedOrgUnitId,
+            function (response) {
+              if (me.approvalDataObj.allowToApproveData) {
+                me.approvalBtnTag.html("Approve");
+                setHeaderMessage("The form is approved");
+              } else {
+                me.approvalBtnTag.html("Un-Approve");
+                setHeaderMessage("The form is un-approved");
+              }
+            }
+          );
+        }
+      });
+
+      me.runValidateBtnTag.off("click").on("click", function () {
+        me.validateDataObj.runValidations(
+          me.selectedPeriodId,
+          me.orgUnitList,
+          function (response) {
+            me.showValidationRuleDialog(response);
+          }
+        );
+      });
+    };
+
+    me.executeCompleteForm = function (periodId, orgUnitList) {
+      me.completeFormObj.execute(
+        me.selectedPeriodId,
+        me.orgUnitList,
+        function (response) {
+          if (
+            response.status == FosGrandChildrenOUsApp.RESPONSE_STATUS_SUCCESS
+          ) {
+            var label = me.completeFormObj.isCompleted
+              ? "In-Completed"
+              : "Completed";
+            me.completeBtnTag.html(label);
+          }
+
+          alert(response.data.message);
+        }
+      );
+    };
+
+    me.showValidationRuleDialog = function (response) {
+      var validationDivTag = response.data.validationDivTag;
+
+      me.dialogTag.html("").append(validationDivTag);
+      me.dialogTag.dialog({
+        title: "Validation Rule",
+        height: 500,
+        width: 800,
+        resizable: true,
+        modal: true,
+        buttons: {
+          Close: function () {
+            $(this).dialog("close");
+          },
+        },
+      });
+    };
+    // ----------------------------------------------------------------------------------------
+    // Run INIT method
+
+    me.initilize();
+  }
+
+  FosGrandChildrenOUsApp.RESPONSE_STATUS_SUCCESS = "success";
+  FosGrandChildrenOUsApp.RESPONSE_STATUS_ERROR = "error";
+
+  FosGrandChildrenOUsApp.ERROR_NO_CHILDREN_ORGUNIT =
+    "ERROR_NO_CHILDREN_ORGUNIT";
+  FosGrandChildrenOUsApp.ERROR_DATA_SET_HAS_CAT_COMBO =
+    "ERROR_DATA_SET_HAS_CAT_COMBO";
+  FosGrandChildrenOUsApp.ERROR_DATA_VALUE_SAVED = "ERROR_DATA_VALUE_SAVED";
+  FosGrandChildrenOUsApp.ERROR_UNKNOWN = "UNKNOWN";
+
+  // === END - FosGrandChildrenOUsApp =====================================================================
+
+  // === START - FosGrandChildrenOUs_EntryForm ============================================================
+  function FosGrandChildrenOUs_EntryForm() {
+    var me = this;
+
+    me.PARAM_DATASET_ID = "@PARAM_DATASET_ID";
+    me.PARAM_ORGUNIT_ID = "@PARAM_ORGUNIT_ID";
+
+    me.API_BASE_QUERY_URL = BASE_QUERY_URL;
+
+    // For data set
+    me.QUERY_URL_LOAD_DATASET = `${me.API_BASE_QUERY_URL}/dataSets/${me.PARAM_DATASET_ID}.json?fields=fieldCombinationRequired,validCompleteOnly,compulsoryFieldsCompleteOnly,categoryCombo,workflow,compulsoryDataElementOperands[id],dataSetElements[dataElement[id,displayFormName,displayDescription,valueType,optionSet[options[code,displayName]]]]`;
+
+    // For OrgUnit
+    me.QUERY_URL_LOAD_GRAND_CHILDREN_ORGUNITS = `${me.API_BASE_QUERY_URL}/organisationUnits/${me.PARAM_ORGUNIT_ID}.json?fields=children[children[id,displayName,code]]`;
+
+    // For Data Values
+    me.QUERY_URL_LOAD_DATA_VALUES = `${me.API_BASE_QUERY_URL}/dataValueSets?dataSet=${me.PARAM_DATASET_ID}&period=${me.PARAM_PERIOD_ID}&`; // &orgUnit=${me.PARAM_ORGUNIT_ID} ==> Will be generated orgunitList params later
+
+    // For Option set translation
+    me.QUERY_URL_SAVE_DATA_VALUE = `${me.API_BASE_QUERY_URL}/optionSets/xdBjO8vRHss.json?fields=options[code,displayName]`;
+
+    // ----------------------------------------------------------------------------------------
+    // Variables
+
+    me.KEY_OPTION_CODE = "opt_c";
+    me.KEY_DE_ID = "de_id";
+    me.colorRed = "#ff8a8a";
+
+    me.defaultCatComboId;
+    me.dataElementMap;
+    me.grandChildOrgUnitList;
+    me.dataSetConfig;
+    me.optionMap;
+
+    me.inputFieldObj;
+
+    // ----------------------------------------------------------------------------------------
+    // INIT method
+
+    me.initilize = function () {
+      console.log("===================== FORM is INITILIZED");
+
+      me.defaultCatComboId = dhis2.de.defaultCategoryCombo;
+    };
+
+    // ----------------------------------------------------------------------------------------
+    // MAIN methods
+
+    me.generateEntryForm = function (
+      dataSetId,
+      orgUnitId,
+      entryFormTag,
+      exeFunc
+    ) {
+      me.retrieveGrandChildrenOUList(orgUnitId, function (granChidrenResponse) {
+        if (
+          granChidrenResponse.status ==
+          FosGrandChildrenOUsApp.RESPONSE_STATUS_SUCCESS
+        ) {
+          var ouList = granChidrenResponse.data;
+
+          me.retrieveDataSet(dataSetId, function (dataSetResponse) {
+            if (
+              dataSetResponse.status ==
+              FosGrandChildrenOUsApp.RESPONSE_STATUS_SUCCESS
+            ) {
+              me.dataElementMap = dataSetResponse.data;
+
+              me.retrieveOptionSet(function (optionSetResponse) {
+                if (
+                  dataSetResponse.status ==
+                  FosGrandChildrenOUsApp.RESPONSE_STATUS_SUCCESS
+                ) {
+                  var tableHeaderTags = entryFormTag.find(".headerData");
+                  var rowDataTags = entryFormTag.find(".rowData");
+
+                  me.renderTableHeaders(ouList, tableHeaderTags);
+                  me.renderDataRows(me.dataElementMap, ouList, rowDataTags);
+
+                  me.setUp_Events_DEDescriptionToggle(entryFormTag);
+
+                  if (exeFunc) exeFunc(granChidrenResponse); // Return the granChidrenResponse so that we can have Grand-Children OUs later
+                } else {
+                  if (exeFunc) exeFunc(optionSetResponse);
+                }
+              }); // END retrieveOptionSet
+            } else {
+              if (exeFunc) exeFunc(dataSetResponse);
+            }
+          }); // END "retrieveDataSet"
+        } else {
+          if (exeFunc) exeFunc(granChidrenResponse);
+        }
+      }); // END "retrieveGrandChildrenOUList"
+    };
+
+    me.renderInputFields = function (dataSetId, entryFormTag, periodId) {
+      me.inputFieldObj = new FosGrandChildrenInputField(dataSetId);
+
+      entryFormTag.find(".inputDiv").html("");
+
+      entryFormTag.find(".inputDiv").each(function () {
+        var colTag = $(this);
+
+        var deId = colTag.attr("deId");
+        var ouId = colTag.attr("ouId");
+        var optComboId = colTag.attr("optComboId");
+
+        var dataElement = me.dataElementMap[deId];
+        if (dataElement == undefined) {
+          colTag.html(
+            `<span style='color:red'>Not found data element ${deId}</span>`
+          );
+        } else {
+          var inputTag = me.inputFieldObj.generateInputField(
+            dataElement,
+            periodId,
+            ouId,
+            optComboId
+          );
+          colTag.append(inputTag);
+        }
+      });
+    };
+
+    me.blockEntryForm = function (entryFormTag, blocked) {
+      entryFormTag.find("input,select").prop("disabled", blocked);
+      // entryFormTag.find("button").prop("disabled", blocked);
+    };
+
+    me.checkCompulsaryDEs = function (entryFormTag) {
+      var valid = true;
+
+      entryFormTag.find(`[compulsary="true"]`).each(function () {
+        if ($(this).val() == "") {
+          $(this).css("background-color", me.colorRed);
+          valid = false;
+        }
+      });
+
+      return valid;
+    };
+
+    // ----------------------------------------------------------------------------------------
+    // Supportive methods - GENERATING FORMS related
+
+    /** <div class="grid-header headerData" ouListData="CL:StaticCL,AS:AssocCL,CB:CommDist,OU:MobileOU,VC:DigPlat"></div>
+			  ====>
+  
+			  <div class="grid-header" keyword="opt_c:">Associated Clinics (AS)</div>
+			  <div class="grid-header" keyword="opt_c:">Community-Based Distribution / Services ()</div>
+			  <div class="grid-header" keyword="opt_c:">Mobile Outreach Units ()</div>
+			  <div class="grid-header" keyword="opt_c:">Digital Platforms ()</div>
+			  **/
+
+    me.renderTableHeaders = function (ouList, tableHeaderTags) {
+      tableHeaderTags.each(function () {
+        var headerTag = $(this);
+        headerTag.hide();
+
+        var headerInfoData = headerTag.attr("ouListData").split(",");
+        // for( var i=headerInfoData.length-1; i>=0; i-- )
+        for (var i = 0; i < headerInfoData.length; i++) {
+          var data = headerInfoData[i].split(":");
+          var ouType = data[0];
+          var transKeyword = data[1];
+
+          var foundOuData = ouList.filter(function (item) {
+            return item.code.substring(0, 2) == ouType;
+          });
+          if (foundOuData.length > 0) {
+            $(
+              `<div class="grid-header colData" ouType="${ouType}" keyword="opt_c:${transKeyword}">${foundOuData[0].displayName}</div>`
+            ).insertBefore(headerTag);
+          } else {
+            $(
+              `<div class="grid-header" style="color:red">Not found OrgUnit with TYPE ${ouType}</div>`
+            ).insertBefore(headerTag);
+          }
+        }
+      });
+    };
+
+    /** 
+		   * 
+		  <div class="rowData" deId="j54Hd4Q6LtQ" optComboId="mYU1cpPLbA3" ouTypes="CL,AS,CB,OU,VC"></div> <!-- DE 1, List of OUs -->
+		  ==============>
+  
+		  
+		  
+		  <div class="grid-cell title_row">
+			  <div class="toggle-data " data-target="#content1"><span class="title">Contraceptives – Counseling – General</span> <span class="info-icon">ℹ</span> <span class="arrow">▼</span></div>
+  
+			  <div class="content" id="content1" style="display: none;">A trained counselor/service provider shares person-specific non-directive advice about all available contraceptive methods before the person decides which is most suitable for them, to ensure their individual situation is considered in method selection, and that all possible options are made clear to them, in a space which allows confidentiality. This service should be recorded for people attending a contraceptive consultation for the first time and when considering switching methods, regardless of the method they select and even if they decide not to take up a method at that time.</div>
+		  </div>
+  
+		  <div class="grid-cell data"></div>
+		  <div class="grid-cell data"></div>
+		  <div class="grid-cell data"></div>
+		  <div class="grid-cell data"></div>
+		  <div class="grid-cell data"></div> 
+		   **/
+
+    //  <div class="grid-header headerData" ouListData="CL:StaticCL,AS:AssocCL,CB:CommDist,OU:MobileOU,VC:DigPlat"></div>
+
+    me.getOrgUnitTypesFromHeaderTag = function (ouList, headerTag) {
+      var typeMap = {}; // {"CL" : <ouData> }
+      var headerInfoData = headerTag.attr("ouListData").split(",");
+      for (var i = 0; i < headerInfoData.length; i++) {
+        var data = headerInfoData[i].split(":");
+        var ouType = data[0];
+
+        var foundOuData = ouList.filter(function (item) {
+          return item.code.substring(0, 2) == ouType;
+        });
+        typeMap[ouType] = foundOuData.length > 0 ? foundOuData[0] : undefined;
+      }
+
+      return typeMap;
+    };
+
+    me.renderDataRows = function (dataElementMap, ouList, rowDataTags) {
+      rowDataTags.each(function () {
+        var rowTag = $(this);
+        rowTag.hide();
+
+        var headerTag = rowTag.closest(".tableData").find(".headerData");
+        var ouTypeMap = me.getOrgUnitTypesFromHeaderTag(ouList, headerTag);
+
+        // TODO: NEED to check if the deId, optComboId and ouTypes are defined properly
+        var deId = rowTag.attr("deId");
+        var optComboId = rowTag.attr("optComboId");
+        var deOrgUnitTypes = rowTag.attr("ouTypes").split(",");
+
+        var dataElement = dataElementMap[deId];
+
+        // Add Data element column
+        var colspusaryTag = dataElement.compulsary
+          ? "<span style='color: red'> *</span>"
+          : "";
+
+        var deColTag = $(`<div class="grid-cell title_row">
+									  <div class="toggle-data " data-target="#content1">
+										  <span class="title">${dataElement.displayFormName} ${colspusaryTag}</span> 
+										  <span class="info-icon">&#x2139;</span>
+											<span class="arrow">&#9660;</span>
+									  </div>
+									  <div class="content" style="display: none;">${dataElement.displayDescription}</div>
+								  </div>`);
+        deColTag.insertBefore(rowTag);
+        // rowTag.append(deColTag);
+
+        // Add INPUT columns
+        for (var ouType in ouTypeMap) {
+          var ouData = ouTypeMap[ouType];
+          if (
+            ouData != undefined &&
+            (deOrgUnitTypes.indexOf("*") >= 0 ||
+              deOrgUnitTypes.indexOf(ouType) >= 0)
+          ) {
+            var colTag = $(
+              `<div class='grid-cell data colData inputDiv' deId="${dataElement.id}" ouId="${ouData.id}" optComboId="${optComboId}"></div>`
+            );
+            colTag.insertBefore(rowTag);
+            // rowTag.append(colTag);
+          } else {
+            $(`<div class='grid-cell data colData'></div>`).insertBefore(
+              rowTag
+            );
+            // rowTag.append(`<div class='grid-cell data colData'></div>`);
+          }
+        }
+      });
+    };
+
+    me.setUp_Events_DEDescriptionToggle = function (entryFormTag) {
+      entryFormTag.find(".toggle-data ").click(function () {
+        var target = $(this).closest(".title_row").find(".content");
+        $(target).toggle();
+        $(this).find(".arrow").toggleClass("up");
+      });
+    };
+
+    me.setGrandChildOrgUnitList = function (orgUnitData) {
+      var ouList = [];
+
+      var ouChildren = orgUnitData.children;
+      if (ouChildren && ouChildren.length > 0) {
+        for (let i = 0; i < ouChildren.length; i++) {
+          const ouChild = ouChildren[i];
+          var ouGrandChildren = ouChild.children;
+          if (ouGrandChildren != undefined && ouGrandChildren.length > 0) {
+            ouList = ouList.concat(ouGrandChildren);
+          }
+        }
+      }
+
+      me.grandChildOrgUnitList = ouList;
+
+      return ouList;
+    };
+
+    me.getOrgUnitType = function (orgUnitData) {
+      return orgUnitData.code.substring(0, 2);
+    };
+
+    // ----------------------------------------------------------------------------------------
+    // Supportive methods - DATA SET & DATA ELEMENT related
+
+    me.retrieveDataSet = function (dataSetId, execFunc) {
+      var url = me.QUERY_URL_LOAD_DATASET;
+      url = url.replace(me.PARAM_DATASET_ID, dataSetId);
+
+      RESTUtils.sendRequest(url, function (response) {
+        if (response.status == FosGrandChildrenOUsApp.RESPONSE_STATUS_SUCCESS) {
+          if (response.data.categoryCombo.id != me.defaultCatComboId) {
+            execFunc({
+              status: FosGrandChildrenOUsApp.RESPONSE_STATUS_ERROR,
+              code: FosGrandChildrenOUsApp.ERROR_DATA_SET_HAS_CAT_COMBO,
+              data: response.data,
+            });
+          } else {
+            me.dataSetConfig = response.data;
+            execFunc({
+              status: FosGrandChildrenOUsApp.RESPONSE_STATUS_SUCCESS,
+              data: me.getDataElements(response.data),
+            });
+          }
+        } else {
+          execFunc(response); // UNKNOWN error case
+        }
+      });
+    };
+
+    me.getDataElements = function (dataSetData) {
+      var dataElementMap = {};
+
+      var allFieldsRequired = dataSetData.fieldCombinationRequired; // All fields in entry form are mandatory
+      var compulsoryDEList = dataSetData.compulsoryDataElementOperands;
+      compulsoryDEList = compulsoryDEList ? compulsoryDEList : [];
+
+      var dataSetElements = dataSetData.dataSetElements;
+      for (var i = 0; i < dataSetElements.length; i++) {
+        var dataElement = dataSetElements[i].dataElement;
+
+        // Set "compulsary" for each Data element
+        var compulsary =
+          allFieldsRequired ||
+          compulsoryDEList.filter(function (item) {
+            return item.id == dataElement.id;
+          }).length > 0;
+        dataElement.compulsary = compulsary;
+
+        dataElementMap[dataElement.id] = dataElement;
+      }
+
+      return dataElementMap;
+    };
+
+    // ----------------------------------------------------------------------------------------
+    // Supportive methods - Load DATA VALUES for FORM
+
+    me.retrieveAndPopulateDataValues = function (
+      dataSetId,
+      periodId,
+      orgUnitList,
+      entryFormTag,
+      execFunc
+    ) {
+      entryFormTag.find("input,select").val("");
+      me.retrieveDataValues(
+        dataSetId,
+        periodId,
+        orgUnitList,
+        function (response) {
+          if (
+            response.status == FosGrandChildrenOUsApp.RESPONSE_STATUS_SUCCESS
+          ) {
+            var dataValues = response.data.dataValues;
+            for (let i = 0; i < dataValues.length; i++) {
+              const dataValue = dataValues[i];
+              entryFormTag
+                .find(
+                  `[deId="${dataValue.dataElement}"][optComboId="${dataValue.categoryOptionCombo}"][ouId="${dataValue.orgUnit}"]`
+                )
+                .find("input,select")
+                .val(dataValue.value);
+            }
+
+            execFunc({
+              status: FosGrandChildrenOUsApp.RESPONSE_STATUS_SUCCESS,
+            });
+          } else {
+            execFunc(response);
+          }
+        }
+      );
+    };
+
+    me.retrieveDataValues = function (
+      dataSetId,
+      periodId,
+      orgUnitList,
+      execFunc
+    ) {
+      // orgUnitParams ==> orgUnit=c0KSZZIXuuj&orgUnit=ygTzE0LlHYL
+      var orgUnitParams = orgUnitList
+        .map(function (item) {
+          return `orgUnit=${item.id}`;
+        })
+        .join("&");
+
+      var url = me.QUERY_URL_LOAD_DATA_VALUES;
+      url = url.replace(me.PARAM_DATASET_ID, dataSetId);
+      url = url.replace(me.PARAM_PERIOD_ID, periodId);
+      url += orgUnitParams;
+
+      RESTUtils.sendRequest(url, execFunc, "GET");
+    };
+
+    // ----------------------------------------------------------------------------------------
+    // Supportive methods - Retrieve Grand-Children of a selected OrgUnit
+
+    me.retrieveGrandChildrenOUList = function (orgUnitId, exeFunc) {
+      var url = me.QUERY_URL_LOAD_GRAND_CHILDREN_ORGUNITS;
+      url = url.replace(me.PARAM_ORGUNIT_ID, orgUnitId);
+
+      RESTUtils.sendRequest(url, function (response) {
+        if (response.status == FosGrandChildrenOUsApp.RESPONSE_STATUS_SUCCESS) {
+          var grandChildOrgUnitList = me.setGrandChildOrgUnitList(
+            response.data
+          );
+
+          if (grandChildOrgUnitList.length == 0) {
+            // alert("No Grand Children orgunits. Cannot generate the form");
+            exeFunc({
+              status: FosGrandChildrenOUsApp.RESPONSE_STATUS_ERROR,
+              code: FosGrandChildrenOUsApp.ERROR_NO_CHILDREN_ORGUNIT,
+            });
+          } else {
+            exeFunc({
+              status: FosGrandChildrenOUsApp.RESPONSE_STATUS_SUCCESS,
+              code: FosGrandChildrenOUsApp.ERROR_UNKNOWN,
+              data: grandChildOrgUnitList,
+            });
+          }
+        } else {
+          exeFunc(response);
+        }
+      });
+    };
+
+    // ----------------------------------------------------------------------------------------
+    // Supportive methods - TRANSLATION optionset
+
+    me.retrieveOptionSet = function (execFunc) {
+      RESTUtils.sendRequest(me.QUERY_URL_SAVE_DATA_VALUE, function (response) {
+        var optionList = response.data.options;
+        me.optionMap = optionList.reduce((json, value, key) => {
+          json[value.code] = value.displayName;
+          return json;
+        }, {});
+
+        execFunc(response);
+      });
+    };
+
+    me.translatePage = function (entryFormTag) {
+      entryFormTag.find("[keyword]").each(function () {
+        var keys = $(this).attr("keyword").split(":");
+        if (keys.length == 2) {
+          if (keys[0] == me.KEY_OPTION_CODE) {
+            var translatedText = me.optionMap[keys[1]];
+            translatedText =
+              translatedText != undefined ? translatedText : keys[1];
+            $(this).html(translatedText);
+          } else if (keys[0] == me.KEY_DE_ID) {
+            var dataElement = me.dataElementMap[keys[1]];
+            var translatedText =
+              dataElement != undefined
+                ? dataElement.displayDescription
+                : keys[1];
+            $(this).html(translatedText);
+          }
+        }
+      });
+    };
+
+    // ----------------------------------------------------------------------------------------
+    // RUN Init method
+
+    me.initilize();
+  }
+  // === END FosGrandChildrenOUs_EntryForm ================================================================
+
+  // ===  START - Validation ==============================================================================
+  // Check DE compulsory
+  // Check Validation Rules
+  function FosGrandChildrenOUs_Validation(_dataSetId, _initFunc) {
+    var me = this;
+
+    me.dataSetId = _dataSetId;
+
+    // ------------------------------------------------------------------------------------------
+    // URLs
+
+    me.PARAM_ORGUNIT_ID = "@PARAM_ORGUNIT_ID";
+    me.PARAM_PERIOD_ID = "@PARAM_ORGUNIT_ID";
+    me.PARAM_ORGUNIT_ID = "@PARAM_ORGUNIT_ID";
+
+    me.API_BASE_QUERY_URL = BASE_QUERY_URL;
+
+    // https://training.data.fosfeminista.org/api/validationRules?dataSet=uFurRa2Tc5G&fields=id,operator&paging=false
+    me.QUERY_URL_GET_VALIDATION_RULES = `${me.API_BASE_QUERY_URL}/validationRules?dataSet=${me.dataSetId}&fields=id,operator&paging=false`;
+
+    me.QUERY_URL_RUN_VALIDATION = `${me.API_BASE_QUERY_URL}/validation/dataSet/${me.dataSetId}.json?pe=${me.PARAM_PERIOD_ID}&ou=${me.PARAM_ORGUNIT_ID}`;
+
+    // ------------------------------------------------------------------------------------------
+    // variables
+
+    me.VALIDATION_RULE_OPERATORS_MAP = {
+      equal_to: "=",
+      not_equal_to: "!=",
+      greater_than: ">",
+      greater_than_or_equal_to: ">=",
+      less_than: "<",
+      less_than_or_equal_to: "<=",
+      compulsory_pair: "If either side is present, the other must also be",
+      exclusive_pair: "If either side is present, the other must not be",
+    };
+
+    me.operatorMap;
+
+    // ------------------------------------------------------------------------------------------
+    // INIT method
+
+    me.initilize = function () {
+      me.retrieveValidationRules(function (ruleResponse) {
+        if (
+          ruleResponse.status == FosGrandChildrenOUsApp.RESPONSE_STATUS_SUCCESS
+        ) {
+          me.operatorMap = ruleResponse.data;
+        }
+
+        _initFunc(ruleResponse);
+      });
+    };
+
+    // ------------------------------------------------------------------------------------------
+    // Supportive methods - RUN VALIDATION for ORGUNIT LIST related
+
+    me.runValidations = function (periodId, orgUnitList, execFunc) {
+      if (me.operatorMap == undefined) {
+        execDone({
+          status: FosGrandChildrenOUsApp.RESPONSE_STATUS_SUCCESS,
+          data: { valid: true },
+        }); // No any validation rule is defined
+      } else {
+        var valid = true;
+
+        var validationDivTag =
+          me.generateValidationResult_Contents(orgUnitList);
+
+        // Run validation rules
+        me.total = orgUnitList.length;
+        me.processingIdx = 0;
+
+        for (let i = 0; i < orgUnitList.length; i++) {
+          const orgUnitData = orgUnitList[i];
+          const ouValidationDivTag = validationDivTag.find(
+            `[ouId="${orgUnitData.id}"]`
+          );
+
+          me.validate_OrgUnit(
+            periodId,
+            orgUnitData,
+            me.operatorMap,
+            ouValidationDivTag,
+            function (response) {
+              if (!response.data.valid) valid = false;
+
+              me.processingIdx++;
+              if (me.processingIdx == me.total) {
+                var statusData = {
+                  data: { valid: valid, validationDivTag: validationDivTag },
+                };
+                statusData.status = valid
+                  ? FosGrandChildrenOUsApp.RESPONSE_STATUS_SUCCESS
+                  : FosGrandChildrenOUsApp.RESPONSE_STATUS_ERROR;
+                execFunc(statusData);
+              }
+            }
+          );
+        }
+
+        // execFunc( divTag );
+      }
+    };
+
+    me.generateValidationResult_Contents = function (orgUnitList) {
+      var divTag = $(`<div></div>`);
+      for (let i = 0; i < orgUnitList.length; i++) {
+        var orgUnitData = orgUnitList[i];
+
+        divTag.append(`<h2>${orgUnitData.displayName}</h2>`);
+        divTag.append(`<div ouId="${orgUnitData.id}"></div>`);
+      }
+
+      return divTag;
+    };
+
+    // ------------------------------------------------------------------------------------------
+    // Supportive methods - VALIDATION RULES related
+
+    me.retrieveValidationRules = function (execFunc) {
+      RESTUtils.sendRequest(
+        me.QUERY_URL_GET_VALIDATION_RULES,
+        function (response) {
+          if (
+            response.status == FosGrandChildrenOUsApp.RESPONSE_STATUS_SUCCESS
+          ) {
+            if (response.data.validationRules.length > 0) {
+              execFunc({
+                status: FosGrandChildrenOUsApp.RESPONSE_STATUS_SUCCESS,
+                data: me.convertOperatorToSign(response.data.validationRules),
+              });
+            } else {
+              execFunc({
+                status: FosGrandChildrenOUsApp.RESPONSE_STATUS_SUCCESS,
+                data: {},
+              });
+            }
+          } else {
+            execFunc(response);
+          }
+        }
+      );
+    };
+
+    me.convertOperatorToSign = function (validationRuleList) {
+      var operatorMap = {};
+      for (var i = 0; i < validationRuleList.length; i++) {
+        var rule = validationRuleList[i];
+        operatorMap[rule.id] = me.VALIDATION_RULE_OPERATORS_MAP[rule.operator];
+      }
+
+      return operatorMap;
+    };
+
+    // ------------------------------------------------------------------------------------------
+    // Supportive methods - RUN VALIDATION for ONLY ONE OrgUnit related
+
+    me.validate_OrgUnit = function (
+      periodId,
+      orgUnitData,
+      operatorMap,
+      ouValidationTag,
+      execFunc
+    ) {
+      var url = me.QUERY_URL_RUN_VALIDATION;
+      url = url.replace(me.PARAM_PERIOD_ID, periodId);
+      url = url.replace(me.PARAM_ORGUNIT_ID, orgUnitData.id);
+
+      RESTUtils.sendRequest(url, function (response) {
+        if (response.status == FosGrandChildrenOUsApp.RESPONSE_STATUS_SUCCESS) {
+          var validationRuleViolations = response.data.validationRuleViolations;
+          var resultTag = me.generateValidationResult_Table(
+            orgUnitData,
+            response.data,
+            operatorMap
+          );
+          ouValidationTag.append(resultTag);
+
+          var valid = validationRuleViolations.length > 0;
+          execFunc({
+            status: FosGrandChildrenOUsApp.RESPONSE_STATUS_SUCCESS,
+            data: { valid },
+          });
+        } else {
+          var errorTag = me.generateErrorValidateMessage(response);
+          ouValidationTag.append(errorTag);
+
+          response.code = FosGrandChildrenOUsApp.ERROR_RUN_VALIDATION;
+          response.data.valid = false;
+          execFunc(response);
+        }
+      });
+    };
+
+    me.generateValidationResult_Table = function (
+      orgUnitData,
+      validationResult,
+      operatorMap
+    ) {
+      var validationRuleViolations = validationResult.validationRuleViolations;
+      var commentRequiredViolations =
+        validationResult.commentRequiredViolations;
+
+      if (validationRuleViolations.length > 0) {
+        var tableTag = $(`<div class="div-table entryForm"><div>`);
+
+        // Header
+        var headerTag = me.generateValidationResult_HeaderTag();
+        tableTag.append(headerTag);
+
+        // Rows
+        for (var i = 0; i < validationRuleViolations.length; i++) {
+          var violationResult = validationRuleViolations[i];
+          var validationRule = violationResult.validationRule;
+
+          var rowTag = $("<div class='div-table-row'></div>");
+          rowTag.append(
+            `<div class="div-table-col">${validationRule.displayName}</div>`
+          );
+          rowTag.append(
+            `<div class="div-table-col">${violationResult.leftsideValue}</div>`
+          );
+          rowTag.append(
+            `<div class="div-table-col">${operatorMap[validationRule.id]}</div>`
+          );
+          rowTag.append(
+            `<div class="div-table-col">${violationResult.rightsideValue}</div>`
+          );
+
+          tableTag.append(rowTag);
+        }
+
+        // var divTag = $("<div></div>");
+        // divTag.append(`<h2>${orgUnitData.displayName}</h2>`);
+        // divTag.append( tableTag );
+
+        // return divTag;
+
+        return tableTag;
+      } else {
+        return me.generateSuccessValidateMessage();
+      }
+
+      // if( commentRequiredViolations.length > 0 )
+      // {
+      // 	// TODO : NEED TO find out what it is
+      // }
+
+      // if( validationRuleViolations.length == 0 && commentRequiredViolations.length == 0 )
+    };
+
+    me.generateSuccessValidateMessage = function () {
+      return $(
+        `<h3 style="color:green; padding-left: 10px;margin-bottom: 30px;">The data entry screen successfully passed validation.</h3>`
+      );
+    };
+
+    me.generateErrorValidateMessage = function (response) {
+      if (response.status == FosGrandChildrenOUsApp.RESPONSE_STATUS_ERROR) {
+        var msg = "";
+        if (response.data.message) msg = response.data.message;
+
+        return $(
+          `<h3 style="color:red; padding-left: 10px;margin-bottom: 30px;">Error while running validation.\n ${msg}</h3>`
+        );
+      }
+
+      return "";
+    };
+
+    me.generateValidationResult_HeaderTag = function () {
+      var headerTag = $("<div class='div-table-row header'></div>");
+
+      headerTag.append("<div class='div-table-col'>Validation rule</div>");
+      headerTag.append("<div class='div-table-col'>Left side</div>");
+      headerTag.append("<div class='div-table-col'>Operator</div>");
+      headerTag.append("<div class='div-table-col'>Right side</div>");
+
+      return headerTag;
+    };
+
+    // ------------------------------------------------------------------------------------------
+    // RUN init
+
+    me.initilize();
+  }
+
+  // ===  END Validation ============================================================
+
+  // ===  START - Approval Data  ============================================================================
+  function FosGrandChildrenOUs_ApprovalData(
+    _dataSetId,
+    _periodId,
+    _orgUnitId,
+    _initFunc
+  ) {
+    var me = this;
+
+    me.dataSetId = _dataSetId;
+    me.periodId = _periodId;
+    me.orgUnitId = _orgUnitId;
+
+    // ------------------------------------------------------------------------------------------
+    // URLs
+
+    me.PARAM_ORGUNIT_ID = "@PARAM_ORGUNIT_ID";
+    me.PARAM_PERIOD_ID = "@PARAM_PERIOD_ID";
+
+    me.API_BASE_QUERY_URL = BASE_QUERY_URL;
+
+    // https://training.data.fosfeminista.org/api/dataApprovals?ds=uFurRa2Tc5G&pe=202311&ou=c0KSZZIXuuj
+    // GET method : Get approval information
+    // POST method : Approve form
+    // DELETE method : Un-approve form
+    me.QUERY_URL_APPROVAL_STATUS_GET = `${me.API_BASE_QUERY_URL}/dataApprovals?ds=${me.dataSetId}&pe=${me.PARAM_PERIOD_ID}&ou=${me.PARAM_ORGUNIT_ID}`;
+
+    // ------------------------------------------------------------------------------------------
+    // variables
+
+    me.allowToApproveData;
+
+    // ------------------------------------------------------------------------------------------
+    // INIT method
+
+    me.initilize = function () {
+      me.retrieveApprovalDataStatus(
+        me.periodId,
+        me.orgUnitId,
+        function (approvalDataResponse) {
+          if (
+            approvalDataResponse.status ==
+            FosGrandChildrenOUsApp.RESPONSE_STATUS_SUCCESS
+          ) {
+            me.allowToApproveData = approvalDataResponse.data.mayApprove; // "mayApprove" means "Allow to Approve now"
+          }
+
+          _initFunc(approvalDataResponse);
+        }
+      );
+    };
+
+    // ------------------------------------------------------------------------------------------
+    // Supportive methods
+
+    me.runApprovalData = function (periodId, orgUnitId, exeFunc) {
+      if (me.allowToApproveData) {
+        me.approveData(periodId, orgUnitId, function (response) {
+          me.allowToApproveData = false;
+          exeFunc(response);
+        });
+      } else {
+        me.unapproveData(periodId, orgUnitId, function (response) {
+          me.allowToApproveData = true;
+          exeFunc(response);
+        });
+      }
+    };
+
+    me.allowToApproveData = function (approvalData) {
+      return approvalData.mayApprove; // "mayApprove" means "Allow to Approve now"
+    };
+
+    me.retrieveApprovalDataStatus = function (periodId, orgUnitId, execFunc) {
+      var url = me.QUERY_URL_APPROVAL_STATUS_GET;
+      url = url.replace(me.PARAM_PERIOD_ID, periodId);
+      url = url.replace(me.PARAM_ORGUNIT_ID, orgUnitId);
+      RESTUtils.sendRequest(
+        url,
+        function (response) {
+          if (
+            response.status == FosGrandChildrenOUsApp.RESPONSE_STATUS_SUCCESS
+          ) {
+            me.allowToApproveData = response.data.mayApprove; // "mayApprove" means "Allow to Approve now"
+          }
+
+          execFunc(response);
+        },
+        "GET"
+      );
+    };
+
+    me.approveData = function (periodId, orgUnitId, execFunc) {
+      var url = me.QUERY_URL_APPROVAL_STATUS_GET;
+      url = url.replace(me.PARAM_PERIOD_ID, periodId);
+      url = url.replace(me.PARAM_ORGUNIT_ID, orgUnitId);
+      RESTUtils.sendRequest(
+        url,
+        function (response) {
+          if (response.status == FosGrandChildrenOUsApp.RESPONSE_STATUS_SUCCESS)
+            me.allowToApproveData = false;
+          execFunc(response);
+        },
+        "POST"
+      );
+    };
+
+    me.unapproveData = function (periodId, orgUnitId, execFunc) {
+      var url = me.QUERY_URL_APPROVAL_STATUS_GET;
+      url = url.replace(me.PARAM_PERIOD_ID, periodId);
+      url = url.replace(me.PARAM_ORGUNIT_ID, orgUnitId);
+      RESTUtils.sendRequest(
+        url,
+        function (response) {
+          if (response.status == FosGrandChildrenOUsApp.RESPONSE_STATUS_SUCCESS)
+            me.allowToApproveData = true;
+          execFunc(response);
+        },
+        "DELETE"
+      );
+    };
+
+    // ------------------------------------------------------------------------------------------
+    // RUN init
+
+    me.initilize();
+  }
+  // ===  END Validation ============================================================
+
+  // ===  START - Complete/Incompete Data set form  ============================================================================
+  function FosGrandChildrenOUs_CompleteForm(
+    _dataSetId,
+    _periodId,
+    _orgUnitList,
+    _initFunc
+  ) {
+    var me = this;
+
+    me.dataSetId = _dataSetId;
+    me.periodId = _periodId;
+    me.orgUnitList = _orgUnitList;
+
+    // ------------------------------------------------------------------------------------------
+    // URLs
+
+    me.API_BASE_QUERY_URL = BASE_QUERY_URL;
+
+    // POST mehods
+    // Payload
+    //  {"completeDataSetRegistrations":[{"dataSet":"uFurRa2Tc5G","period":"202310","organisationUnit":"c0KSZZIXuuj","completed":true/false}]}
+    // "completed": true ==> for completing a form
+    // "completed": false ==> for in-completing a form
+    me.QUERY_URL_COMPLETE_FORM_BASE = `${me.API_BASE_QUERY_URL}/completeDataSetRegistrations`;
+
+    me.QUERY_URL_COMPLETE_FORM_GET = `${me.QUERY_URL_COMPLETE_FORM_BASE}?dataSet=${me.dataSetId}&period=${me.periodId}`; // ==> &orgUnit=XXX&orgUnit=XXX`;
+
+    // ------------------------------------------------------------------------------------------
+    // variables
+
+    me.isCompleted;
+
+    // ------------------------------------------------------------------------------------------
+    // INIT method
+
+    me.initilize = function () {
+      me.retrieveCompleteStatus(me.orgUnitList, _initFunc);
+    };
+
+    // ------------------------------------------------------------------------------------------
+    // Supportive methods
+
+    me.retrieveCompleteStatus = function (orgUnitList, execFunc) {
+      var ouParams = orgUnitList
+        .map(function (item) {
+          return `orgUnit=${item.id}`;
+        })
+        .join("&");
+
+      var url = `${me.QUERY_URL_COMPLETE_FORM_GET}&${ouParams}`;
+      RESTUtils.sendRequest(
+        url,
+        function (response) {
+          if (
+            response.status == FosGrandChildrenOUsApp.RESPONSE_STATUS_SUCCESS
+          ) {
+            var completeData = response.data.completeDataSetRegistrations;
+            if (completeData && completeData.length > 0) {
+              me.isCompleted = true;
+            } else {
+              completeData = [];
+              me.isCompleted = false;
+            }
+            execFunc({
+              status: FosGrandChildrenOUsApp.RESPONSE_STATUS_SUCCESS,
+              data: completeData,
+            });
+          } else {
+            execFunc(response);
+          }
+        },
+        "GET"
+      );
+    };
+
+    me.execute = function (periodId, orgUnitList, execFunc) {
+      if (me.isCompleted) me.uncompleteForm(periodId, orgUnitList, execFunc);
+      else me.completeForm(periodId, orgUnitList, execFunc);
+    };
+
+    me.completeForm = function (periodId, orgUnitList, execFunc) {
+      var url = me.QUERY_URL_COMPLETE_FORM_BASE;
+      var payload = me.generatePayload(periodId, orgUnitList, true);
+      RESTUtils.sendRequest(
+        url,
+        function (response) {
+          execFunc(me.resolveResponse(response, true));
+        },
+        "POST",
+        payload,
+        { "Content-Type": "application/json" }
+      );
+    };
+
+    me.uncompleteForm = function (periodId, orgUnitList, execFunc, headers) {
+      var url = me.QUERY_URL_COMPLETE_FORM_BASE;
+
+      var payload = me.generatePayload(periodId, orgUnitList, false);
+      RESTUtils.sendRequest(
+        url,
+        function (response) {
+          execFunc(me.resolveResponse(response, false));
+        },
+        "POST",
+        payload,
+        { "Content-Type": "application/json" }
+      );
+    };
+
+    me.generatePayload = function (periodId, orgUnitList, completed) {
+      var commpletedList = orgUnitList.map(function (item) {
+        return {
+          dataSet: me.dataSetId,
+          period: periodId,
+          organisationUnit: item.id,
+          completed: completed,
+        };
+      });
+
+      return { completeDataSetRegistrations: commpletedList };
+    };
+
+    me.resolveResponse = function (response, isCompletedProcess) {
+      if (response.status == FosGrandChildrenOUsApp.RESPONSE_STATUS_SUCCESS) {
+        me.isCompleted = !me.isCompleted;
+
+        var conflictData = response.data.response.conflicts;
+
+        var resultStatus = {
+          status: FosGrandChildrenOUsApp.RESPONSE_STATUS_SUCCESS,
+          data: {},
+        };
+        if (conflictData && conflictData.length > 0)
+          resultStatus.data.conflicts = conflictData;
+
+        resultStatus.data.message = isCompletedProcess
+          ? "Completed successfully"
+          : "In-Completed successfully";
+
+        return resultStatus;
+      } else {
+        response.status = FosGrandChildrenOUsApp.RESPONSE_STATUS_ERROR;
+        var msg = isCompletedProcess
+          ? "Completed failed"
+          : "In-Completed failed";
+        var responseJSON = response.data.responseJSON;
+        if (
+          responseJSON &&
+          responseJSON.response &&
+          responseJSON.response.description
+        ) {
+          response.data.message =
+            msg + "\n" + responseJSON.response.description;
+        } else {
+          response.data.message = msg;
+        }
+
+        return response;
+      }
+    };
+
+    // ------------------------------------------------------------------------------------------
+    // RUN init
+
+    me.initilize();
+  }
+  // ===  END Validation ============================================================
+
+  // ===  START - Complete/Incompete Data set form  ============================================================================
+  function FosGrandChildrenInputField(_dataSetId) {
+    var me = this;
+
+    me.dataSetId = _dataSetId;
+
+    // ------------------------------------------------------------------------------------------
+    // URLs
+
+    me.PARAM_DATA_ELEMENT_ID = "@PARAM_DATA_ELEMENT_ID";
+    me.PARAM_PERIOD_ID = "@PARAM_PERIOD_ID";
+    me.PARAM_DATA_VALUE = "@PARAM_DATA_VALUE";
+    me.PARAM_ORGUNIT_ID = "@PARAM_ORGUNIT_ID";
+    me.PARAM_CATOTION_COMBO_ID = "@PARAM_CATOTION_COMBO_ID";
+
+    me.API_BASE_QUERY_URL = BASE_QUERY_URL;
+
+    me.QUERY_URL_SAVE_DATA_VALUE = `${me.API_BASE_QUERY_URL}/dataValues?de=${me.PARAM_DATA_ELEMENT_ID}&co=${me.PARAM_CATOTION_COMBO_ID}&ds=${me.dataSetId}&ou=${me.PARAM_ORGUNIT_ID}&pe=${me.PARAM_PERIOD_ID}&value=${me.PARAM_DATA_VALUE}`;
+
+    // ------------------------------------------------------------------------------------------
+    // variables
+
+    me.colorGreen = "#b9ffb9";
+    me.colorYellow = "#fffe8c";
+    me.colorRed = "#ff8a8a";
+    me.colorOrange = "#ff6600";
+    me.colorWhite = "#fff";
+    me.colorGrey = "#ccc";
+    me.colorBorderActive = "#73ad72";
+    me.colorBorder = "#aaa";
+    me.colorLightGrey = "#dcdcdc";
+
+    // ------------------------------------------------------------------------------------------
+    // INIT method
+
+    me.initilize = function () {};
+
+    // ------------------------------------------------------------------------------------------
+    // Supportive methods
+
+    me.generateInputField = function (
+      dataElement,
+      periodId,
+      orgUnitId,
+      catOptionComboId
+    ) {
+      var inputTag = $(
+        `<input type='text' compulsary="${dataElement.compulsary}">`
+      );
+
+      if (
+        dataElement.valueType == "INTEGER_ZERO_OR_POSITIVE" ||
+        dataElement.valueType == "INTEGER_POSITIVE"
+      ) {
+        inputTag.css("text-align", "right");
+      }
+
+      inputTag.off("change").on("change", function () {
+        var value = $(this).val();
+        inputTag.css("background-color", me.colorYellow);
+
+        if (me.checkValueType(dataElement, value)) {
+          me.saveValue(
+            dataElement.id,
+            periodId,
+            orgUnitId,
+            catOptionComboId,
+            $(this).val(),
+            function (response) {
+              if (
+                response.status ==
+                FosGrandChildrenOUsApp.RESPONSE_STATUS_SUCCESS
+              ) {
+                inputTag.css("background-color", me.colorGreen);
+              } else {
+                inputTag.css("background-color", me.colorRed);
+                if (
+                  response.code == FosGrandChildrenOUsApp.ERROR_DATA_VALUE_SAVED
+                ) {
+                  alert(RESTUtils.getResponseErrorMsgIfAny(response));
+                }
+              }
+            }
+          );
+        } else {
+          inputTag.css("background-color", me.colorRed);
+        }
+      });
+
+      return inputTag;
+    };
+
+    me.checkValueType = function (dataElement, value) {
+      var valid = true;
+      if (value != "") {
+        if (dataElement.valueType == "INTEGER_ZERO_OR_POSITIVE") {
+          valid = dhis2.validation.isZeroOrPositiveInt(value);
+          if (!valid) {
+            alert(
+              `Value must be zero or a positive integer \n ${dataElement.displayFormName}`
+            );
+          }
+        } else if (dataElement.valueType == "INTEGER_POSITIVE") {
+          valid = dhis2.validation.isPositiveInt(value);
+          if (!valid) {
+            alert(
+              `Value must be a positive integer \n ${dataElement.displayFormName}`
+            );
+          }
+        }
+      }
+
+      return valid;
+    };
+
+    me.saveValue = function (
+      deId,
+      periodId,
+      orgunitId,
+      catOptionComboId,
+      value,
+      execFunc
+    ) {
+      var url = me.QUERY_URL_SAVE_DATA_VALUE;
+      url = url.replace(me.PARAM_DATA_VALUE, value);
+      url = url.replace(me.PARAM_DATA_ELEMENT_ID, deId);
+      url = url.replace(me.PARAM_PERIOD_ID, periodId);
+      url = url.replace(me.PARAM_ORGUNIT_ID, orgunitId);
+      url = url.replace(me.PARAM_CATOTION_COMBO_ID, catOptionComboId);
+
+      RESTUtils.sendRequest(
+        url,
+        function (response) {
+          if (
+            response.status == FosGrandChildrenOUsApp.RESPONSE_STATUS_SUCCESS
+          ) {
+            if (response.data.status && response.data.status !== "OK") {
+              // ERROR
+              execFunc({
+                status: FosGrandChildrenOUsApp.RESPONSE_STATUS_ERROR,
+                code: FosGrandChildrenOUsApp.ERROR_DATA_VALUE_SAVED,
+                data: response.data,
+              });
+            } else {
+              // {
+              // 	"httpStatus": "Conflict",
+              // 	"httpStatusCode": 409,
+              // 	"status": "ERROR",
+              // 	"message": "Data set is locked",
+              // 	"errorCode": "E2017"
+              // }
+              execFunc({
+                status: FosGrandChildrenOUsApp.RESPONSE_STATUS_SUCCESS,
+              });
+            }
+          } else {
+            execFunc(response);
+          }
+        },
+        "POST"
+      );
+    };
+
+    // ------------------------------------------------------------------------------------------
+    // RUN init
+
+    me.initilize();
+  }
+  // ===  END Validation ============================================================
+
+  // === RESTUtils ==================================================================
+  function RESTUtils() {}
+
+  RESTUtils.sendRequest = function (url, exeFunc, method, payload, headers) {
+    method = method == undefined ? "GET" : method;
+
+    var options = {
+      type: method,
+      url: url,
+      success: function (response) {
+        exeFunc({
+          status: FosGrandChildrenOUsApp.RESPONSE_STATUS_SUCCESS,
+          data: response,
+          url,
+        });
+      },
+      error: function (error) {
+        exeFunc({
+          status: FosGrandChildrenOUsApp.RESPONSE_STATUS_ERROR,
+          code: FosGrandChildrenOUsApp.ERROR_UNKNOWN,
+          data: error,
+          url,
+        });
+      },
+    };
+
+    if (payload != undefined) options.data = JSON.stringify(payload);
+    if (headers != undefined) options.headers = headers;
+
+    $.ajax(options);
+  };
+
+  RESTUtils.getResponseErrorMsgIfAny = function (response) {
+    var message = "";
+    if (response.code == FosGrandChildrenOUsApp.ERROR_UNKNOWN) {
+      var message = "ERROR";
+      if (response.data.message) {
+        message += ": " + response.data.message;
+      }
+    }
+
+    return message;
+  };
+  // === END RESTUtils ==============================================================
+</script>
