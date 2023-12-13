@@ -39,9 +39,9 @@ $(document).ready(function () {
       $(this).find(".tooltip-content").remove();
     });
 
-    $(".toggle").click(function () {
+    $(".toggle-data").click(function () {
       var target = $(this).data('target');
-      $(target).toggle();
+      $(target).toggle-data();
       //$(this).find(".arrow").toggleClass("up");
     });
 

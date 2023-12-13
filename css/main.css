@@ -325,13 +325,13 @@ label {
   font-size: 16px;
 }
 
-.toggle {
+.toggle-data {
   cursor: pointer;
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
-.toggle .title {
+.toggle-data .title {
   padding-right: 8px;
 }
 
