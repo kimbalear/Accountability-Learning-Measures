@@ -356,4 +356,13 @@ label {
   background-color: #f7e2fd !important;
 }
 
+.version {
+  margin: 4px 0;
+  width: max-content;
+  color: #5C3873;
+  font-size: 12px;
+  padding: 4px;
+  border: 0.5px solid #CACACE;
+}
+
 /*# sourceMappingURL=main.css.map */
