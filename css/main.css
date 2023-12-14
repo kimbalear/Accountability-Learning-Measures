@@ -63,7 +63,7 @@
 }
 .grid-SRH_ervices .grid-cell input {
   margin: auto 0;
-  width: 90px;
+  width: calc(100% - 10px);
 }
 .grid-SRH_ervices .grid-cell-highlight {
   background-color: #f0e4f7;
@@ -93,7 +93,7 @@
 }
 .grid-people_reached .grid-cell input {
   margin: auto 0;
-  width: 90px;
+  width: calc(100% - 10px);
 }
 .grid-people_reached .grid-cell-highlight {
   background-color: #f0e4f7;
@@ -126,7 +126,7 @@
 }
 .grid-commodities .grid-cell input {
   margin: auto 0;
-  width: 90px;
+  width: calc(100% - 10px);
 }
 .grid-commodities .grid-cell-highlight {
   background-color: #f0e4f7;
@@ -156,7 +156,7 @@
 }
 .grid-CSE .grid-cell input {
   margin: auto 0;
-  width: 90px;
+  width: calc(100% - 10px);
 }
 .grid-CSE .grid-cell-highlight {
   background-color: #f0e4f7;
@@ -197,7 +197,7 @@
 }
 .grid-OIES .grid-cell .grid-data input {
   margin: auto 0;
-  width: 90px;
+  width: calc(100% - 10px);
 }
 .grid-OIES .grid-cell-highlight {
   background-color: #f0e4f7;
